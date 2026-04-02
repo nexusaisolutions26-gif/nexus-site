@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Seven AI systems for Ohio businesses: dashboards, meeting intelligence, social media, AR automation, lead response, field team visibility, and HR compliance.">
+<title>Services — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+nav {
+  background: #0d1117;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #1d4ed8 !important; }
+
+.mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+.page-hero {
+  background: #0d1117;
+  padding: 80px 60px 60px;
+  text-align: center;
+}
+.page-hero .label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
+.page-hero h1 { font-size: 48px; font-weight: 800; color: #fff; letter-spacing: -1.5px; margin-bottom: 16px; }
+.page-hero p { font-size: 18px; color: #9ca3af; max-width: 560px; margin: 0 auto; }
+
+.services-wrapper { max-width: 1100px; margin: 0 auto; padding: 80px 60px; }
+
+.service-block {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  padding: 56px 0;
+  border-bottom: 1px solid #e2e8f0;
+  align-items: start;
+}
+.service-block:last-child { border-bottom: none; }
+
+.service-meta { position: sticky; top: 100px; }
+.service-number { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #2563eb; text-transform: uppercase; margin-bottom: 12px; }
+.service-icon-large { font-size: 28px; font-weight: 800; color: #2563eb; letter-spacing: 1px; margin-bottom: 16px; }
+.service-meta h2 { font-size: 26px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 12px; }
+.service-meta .price-tag { display: inline-block; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 4px 12px; border-radius: 100px; font-size: 13px; font-weight: 600; }
+.service-meta .included-in { font-size: 13px; color: #6b7280; margin-top: 8px; }
+
+.service-detail h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 12px; }
+.service-detail p { font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px; }
+.feature-list { list-style: none; margin-bottom: 24px; }
+.feature-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 15px;
+  color: #374151;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.feature-list li:last-child { border-bottom: none; }
+.feature-list li::before { content: "\2713"; color: #2563eb; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.result-box {
+  background: #f8fafc;
+  border-left: 3px solid #2563eb;
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+  color: #374151;
+  font-style: italic;
+}
+.result-box strong { color: #0f172a; font-style: normal; }
+
+.tiers-section { background: #0d1117; padding: 80px 60px; }
+.tiers-inner { max-width: 1100px; margin: 0 auto; }
+.tiers-inner .label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #60a5fa; margin-bottom: 12px; text-align: center; }
+.tiers-inner h2 { font-size: 38px; font-weight: 800; color: #fff; letter-spacing: -1px; text-align: center; margin-bottom: 48px; }
+.tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.tier-card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 36px; }
+.tier-card.featured { border-color: #2563eb; background: #0f1f3d; }
+.tier-name { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #2563eb; margin-bottom: 8px; }
+.tier-price { font-size: 40px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
+.tier-price span { font-size: 16px; font-weight: 400; color: #6b7280; }
+.tier-setup { font-size: 13px; color: #6b7280; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #1f2937; }
+.tier-features { list-style: none; margin-bottom: 28px; }
+.tier-features li { padding: 7px 0; font-size: 14px; color: #9ca3af; display: flex; gap: 10px; }
+.tier-features li::before { content: "\2713"; color: #2563eb; font-weight: 700; flex-shrink: 0; }
+.tier-btn { display: block; text-align: center; padding: 13px; border-radius: 8px; font-size: 15px; font-weight: 600; }
+.tier-btn-outline { border: 1px solid #374151; color: #d1d5db; }
+.tier-btn-outline:hover { border-color: #2563eb; color: #60a5fa; }
+.tier-btn-solid { background: #2563eb; color: #fff; }
+.tier-btn-solid:hover { background: #1d4ed8; }
+
+.cta-section { background: #2563eb; padding: 80px 60px; text-align: center; }
+.cta-section h2 { font-size: 38px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+.cta-section p { font-size: 18px; color: #bfdbfe; margin-bottom: 32px; }
+.btn-white { background: #fff; color: #2563eb; padding: 16px 40px; border-radius: 8px; font-size: 16px; font-weight: 700; display: inline-block; }
+.btn-white:hover { background: #eff6ff; }
+
+footer { background: #0d1117; padding: 48px 60px; text-align: center; }
+footer .footer-logo { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+footer .footer-logo span { color: #2563eb; }
+footer p { color: #6b7280; font-size: 14px; margin-bottom: 4px; }
+footer a { color: #6b7280; }
+footer a:hover { color: #2563eb; }
+
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .mobile-menu-btn { display: block; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #0d1117; flex-direction: column; padding: 20px; gap: 16px; border-top: 1px solid #1f2937; }
+  .nav-links.show { display: flex; }
+  .page-hero { padding: 60px 24px 40px; }
+  .page-hero h1 { font-size: 32px; }
+  .services-wrapper { padding: 48px 24px; }
+  .service-block { grid-template-columns: 1fr; gap: 24px; }
+  .service-meta { position: static; }
+  .tiers-section { padding: 60px 24px; }
+  .tiers-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 24px; }
+  footer { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Nexus <span>AI</span> Solutions</div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/faq">FAQ</a>
+    <a href="/audit" class="nav-cta">Free Audit</a>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+</nav>
+
+<div class="page-hero">
+  <div class="label">What We Build</div>
+  <h1>Seven AI systems.<br>One operational layer.</h1>
+  <p>We don't sell software. We build custom AI systems connected to your existing tools — and manage them month to month.</p>
+</div>
+
+<div class="services-wrapper">
+
+  <!-- SERVICE 1 -->
+  <div class="service-block">
+    <div class="service-meta">
+      <div class="service-number">01</div>
+      <div class="service-icon-large">BI</div>
+      <h2>Business Intelligence Dashboard</h2>
+      <div class="price-tag">Included in Operations+</div>
+    </div>
+    <div class="service-detail">
+      <p>Your business data currently lives in 3–5 disconnected systems. Every Monday someone spends an hour pulling it together manually. We connect your existing tools — QuickBooks, Jobber, ServiceTitan, HubSpot, or whatever you use — and build one unified live dashboard.</p>
+      <ul class="feature-list">
+        <li>Live view: revenue, jobs, leads, invoices, team performance — one screen</li>
+        <li>Automated weekly report delivered to your inbox every Sunday evening</li>
+        <li>Exception alerts: overdue invoices, unanswered leads, missed KPIs flagged automatically</li>
+        <li>Historical comparisons: this week vs. last week, this month vs. last month</li>
+        <li>Accessible on desktop and mobile — check the state of your business in 60 seconds</li>
+      </ul>
+      <div class="result-box"><strong>The result:</strong> You know the state of your business in real time, without asking anyone or spending Sunday evening on a spreadsheet.</div>
+    </div>
+  </div>
+
+  <!-- SERVICE 2 -->
+  <div class="service-block">
+    <div class="service-meta">
+      <div class="service-number">02</div>
+      <div class="service-icon-large">MI</div>
+      <h2>Meeting Intelligence & Action Items</h2>
+      <div class="price-tag">Included in Operations+</div>
+    </div>
+    <div class="service-detail">
+      <p>Your team meets. Decisions get made. Half of them are forgotten by Thursday. We connect an AI meeting assistant to all your internal meetings — Zoom, Google Meet, Teams, or in-person via phone. Every meeting is automatically transcribed, action items extracted, assigned, and summarized.</p>
+      <ul class="feature-list">
+        <li>Full transcript of every meeting — searchable and stored</li>
+        <li>Automatic action item extraction with owner attribution</li>
+        <li>Summary delivered to the owner and relevant team members within minutes</li>
+        <li>Optional: tasks auto-populate into your project management system</li>
+        <li>Works with Zoom, Google Meet, Teams, and phone-based meetings</li>
+      </ul>
+      <div class="result-box"><strong>The result:</strong> Nothing falls through the cracks. The same conversation never needs to happen twice.</div>
+    </div>
+  </div>
+
+  <!-- SERVICE 3 -->
+  <div class="service-block">
+    <div class="service-meta">
+      <div class="service-number">03</div>
+      <div class="service-icon-large">SM</div>
+      <h2>Social Media — Upload & Disappear</h2>
+      <div class="price-tag">Included in all tiers</div>
+    </div>
+    <div class="service-detail">
+      <p>Your business does great work. Nobody sees it because posting consistently requires time you don't have. We solve this with a dead-simple system: snap a photo of a completed job, send it to a portal with a couple words, and the AI does the rest.</p>
+      <ul class="feature-list">
+        <li>4–5 posts per week across Facebook, Instagram, and Google Business Profile</li>
+        <li>AI-written captions matched to your brand voice and industry</li>
+        <li>Scheduled posting — no manual login, no content calendar to maintain</li>
+        <li>Hashtag optimization and platform-specific formatting handled automatically</li>
+        <li>Monthly content calendar for review if desired</li>
+      </ul>
+      <div class="result-box"><strong>The result:</strong> Your social media stays active and professional without anyone managing it.</div>
+    </div>
+  </div>
+
+  <!-- SERVICE 4 -->
+  <div class="service-block">
+    <div class="service-meta">
+      <div class="service-number">04</div>
+      <div class="service-icon-large">AR</div>
+      <h2>Accounts Receivable Automation</h2>
+      <div class="price-tag">Included in Operations+</div>
+    </div>
+    <div class="service-detail">
+      <p>Every business has invoices that should have been paid already. Most owners chase them manually, inconsistently, or not at all — because it feels awkward and takes time they don't have. We connect to your invoicing system and build an automated AR follow-up sequence that runs without exception.</p>
+      <ul class="feature-list">
+        <li>Automated email + SMS follow-up on all overdue invoices</li>
+        <li>Escalating tone: friendly at day 8, firmer at day 15, final notice at day 22</li>
+        <li>Owner alert when any invoice hits 30 days outstanding</li>
+        <li>Monthly AR summary showing collection rate and outstanding totals</li>
+        <li>Works with QuickBooks, FreshBooks, Jobber, ServiceTitan, and others</li>
+      </ul>
+      <div class="result-box"><strong>The result:</strong> You collect more of what you've already earned — without the awkward follow-up calls.</div>
+    </div>
+  </div>
+
+  <!-- SERVICE 5 -->
+  <div class="service-block">
+    <div class="service-meta">
+      <div class="service-number">05</div>
+      <div class="service-icon-large">LC</div>
+      <h2>Lead & Customer Communication</h2>
+      <div class="price-tag">Included in all tiers</div>
+    </div>
+    <div class="service-detail">
+      <p>From the moment a lead comes in to the year-two reactivation, every touchpoint is automated and consistent. No lead falls through because someone was busy. No customer goes dark after a job because nobody followed up.</p>
+      <ul class="feature-list">
+        <li>Immediate lead response within 2 minutes — 24 hours a day, 7 days a week</li>
+        <li>5-step follow-up sequence for leads that don't book immediately</li>
+        <li>Job confirmation, technician ETA, and completion notifications to customers</li>
+        <li>Automated review requests after every completed job</li>
+        <li>6-month reactivation sequence for past customers</li>
+      </ul>
+      <div class="result-box"><strong>The result:</strong> No lead falls through. Every customer feels taken care of without your team lifting a finger.</div>
+    </div>
+  </div>
+
+  <!-- SERVICE 6 -->
+  <div class="service-block">
+    <div class="service-meta">
+      <div class="service-number">06</div>
+      <div class="service-icon-large">FT</div>
+      <h2>Field Team Visibility</h2>
+      <div class="price-tag">Included in Operations+</div>
+    </div>
+    <div class="service-detail">
+      <p>For businesses with field teams, knowing who's where and what got done is a daily challenge. Owners end up making calls, texting techs, or waiting for someone to come back to the office. We automate the visibility layer entirely.</p>
+      <ul class="feature-list">
+        <li>Daily end-of-day summary: jobs completed, hours logged, flags raised</li>
+        <li>Customer notification triggers tied to job status (on the way, arrived, completed)</li>
+        <li>Automated job completion follow-up and satisfaction check</li>
+        <li>Weekly team performance summary delivered to managers</li>
+        <li>Exception alerts for missed jobs, late arrivals, or customer complaints</li>
+      </ul>
+      <div class="result-box"><strong>The result:</strong> The owner has full visibility without making a single status call.</div>
+    </div>
+  </div>
+
+  <!-- SERVICE 7 -->
+  <div class="service-block">
+    <div class="service-meta">
+      <div class="service-number">07</div>
+      <div class="service-icon-large">HR</div>
+      <h2>HR & Compliance Administration</h2>
+      <div class="price-tag">Included in Full Business AI</div>
+    </div>
+    <div class="service-detail">
+      <p>License renewals, certification expirations, onboarding paperwork, employee scheduling — the administrative side of managing people is repetitive, high-stakes, and almost always the thing that falls through the cracks when the owner gets busy.</p>
+      <ul class="feature-list">
+        <li>License and certification expiration tracking with 60/30/7-day alerts</li>
+        <li>Insurance renewal reminders well before deadlines</li>
+        <li>Onboarding document routing and completion tracking</li>
+        <li>Scheduling summaries and conflict flagging</li>
+        <li>Annual compliance calendar with automated reminders</li>
+      </ul>
+      <div class="result-box"><strong>The result:</strong> Nothing expires without notice. Onboarding runs without the owner tracking it manually.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TIERS -->
+<div class="tiers-section">
+  <div class="tiers-inner">
+    <div class="label">Pricing</div>
+    <h2>Choose your tier.</h2>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-name">Starter</div>
+        <div class="tier-price">$1,200<span>/mo</span></div>
+        <div class="tier-setup">+ $1,500 one-time setup &bull; 5–10 employees</div>
+        <ul class="tier-features">
+          <li>Social Media Upload &amp; Post System</li>
+          <li>Automated Lead Response (24/7)</li>
+          <li>Customer Communication Sequences</li>
+          <li>Review Request Automation</li>
+          <li>Weekly Email Summary Report</li>
+        </ul>
+        <a href="/audit" class="tier-btn tier-btn-outline">Book Free Audit</a>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-name">Operations — Most Popular</div>
+        <div class="tier-price">$2,500<span>/mo</span></div>
+        <div class="tier-setup">+ $2,500 one-time setup &bull; 10–25 employees</div>
+        <ul class="tier-features">
+          <li>Everything in Starter</li>
+          <li>Live Business Dashboard</li>
+          <li>Meeting Intelligence &amp; Action Items</li>
+          <li>AR Automation (invoice follow-up)</li>
+          <li>Field Team Visibility &amp; Notifications</li>
+          <li>Monthly Strategy Review</li>
+        </ul>
+        <a href="/audit" class="tier-btn tier-btn-solid">Book Free Audit</a>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Full Business AI</div>
+        <div class="tier-price">$4,500<span>/mo</span></div>
+        <div class="tier-setup">+ $3,500 one-time setup &bull; 20–50 employees</div>
+        <ul class="tier-features">
+          <li>Everything in Operations</li>
+          <li>HR &amp; Compliance Administration</li>
+          <li>Custom Exception Alerts &amp; Escalations</li>
+          <li>Full Integration Stack</li>
+          <li>Custom Departmental Reporting</li>
+          <li>Weekly Dashboard Review</li>
+          <li>Priority Support</li>
+        </ul>
+        <a href="/audit" class="tier-btn tier-btn-outline">Book Free Audit</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Not sure which tier fits?</h2>
+  <p>The audit is free and there's no obligation. You'll leave knowing exactly what your business needs and what it costs.</p>
+  <a href="/audit" class="btn-white">Book My Free Operational Audit</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Nexus <span>AI</span> Solutions</div>
+  <p>Circleville, Ohio — Serving businesses across Ohio</p>
+  <p><a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a> &nbsp;·&nbsp; <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+  <p style="margin-top:20px;font-size:12px;color:#374151;">&copy; 2026 Nexus AI Solutions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
