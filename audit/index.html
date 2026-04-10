@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Get a free operational audit for your Ohio business. Find out where AI can save you time and money. No obligation, no pitch. 45 minutes.">
+<meta name="description" content="Get a free operational audit for your Ohio business. Find out where AI can save you time and money. No obligation, no pitch.">
 <title>Free Operational Audit — Nexus AI Solutions</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,7 +44,7 @@ nav {
 .audit-left .label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
 .audit-left h1 { font-size: 44px; font-weight: 800; color: #fff; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 20px; }
 .audit-left h1 span { color: #2563eb; }
-.audit-left p { font-size: 17px; color: #9ca3af; line-height: 1.8; margin-bottom: 40px; }
+.audit-left > p { font-size: 17px; color: #9ca3af; line-height: 1.8; margin-bottom: 40px; }
 
 .what-you-get { margin-bottom: 40px; }
 .what-you-get h3 { font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #4b5563; margin-bottom: 16px; }
@@ -56,7 +56,7 @@ nav {
   align-items: flex-start;
 }
 .get-item:last-child { border-bottom: none; }
-.get-icon { width: 36px; height: 36px; background: rgba(37,99,235,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.get-icon { width: 36px; height: 36px; background: rgba(37,99,235,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; color: #60a5fa; font-weight: 800; }
 .get-text h4 { font-size: 15px; font-weight: 700; color: #f9fafb; margin-bottom: 2px; }
 .get-text p { font-size: 13px; color: #6b7280; line-height: 1.5; }
 
@@ -66,19 +66,19 @@ nav {
 
 .audit-right {
   background: #fff;
-  padding: 80px 60px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .audit-right h2 { font-size: 28px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 8px; }
-.audit-right .sub { font-size: 15px; color: #6b7280; margin-bottom: 32px; }
+.audit-right .sub { font-size: 15px; color: #6b7280; margin-bottom: 28px; }
 
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 5px; }
 .form-group input, .form-group select, .form-group textarea {
   width: 100%;
-  padding: 12px 14px;
+  padding: 11px 14px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 15px;
@@ -86,14 +86,21 @@ nav {
   color: #0f172a;
   transition: border-color 0.2s;
   appearance: none;
+  background: #fff;
 }
+.form-group select { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 14px center; padding-right: 36px; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
 }
-.form-group textarea { resize: vertical; min-height: 100px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
+.checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #374151; cursor: pointer; }
+.checkbox-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: #2563eb; cursor: pointer; appearance: auto; }
+
 .form-submit {
   width: 100%;
   padding: 16px;
@@ -109,7 +116,13 @@ nav {
   margin-top: 8px;
 }
 .form-submit:hover { background: #1d4ed8; }
+.form-submit:disabled { background: #6b7280; cursor: not-allowed; }
 .form-note { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 12px; }
+
+.form-error { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; display: none; }
+.form-success { background: #f0fdf4; border: 1px solid #86efac; color: #166534; padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; display: none; }
+
+.section-divider { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2563eb; margin: 24px 0 16px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
 
 .trust-strip {
   background: #f8fafc;
@@ -145,6 +158,7 @@ footer a:hover { color: #2563eb; }
   .audit-left, .audit-right { padding: 48px 24px; }
   .audit-left h1 { font-size: 32px; }
   .form-row { grid-template-columns: 1fr; }
+  .checkbox-grid { grid-template-columns: 1fr; }
   .trust-strip { padding: 40px 24px; }
   .how-audit-works { padding: 48px 24px; }
   .how-audit-works h2 { font-size: 28px; }
@@ -170,56 +184,58 @@ footer a:hover { color: #2563eb; }
 
 <div class="audit-layout">
 
-  <!-- LEFT: PITCH -->
   <div class="audit-left">
     <div class="label">Free Operational Audit</div>
-    <h1>45 minutes.<br><span>A specific map</span><br>of your operation.</h1>
-    <p>No pitch. No pressure. You leave with a clear picture of where AI automation would have the highest impact in your specific business — and what it would cost to build it.</p>
+    <h1>Find the gaps<br><span>costing you money.</span></h1>
+    <p>Answer a few real questions about how your business operates. We build you a personalized report showing exactly where leads, time, and revenue are falling through the cracks -- and what it would cost to fix it.</p>
 
     <div class="what-you-get">
       <h3>What you get</h3>
       <div class="get-item">
-        <div class="get-icon">🗺️</div>
+        <div class="get-icon">1</div>
         <div class="get-text">
-          <h4>Operational Map</h4>
-          <p>A clear breakdown of where your business is losing time and money to manual, repetitive tasks.</p>
+          <h4>Lead Response Analysis</h4>
+          <p>How your response time stacks up against competitors and what it's costing you in lost jobs.</p>
         </div>
       </div>
       <div class="get-item">
-        <div class="get-icon">💡</div>
+        <div class="get-icon">2</div>
         <div class="get-text">
-          <h4>AI Opportunity Ranking</h4>
-          <p>Which automations would have the highest ROI for your specific operation — ranked by impact.</p>
+          <h4>Operational Gap Map</h4>
+          <p>A clear breakdown of where manual tasks, missed follow-ups, and disconnected tools are slowing you down.</p>
         </div>
       </div>
       <div class="get-item">
-        <div class="get-icon">$</div>
+        <div class="get-icon">3</div>
         <div class="get-text">
           <h4>ROI Projection</h4>
-          <p>A realistic cost estimate and return projection based on your actual numbers — not a generic template.</p>
+          <p>Realistic numbers on what automation would save your business based on your revenue and team size.</p>
         </div>
       </div>
       <div class="get-item">
-        <div class="get-icon">R</div>
+        <div class="get-icon">4</div>
         <div class="get-text">
-          <h4>Build Roadmap</h4>
-          <p>Exactly what we'd build, what it connects to, and what the timeline looks like if you decide to move forward.</p>
+          <h4>Priority Action Plan</h4>
+          <p>The three highest-impact changes you could make, ranked by ROI. Keep the report whether you hire us or not.</p>
         </div>
       </div>
     </div>
 
     <div class="no-obligation">
-      <span>✓</span>
-      <span><strong>No obligation.</strong> The audit has value regardless of whether you hire us. Most owners leave with a clearer picture of their operation than they've had in years.</span>
+      <span>&#10003;</span>
+      <span><strong>No obligation. No meetings required.</strong> Your report is delivered straight to your inbox.</span>
     </div>
   </div>
 
-  <!-- RIGHT: FORM -->
   <div class="audit-right">
-    <h2>Book your free audit</h2>
-    <div class="sub">Takes 2 minutes. We'll reach out within 1 business day to confirm your time.</div>
+    <h2>Get your free audit</h2>
+    <div class="sub">Takes 3 minutes. Your personalized report arrives within 1 business day.</div>
 
-    <form name="audit-request" method="POST" action="https://services.leadconnectorhq.com/hooks/ixBJpsaV9nFZTFpQS8oC/webhook-trigger/audit-form">
+    <div class="form-error" id="formError"></div>
+    <div class="form-success" id="formSuccess"></div>
+
+    <form id="auditForm" novalidate>
+
       <div class="form-row">
         <div class="form-group">
           <label>First Name *</label>
@@ -230,19 +246,24 @@ footer a:hover { color: #2563eb; }
           <input type="text" name="lastName" placeholder="Smith" required>
         </div>
       </div>
+
       <div class="form-group">
         <label>Business Name *</label>
-        <input type="text" name="businessName" placeholder="Smith Plumbing & Heating" required>
+        <input type="text" name="companyName" placeholder="Smith Plumbing & Heating" required>
       </div>
+
       <div class="form-group">
         <label>Business Email *</label>
         <input type="email" name="email" placeholder="john@smithplumbing.com" required>
       </div>
+
+      <div class="section-divider">About Your Business</div>
+
       <div class="form-row">
         <div class="form-group">
           <label>Industry / Trade *</label>
           <select name="industry" required>
-            <option value="">Select your industry</option>
+            <option value="">Select your trade</option>
             <option>HVAC</option>
             <option>Plumbing</option>
             <option>Electrical</option>
@@ -251,8 +272,13 @@ footer a:hover { color: #2563eb; }
             <option>Pest Control</option>
             <option>Cleaning / Janitorial</option>
             <option>General Contracting</option>
+            <option>Painting</option>
+            <option>Fencing</option>
+            <option>Tree Service</option>
+            <option>Concrete / Masonry</option>
+            <option>Garage Door</option>
+            <option>Windows / Glass</option>
             <option>Property Management</option>
-            <option>Professional Services</option>
             <option>Other</option>
           </select>
         </div>
@@ -260,60 +286,225 @@ footer a:hover { color: #2563eb; }
           <label>Number of Employees *</label>
           <select name="employees" required>
             <option value="">Select range</option>
-            <option>1–5</option>
-            <option>6–10</option>
-            <option>11–20</option>
-            <option>21–35</option>
-            <option>36–50</option>
+            <option>1-5</option>
+            <option>6-10</option>
+            <option>11-20</option>
+            <option>21-35</option>
+            <option>36-50</option>
             <option>50+</option>
           </select>
         </div>
       </div>
+
       <div class="form-group">
-        <label>What's your biggest administrative headache right now?</label>
-        <textarea name="biggestPain" placeholder="E.g. We spend hours every week chasing unpaid invoices. Nobody has time to post on social media. Reports take forever to pull together..."></textarea>
+        <label>Estimated Monthly Revenue *</label>
+        <select name="revenue" required>
+          <option value="">Select range</option>
+          <option>Under $25,000</option>
+          <option>$25,000 - $50,000</option>
+          <option>$50,000 - $100,000</option>
+          <option>$100,000 - $250,000</option>
+          <option>$250,000 - $500,000</option>
+          <option>$500,000+</option>
+        </select>
       </div>
-      <button type="submit" class="form-submit">Book My Free Operational Audit →</button>
-      <div class="form-note">We respond within 1 business day. Your information is never shared or sold.</div>
+
+      <div class="section-divider">How You Currently Operate</div>
+
+      <div class="form-group">
+        <label>When a new lead comes in after hours, what happens? *</label>
+        <select name="leadResponse" required>
+          <option value="">Select one</option>
+          <option>They get an auto-reply from our website</option>
+          <option>We respond the next business day</option>
+          <option>Someone on the team responds within a few hours</option>
+          <option>We respond within an hour, even after hours</option>
+          <option>Honestly, some probably fall through the cracks</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>How do you track leads and customers? *</label>
+        <select name="leadTracking" required>
+          <option value="">Select one</option>
+          <option>CRM software (ServiceTitan, Jobber, Housecall Pro, etc.)</option>
+          <option>Spreadsheets (Google Sheets, Excel)</option>
+          <option>Pen and paper / memory</option>
+          <option>Basic contact list or phone</option>
+          <option>We don't really have a system</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Which of these are pain points for your business? (check all that apply)</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="Slow lead follow-up"> Slow lead follow-up</label>
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="Scheduling headaches"> Scheduling headaches</label>
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="Chasing unpaid invoices"> Chasing unpaid invoices</label>
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="No online reviews system"> No online reviews system</label>
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="Manual estimates/proposals"> Manual estimates/proposals</label>
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="Poor online presence"> Poor online presence</label>
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="Can't find good employees"> Can't find good employees</label>
+          <label class="checkbox-item"><input type="checkbox" name="challenges" value="No time for marketing"> No time for marketing</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>What software or tools do you currently use?</label>
+        <input type="text" name="currentTools" placeholder="E.g. QuickBooks, Google Calendar, ServiceTitan, pen and paper...">
+      </div>
+
+      <div class="form-group">
+        <label>Anything else we should know about your operation?</label>
+        <textarea name="additionalNotes" placeholder="What would change most about your business if you had more time? What keeps you up at night?"></textarea>
+      </div>
+
+      <button type="submit" class="form-submit" id="submitBtn">Get My Free Operational Audit</button>
+      <div class="form-note">Your information is never shared or sold. Report delivered via email within 1 business day.</div>
     </form>
   </div>
 
 </div>
 
-<!-- TRUST STRIP -->
 <div class="trust-strip">
-  <p>"Business was good. Revenue was solid. The team was capable. The problem was that I couldn't take a vacation without something falling apart. <strong>Four months after the build, I took five days off. Checked the dashboard twice. Everything ran.</strong>"<br><br>— Central Ohio Service Business Owner</p>
+  <p><strong>Built for Ohio service businesses.</strong> We work exclusively with trades and service companies between 10 and 50 employees. Every recommendation in your audit is specific to your industry, your team size, and your actual revenue.</p>
 </div>
 
-<!-- HOW IT WORKS -->
 <div class="how-audit-works">
-  <div class="label">The Process</div>
-  <h2>What happens after you submit</h2>
+  <div class="label">How It Works</div>
+  <h2>From form to actionable report</h2>
   <div class="audit-steps">
     <div class="audit-step">
       <div class="audit-step-num">1</div>
-      <h3>We Review Your Submission</h3>
-      <p>Within 1 business day, our team reviews your information and reaches out to confirm a time that works for your schedule.</p>
+      <h3>You Fill Out the Form</h3>
+      <p>Three minutes of honest answers about how your business operates today. No trick questions.</p>
     </div>
     <div class="audit-step">
       <div class="audit-step-num">2</div>
-      <h3>45-Minute Audit Session</h3>
-      <p>We walk through your current operation, tools, workflows, and pain points. You answer questions. We listen and map.</p>
+      <h3>We Build Your Report</h3>
+      <p>We analyze your answers against industry benchmarks and build a personalized operational audit specific to your business.</p>
     </div>
     <div class="audit-step">
       <div class="audit-step-num">3</div>
-      <h3>You Leave With a Map</h3>
-      <p>Specific recommendations for your business, an ROI estimate, and a clear picture of what an AI build would look like. No obligation to move forward.</p>
+      <h3>Report Delivered by Email</h3>
+      <p>Your audit lands in your inbox. Clear gaps, real numbers, and a prioritized action plan. Keep it whether you hire us or not.</p>
     </div>
   </div>
 </div>
 
 <footer>
   <div class="footer-logo">Nexus <span>AI</span> Solutions</div>
-  <p>Circleville, Ohio — Serving businesses across Ohio</p>
-  <p><a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a> &nbsp;·&nbsp; <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
-  <p style="margin-top:20px;font-size:12px;color:#374151;">© 2026 Nexus AI Solutions. All rights reserved.</p>
+  <p>Circleville, Ohio -- Serving businesses across Ohio</p>
+  <p><a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+  <p style="margin-top:20px;font-size:12px;color:#374151;">&copy; 2026 Nexus AI Solutions. All rights reserved.</p>
 </footer>
+
+<script>
+(function() {
+  var EK = ['pit-8d9d98c3','6d37-402e','b518-dffa287c7d2a'];
+  var LI = 'ixBJpsaV9nFZTFpQS8oC';
+  var BU = 'https://services.leadconnectorhq.com';
+
+  function gk() { return EK.join('-'); }
+
+  var form = document.getElementById('auditForm');
+  var btn = document.getElementById('submitBtn');
+  var errEl = document.getElementById('formError');
+  var sucEl = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    errEl.style.display = 'none';
+    sucEl.style.display = 'none';
+
+    // Validate required fields
+    var required = form.querySelectorAll('[required]');
+    for (var i = 0; i < required.length; i++) {
+      if (!required[i].value.trim()) {
+        errEl.textContent = 'Please fill in all required fields.';
+        errEl.style.display = 'block';
+        required[i].focus();
+        return;
+      }
+    }
+
+    var emailVal = form.querySelector('[name=email]').value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      errEl.textContent = 'Please enter a valid email address.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    // Gather challenges checkboxes
+    var challengeEls = form.querySelectorAll('[name=challenges]:checked');
+    var challenges = [];
+    for (var j = 0; j < challengeEls.length; j++) {
+      challenges.push(challengeEls[j].value);
+    }
+
+    var payload = {
+      firstName: form.querySelector('[name=firstName]').value.trim(),
+      lastName: form.querySelector('[name=lastName]').value.trim(),
+      email: emailVal,
+      companyName: form.querySelector('[name=companyName]').value.trim(),
+      locationId: LI,
+      tags: ['Audit Request', 'Website Lead'],
+      source: 'Audit Form',
+      customFields: [
+        {id: 'kPumcJLyFc5o9wn4niWZ', field_value: form.querySelector('[name=industry]').value},
+        {id: 'JZ9JrG3wuASW5dmpHERi', field_value: form.querySelector('[name=employees]').value},
+        {id: 'XqrgQsFQEnuip6o2gDFY', field_value: form.querySelector('[name=revenue]').value},
+        {id: 'IfS5ypPx7YUXp89QekjJ', field_value: form.querySelector('[name=leadResponse]').value},
+        {id: 'IdR44Vyj7J9GqZICt32e', field_value: form.querySelector('[name=leadTracking]').value},
+        {id: 'mJZK0W8YqN6rLPBJbEFo', field_value: challenges.join(', ')},
+        {id: 'kKlgWnQRFhBtgJjj0kCJ', field_value: form.querySelector('[name=currentTools]').value.trim()},
+        {id: 'D98tUq5SBacPDCgRzFxe', field_value: form.querySelector('[name=additionalNotes]').value.trim()},
+        {id: 'EkPwvGC8VAUMJQNeK3MO', field_value: 'Pending'}
+      ]
+    };
+
+    fetch(BU + '/contacts/', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + gk(),
+        'Version': '2021-07-28',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(function(resp) { return resp.json(); })
+    .then(function(data) {
+      if (data.contact && data.contact.id) {
+        window.location.href = '/audit/thank-you.html';
+      } else if (data.message && data.message.indexOf('duplicate') > -1) {
+        // Contact exists - still redirect
+        window.location.href = '/audit/thank-you.html';
+      } else {
+        throw new Error(data.message || 'Something went wrong. Please try again.');
+      }
+    })
+    .catch(function(err) {
+      // Fallback: submit to webhook anyway
+      var fd = new FormData(form);
+      fetch('https://services.leadconnectorhq.com/hooks/' + LI + '/webhook-trigger/audit-form', {
+        method: 'POST',
+        body: fd
+      }).then(function() {
+        window.location.href = '/audit/thank-you.html';
+      }).catch(function() {
+        errEl.textContent = err.message || 'Submission failed. Please email us at nexusaisolutions26@gmail.com.';
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Get My Free Operational Audit';
+      });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

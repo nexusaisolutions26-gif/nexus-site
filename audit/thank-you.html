@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Thank you for requesting your free operational audit. Your report is on the way.">
+<title>You're In — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #0d1117; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+a { text-decoration: none; color: inherit; }
+
+nav {
+  background: #0d1117;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1f2937;
+}
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+.ty-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.ty-check {
+  width: 80px;
+  height: 80px;
+  background: rgba(34,197,94,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 32px;
+}
+
+.ty-container h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+.ty-container h1 span { color: #2563eb; }
+
+.ty-container .lead {
+  font-size: 18px;
+  color: #9ca3af;
+  max-width: 560px;
+  margin-bottom: 40px;
+}
+
+.ty-steps {
+  max-width: 500px;
+  text-align: left;
+  margin: 0 0 40px;
+}
+.ty-step {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #1f2937;
+}
+.ty-step:last-child { border-bottom: none; }
+.ty-step-num {
+  width: 32px;
+  height: 32px;
+  background: rgba(37,99,235,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #60a5fa;
+  flex-shrink: 0;
+}
+.ty-step-text h4 { color: #f9fafb; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.ty-step-text p { color: #6b7280; font-size: 14px; margin: 0; }
+
+.ty-cta {
+  background: rgba(37,99,235,0.1);
+  border: 1px solid rgba(37,99,235,0.2);
+  border-radius: 12px;
+  padding: 24px 32px;
+  max-width: 500px;
+}
+.ty-cta p { color: #93c5fd; font-size: 15px; }
+.ty-cta a { color: #60a5fa; font-weight: 600; }
+.ty-cta a:hover { color: #fff; }
+
+footer { background: #0d1117; padding: 48px 60px; text-align: center; border-top: 1px solid #1f2937; }
+footer .footer-logo { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+footer .footer-logo span { color: #2563eb; }
+footer p { color: #6b7280; font-size: 14px; margin-bottom: 4px; }
+footer a { color: #6b7280; }
+footer a:hover { color: #2563eb; }
+
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .mobile-menu-btn { display: block; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #0d1117; flex-direction: column; padding: 20px; gap: 16px; border-top: 1px solid #1f2937; }
+  .nav-links.show { display: flex; }
+  .ty-container { padding: 60px 24px; }
+  .ty-container h1 { font-size: 32px; }
+  footer { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Nexus <span>AI</span> Solutions</div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/calculator/">Calculator</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/audit/" class="nav-cta">Free Audit</a>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+</nav>
+
+<div class="ty-container">
+  <div class="ty-check">&#10003;</div>
+  <h1>Your audit is <span>on the way.</span></h1>
+  <p class="lead">We're building your personalized operational report right now. Check your inbox -- you'll have it within 1 business day.</p>
+
+  <div class="ty-steps">
+    <div class="ty-step">
+      <div class="ty-step-num">1</div>
+      <div class="ty-step-text">
+        <h4>We build your report</h4>
+        <p>Based on your answers, we research your industry and map out where the biggest operational gaps are in businesses like yours.</p>
+      </div>
+    </div>
+    <div class="ty-step">
+      <div class="ty-step-num">2</div>
+      <div class="ty-step-text">
+        <h4>You get a personalized audit</h4>
+        <p>Delivered straight to your inbox. Specific gaps, what they cost you, and what it would take to fix them with automation.</p>
+      </div>
+    </div>
+    <div class="ty-step">
+      <div class="ty-step-num">3</div>
+      <div class="ty-step-text">
+        <h4>You decide what to do with it</h4>
+        <p>No pressure. If the numbers make sense and you want to move forward, just reply to the email. If not, the report is yours to keep.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ty-cta">
+    <p>While you wait, check out the operational gaps most Ohio service businesses don't know they have: <a href="/blog/">Read the blog</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Nexus <span>AI</span> Solutions</div>
+  <p>Circleville, Ohio -- Serving businesses across Ohio</p>
+  <p><a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a> &nbsp;·&nbsp; <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+  <p style="margin-top:20px;font-size:12px;color:#374151;">&copy; 2026 Nexus AI Solutions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
