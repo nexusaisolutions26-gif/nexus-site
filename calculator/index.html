@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free calculator: find out how much your Ohio service business is losing to slow lead response, no-shows, and late invoicing. Get your custom estimate in 60 seconds.">
+<meta name="keywords" content="service business cost calculator, HVAC revenue loss calculator, Ohio business automation ROI, lead response cost calculator, no-show cost calculator">
+<title>Revenue Loss Calculator — How Much Is Your Business Leaving on the Table? — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #1d4ed8 !important; }
+.hero { background: #0d1117; padding: 80px 60px 60px; text-align: center; }
+.hero .tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
+.hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.15; max-width: 760px; margin: 0 auto 16px; letter-spacing: -1px; }
+.hero p { font-size: 18px; color: #9ca3af; max-width: 560px; margin: 0 auto; }
+
+.calc-container { max-width: 720px; margin: 60px auto; padding: 0 40px; }
+.calc-form { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 48px; }
+.calc-form h2 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.calc-form .subtitle { font-size: 15px; color: #6b7280; margin-bottom: 32px; }
+
+.form-group { margin-bottom: 24px; }
+.form-group label { display: block; font-size: 15px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+.form-group .help { font-size: 13px; color: #6b7280; margin-bottom: 6px; }
+.form-group select, .form-group input[type="number"] {
+  width: 100%; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px;
+  font-size: 16px; color: #0f172a; background: #fff; appearance: auto;
+}
+.form-group select:focus, .form-group input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
+.calc-btn {
+  display: block; width: 100%; padding: 16px; background: #2563eb; color: #fff;
+  border: none; border-radius: 8px; font-size: 17px; font-weight: 700; cursor: pointer;
+  margin-top: 32px; transition: background 0.2s;
+}
+.calc-btn:hover { background: #1d4ed8; }
+
+.results { display: none; margin-top: 40px; }
+.results h2 { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 24px; text-align: center; }
+.results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.result-card { background: #f0f4ff; border: 1px solid #dbeafe; border-radius: 12px; padding: 24px; text-align: center; }
+.result-card .label { font-size: 13px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.result-card .value { font-size: 32px; font-weight: 800; color: #dc2626; }
+.result-card.green .value { color: #16a34a; }
+.result-total { background: #0f172a; border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 32px; }
+.result-total .label { font-size: 14px; color: #9ca3af; margin-bottom: 8px; }
+.result-total .value { font-size: 48px; font-weight: 800; color: #ef4444; }
+.result-total .sub { font-size: 15px; color: #6b7280; margin-top: 8px; }
+
+.results-cta { background: #f0f4ff; border: 1px solid #dbeafe; border-radius: 12px; padding: 32px; text-align: center; }
+.results-cta h3 { font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.results-cta p { font-size: 15px; color: #6b7280; margin-bottom: 20px; }
+.results-cta a { display: inline-block; background: #2563eb; color: #fff; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; }
+.results-cta a:hover { background: #1d4ed8; }
+
+footer { background: #0d1117; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1f2937; margin-top: 60px; }
+footer a { color: #2563eb; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; } .nav-links { gap: 16px; }
+  .hero { padding: 60px 20px 40px; } .hero h1 { font-size: 28px; }
+  .calc-container { padding: 0 20px; margin: 40px auto; }
+  .calc-form { padding: 28px; }
+  .results-grid { grid-template-columns: 1fr; }
+  .result-total .value { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span></a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/audit/" class="nav-cta">Free Audit</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="tag">Free Tool</div>
+  <h1>How Much Revenue Is Your Business Leaving on the Table?</h1>
+  <p>Answer 5 questions. Get a custom estimate of what slow lead response, no-shows, and late invoicing are costing you every month.</p>
+</div>
+
+<div class="calc-container">
+  <div class="calc-form">
+    <h2>Your Business Details</h2>
+    <p class="subtitle">All calculations are based on industry averages for Ohio service businesses.</p>
+
+    <div class="form-group">
+      <label>What trade is your business?</label>
+      <select id="trade">
+        <option value="hvac">HVAC</option>
+        <option value="plumbing">Plumbing</option>
+        <option value="roofing">Roofing</option>
+        <option value="electrical">Electrical</option>
+        <option value="landscaping">Landscaping</option>
+        <option value="cleaning">Cleaning</option>
+        <option value="pest">Pest Control</option>
+        <option value="other">Other Service Business</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>How many employees do you have?</label>
+      <select id="employees">
+        <option value="5">5-9</option>
+        <option value="15" selected>10-19</option>
+        <option value="25">20-29</option>
+        <option value="35">30-39</option>
+        <option value="45">40-50</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>How many inbound leads do you get per week?</label>
+      <div class="help">Include web forms, emails, and inquiries from all sources.</div>
+      <input type="number" id="leads" value="15" min="1" max="200">
+    </div>
+
+    <div class="form-group">
+      <label>What is your average job ticket size?</label>
+      <div class="help">Typical revenue per completed job.</div>
+      <select id="ticket">
+        <option value="150">$100 - $200</option>
+        <option value="300">$200 - $400</option>
+        <option value="500" selected>$400 - $600</option>
+        <option value="800">$600 - $1,000</option>
+        <option value="1500">$1,000 - $2,000</option>
+        <option value="3000">$2,000+</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>How many booked appointments no-show per month?</label>
+      <div class="help">Best estimate is fine.</div>
+      <input type="number" id="noshows" value="4" min="0" max="100">
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate My Revenue Loss</button>
+  </div>
+
+  <div class="results" id="results">
+    <h2>Your Estimated Monthly Revenue Loss</h2>
+
+    <div class="result-total">
+      <div class="label">Total estimated monthly loss</div>
+      <div class="value" id="totalLoss">$0</div>
+      <div class="sub">That is <span id="annualLoss">$0</span> per year walking out the door.</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="label">Slow Lead Response</div>
+        <div class="value" id="leadLoss">$0</div>
+      </div>
+      <div class="result-card">
+        <div class="label">No-Show Revenue Lost</div>
+        <div class="value" id="noshowLoss">$0</div>
+      </div>
+      <div class="result-card">
+        <div class="label">Late Invoice Float</div>
+        <div class="value" id="invoiceLoss">$0</div>
+      </div>
+      <div class="result-card green">
+        <div class="label">Recoverable with Automation</div>
+        <div class="value" id="recoverable">$0</div>
+      </div>
+    </div>
+
+    <div class="results-cta">
+      <h3>Want the Exact Numbers for Your Business?</h3>
+      <p>This calculator uses industry averages. Our free 30-minute operational review digs into your actual data and shows you precisely where the gaps are and what they cost. No commitment.</p>
+      <a href="/audit/">Book Your Free Review</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions — Circleville, Ohio — <a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a> — <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+</footer>
+
+<script>
+function calculate() {
+  var leads = parseInt(document.getElementById('leads').value) || 15;
+  var ticket = parseInt(document.getElementById('ticket').value) || 500;
+  var noshows = parseInt(document.getElementById('noshows').value) || 4;
+  var employees = parseInt(document.getElementById('employees').value) || 15;
+
+  // Lead response loss: 23% of leads go cold without fast response, 41% are after-hours
+  var afterHoursLeads = Math.round(leads * 4.33 * 0.41);
+  var coldLeads = Math.round(leads * 4.33 * 0.23);
+  var leadLoss = Math.round(coldLeads * ticket * 0.6);
+
+  // No-show loss: each no-show = lost ticket + wasted tech time
+  var noshowLoss = Math.round(noshows * ticket * 0.85);
+
+  // Invoice float: average 3.5 day delay, 12% aging past 30 days
+  var monthlyRevenue = Math.round(leads * 4.33 * 0.5 * ticket);
+  var invoiceLoss = Math.round(monthlyRevenue * 0.03 + (employees * 25));
+
+  var totalLoss = leadLoss + noshowLoss + invoiceLoss;
+  var recoverable = Math.round(totalLoss * 0.72);
+
+  document.getElementById('leadLoss').textContent = '$' + leadLoss.toLocaleString();
+  document.getElementById('noshowLoss').textContent = '$' + noshowLoss.toLocaleString();
+  document.getElementById('invoiceLoss').textContent = '$' + invoiceLoss.toLocaleString();
+  document.getElementById('totalLoss').textContent = '$' + totalLoss.toLocaleString();
+  document.getElementById('annualLoss').textContent = '$' + (totalLoss * 12).toLocaleString();
+  document.getElementById('recoverable').textContent = '$' + recoverable.toLocaleString();
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
