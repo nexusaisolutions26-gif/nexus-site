@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free breakdown: how Ohio service businesses recover automation costs in 30-60 days. Real numbers for HVAC, roofing, plumbing, and electrical companies.">
+<meta name="keywords" content="automation ROI service business, HVAC automation cost, roofing business automation ROI, Ohio business automation breakeven, AI automation payback period">
+<title>The Breakeven Analysis: How Ohio Service Businesses Recover Automation Costs in 60 Days — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #1d4ed8 !important; }
+
+.hero { background: #0d1117; padding: 80px 60px 60px; text-align: center; }
+.hero .tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
+.hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.15; max-width: 800px; margin: 0 auto 16px; letter-spacing: -1px; }
+.hero p { font-size: 18px; color: #9ca3af; max-width: 600px; margin: 0 auto; }
+
+.content { max-width: 800px; margin: 60px auto; padding: 0 40px; }
+.content h2 { font-size: 28px; font-weight: 800; color: #0f172a; margin: 48px 0 20px; letter-spacing: -0.5px; }
+.content p { font-size: 17px; color: #374151; line-height: 1.8; margin-bottom: 20px; }
+
+.comparison-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+.comparison-table th { background: #0f172a; color: #fff; padding: 14px 20px; text-align: left; font-weight: 700; }
+.comparison-table td { padding: 12px 20px; border-bottom: 1px solid #e2e8f0; }
+.comparison-table tr:nth-child(even) { background: #f8fafc; }
+.comparison-table .cost { color: #dc2626; font-weight: 700; }
+.comparison-table .gain { color: #16a34a; font-weight: 700; }
+
+.scenario { background: #f0f4ff; border: 1px solid #dbeafe; border-radius: 12px; padding: 36px; margin: 40px 0; }
+.scenario h3 { font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 16px; }
+.scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.scenario-item { }
+.scenario-item .label { font-size: 13px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.scenario-item .value { font-size: 28px; font-weight: 800; color: #0f172a; }
+.scenario-item .value.red { color: #dc2626; }
+.scenario-item .value.green { color: #16a34a; }
+.scenario-bottom { margin-top: 20px; padding-top: 20px; border-top: 1px solid #dbeafe; text-align: center; }
+.scenario-bottom .label { font-size: 14px; color: #6b7280; margin-bottom: 4px; }
+.scenario-bottom .value { font-size: 36px; font-weight: 800; color: #2563eb; }
+
+.highlight { background: #0f172a; color: #fff; border-radius: 12px; padding: 36px; margin: 40px 0; text-align: center; }
+.highlight .num { font-size: 48px; font-weight: 800; color: #2563eb; margin-bottom: 8px; }
+.highlight p { font-size: 18px; color: #9ca3af; max-width: 500px; margin: 0 auto; }
+
+.cta-box { background: #f0f4ff; border: 1px solid #dbeafe; border-radius: 12px; padding: 40px; text-align: center; margin: 56px 0; }
+.cta-box h3 { font-size: 24px; color: #0f172a; margin-bottom: 12px; }
+.cta-box p { color: #6b7280; margin-bottom: 20px; font-size: 16px; }
+.cta-btn { display: inline-block; background: #2563eb; color: #fff; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; }
+.cta-btn:hover { background: #1d4ed8; }
+
+footer { background: #0d1117; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1f2937; }
+footer a { color: #2563eb; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; } .nav-links { gap: 16px; }
+  .hero { padding: 60px 20px 40px; } .hero h1 { font-size: 28px; }
+  .content { padding: 0 20px; margin: 40px auto; }
+  .scenario-grid { grid-template-columns: 1fr; }
+  .comparison-table { font-size: 13px; }
+  .comparison-table th, .comparison-table td { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span></a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/calculator/">Calculator</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/audit/" class="nav-cta">Free Audit</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="tag">Free Analysis</div>
+  <h1>The Breakeven Analysis: How Automation Pays for Itself in 30 to 60 Days</h1>
+  <p>Real numbers for Ohio HVAC, roofing, plumbing, and electrical companies with 10 to 50 employees.</p>
+</div>
+
+<div class="content">
+  <p>Business owners ask us the same question every time: "What is the ROI?" Fair question. Here is the honest answer with real numbers.</p>
+
+  <h2>The Monthly Cost of Doing Nothing</h2>
+  <p>Before talking about what automation costs, you need to understand what you are already paying for manual processes. These are the four biggest revenue leaks for Ohio service companies.</p>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Revenue Leak</th>
+      <th>Typical Monthly Cost</th>
+      <th>How It Happens</th>
+    </tr>
+    <tr>
+      <td>Slow lead response</td>
+      <td class="cost">$1,500 - $3,200</td>
+      <td>Leads that come in after hours or during busy periods wait hours for a response. Most book with competitors.</td>
+    </tr>
+    <tr>
+      <td>Unrecovered no-shows</td>
+      <td class="cost">$1,200 - $2,400</td>
+      <td>Customers miss appointments. Nobody follows up same day. The slot is wasted and the rebook rarely happens.</td>
+    </tr>
+    <tr>
+      <td>Late invoicing</td>
+      <td class="cost">$800 - $1,500</td>
+      <td>Invoices go out 3-5 days after job completion. Payment drags past 30 days. Write-offs increase.</td>
+    </tr>
+    <tr>
+      <td>Office staff time on routine tasks</td>
+      <td class="cost">$600 - $1,200</td>
+      <td>Your office manager spends 10+ hours per week on scheduling, reminders, and chasing payments manually.</td>
+    </tr>
+    <tr>
+      <td><strong>Total monthly cost of status quo</strong></td>
+      <td class="cost"><strong>$4,100 - $8,300</strong></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <h2>Scenario: A 15-Employee HVAC Company in Columbus</h2>
+
+  <div class="scenario">
+    <h3>Current State (Before Automation)</h3>
+    <div class="scenario-grid">
+      <div class="scenario-item">
+        <div class="label">Weekly inbound leads</div>
+        <div class="value">18</div>
+      </div>
+      <div class="scenario-item">
+        <div class="label">Average ticket</div>
+        <div class="value">$425</div>
+      </div>
+      <div class="scenario-item">
+        <div class="label">Monthly no-shows</div>
+        <div class="value red">6</div>
+      </div>
+      <div class="scenario-item">
+        <div class="label">Average invoice delay</div>
+        <div class="value red">3.5 days</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <h3>After Automation (Month 2+)</h3>
+    <div class="scenario-grid">
+      <div class="scenario-item">
+        <div class="label">Recovered after-hours leads</div>
+        <div class="value green">+5/month</div>
+      </div>
+      <div class="scenario-item">
+        <div class="label">Recovered no-shows</div>
+        <div class="value green">+4/month</div>
+      </div>
+      <div class="scenario-item">
+        <div class="label">Faster collections</div>
+        <div class="value green">14 days faster</div>
+      </div>
+      <div class="scenario-item">
+        <div class="label">Office hours saved</div>
+        <div class="value green">40+ hrs/month</div>
+      </div>
+    </div>
+    <div class="scenario-bottom">
+      <div class="label">Net monthly revenue impact</div>
+      <div class="value">+$4,825</div>
+    </div>
+  </div>
+
+  <h2>The Breakeven Math</h2>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Item</th>
+      <th>Starter Tier</th>
+      <th>Operations Tier</th>
+    </tr>
+    <tr>
+      <td>Monthly cost</td>
+      <td>$1,200/mo</td>
+      <td>$2,500/mo</td>
+    </tr>
+    <tr>
+      <td>One-time setup</td>
+      <td>$1,500</td>
+      <td>$2,500</td>
+    </tr>
+    <tr>
+      <td>Typical monthly revenue recovered</td>
+      <td class="gain">$3,200 - $4,800</td>
+      <td class="gain">$4,800 - $7,300</td>
+    </tr>
+    <tr>
+      <td>Net monthly gain after cost</td>
+      <td class="gain">$2,000 - $3,600</td>
+      <td class="gain">$2,300 - $4,800</td>
+    </tr>
+    <tr>
+      <td><strong>Breakeven on setup cost</strong></td>
+      <td><strong>Month 1</strong></td>
+      <td><strong>Month 1-2</strong></td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    <div class="num">30-60 days</div>
+    <p>Typical breakeven period. After that, every month is net positive revenue you were previously losing.</p>
+  </div>
+
+  <h2>Why the Numbers Work</h2>
+  <p>This is not about generating new leads or spending more on marketing. Automation recovers revenue from opportunities you already have. The leads are already coming in. The appointments are already being booked. The invoices are already going out. The system just makes sure nothing falls through the cracks.</p>
+
+  <p>You are not paying for new customers. You are paying to stop losing the ones you already earned.</p>
+
+  <div class="cta-box">
+    <h3>Get Your Custom Breakeven Analysis</h3>
+    <p>These are industry averages. Your numbers might be better or worse. Our free 30-minute operational review uses your actual data to calculate your specific ROI. No commitment required.</p>
+    <a href="/audit/" class="cta-btn">Book Your Free Review</a>
+  </div>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions — Circleville, Ohio — <a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a> — <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+</footer>
+</body>
+</html>
