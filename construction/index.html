@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI automation for construction companies. Capture every lead from the job site, automate estimate follow-up, streamline scheduling, and accelerate invoicing without adding office staff.">
+<meta name="keywords" content="construction automation, general contractor automation, home builder automation, commercial construction automation, remodeling company automation, construction scheduling, construction invoicing, contractor lead capture">
+<title>AI Automation for Construction Companies — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #1d4ed8 !important; }
+
+.hero { background: #0d1117; padding: 100px 60px 80px; }
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+.hero .tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
+.hero h1 { font-size: 44px; font-weight: 800; color: #fff; line-height: 1.12; letter-spacing: -1.5px; margin-bottom: 20px; }
+.hero h1 span { color: #2563eb; }
+.hero p { font-size: 18px; color: #9ca3af; line-height: 1.7; margin-bottom: 28px; }
+.hero-btn { display: inline-block; background: #2563eb; color: #fff; padding: 16px 36px; border-radius: 8px; font-weight: 700; font-size: 16px; }
+.hero-btn:hover { background: #1d4ed8; }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stat-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 28px; }
+.stat-card .num { font-size: 36px; font-weight: 800; color: #ef4444; margin-bottom: 4px; }
+.stat-card .num.green { color: #22c55e; }
+.stat-card .desc { font-size: 14px; color: #9ca3af; line-height: 1.5; }
+
+.problems { max-width: 900px; margin: 80px auto; padding: 0 40px; }
+.problems h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.problem-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px; }
+.problem-card h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.problem-card p { font-size: 15px; color: #6b7280; line-height: 1.7; }
+.problem-card .cost { font-size: 14px; font-weight: 700; color: #dc2626; margin-top: 12px; }
+
+.practices { max-width: 900px; margin: 80px auto; padding: 0 40px; }
+.practices h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 40px; text-align: center; }
+.practice-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; }
+.practice-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; text-align: center; }
+.practice-card h3 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.practice-card p { font-size: 14px; color: #6b7280; line-height: 1.6; }
+
+.solutions { background: #f8fafc; padding: 80px 40px; }
+.solutions-inner { max-width: 900px; margin: 0 auto; }
+.solutions h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 40px; text-align: center; }
+.solution-item { display: flex; gap: 20px; margin-bottom: 32px; align-items: flex-start; }
+.solution-num { background: #2563eb; color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+.solution-item h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.solution-item p { font-size: 15px; color: #6b7280; line-height: 1.7; }
+
+.roi { max-width: 900px; margin: 80px auto; padding: 0 40px; }
+.roi h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 20px; text-align: center; }
+.roi-subtitle { font-size: 16px; color: #6b7280; text-align: center; margin-bottom: 40px; }
+.roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.roi-card { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 24px; text-align: center; }
+.roi-card .num { font-size: 32px; font-weight: 800; color: #16a34a; margin-bottom: 4px; }
+.roi-card .label { font-size: 14px; color: #374151; }
+.roi-total { background: #0f172a; border-radius: 12px; padding: 28px; text-align: center; margin-top: 24px; }
+.roi-total .num { font-size: 40px; font-weight: 800; color: #2563eb; }
+.roi-total .label { font-size: 16px; color: #9ca3af; margin-top: 4px; }
+
+.cta-section { background: #0d1117; padding: 80px 60px; text-align: center; }
+.cta-section h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+.cta-section p { font-size: 18px; color: #9ca3af; margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; background: #2563eb; color: #fff; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 16px; }
+.cta-btn:hover { background: #1d4ed8; }
+
+footer { background: #0d1117; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1f2937; }
+footer a { color: #2563eb; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; } .nav-links { gap: 16px; }
+  .hero { padding: 60px 20px 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero h1 { font-size: 30px; }
+  .problems { padding: 0 20px; margin: 60px auto; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .practice-grid { grid-template-columns: 1fr 1fr; }
+  .solutions { padding: 60px 20px; }
+  .roi { padding: 0 20px; }
+  .roi-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span></a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/calculator/">Calculator</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/audit/" class="nav-cta">Free Audit</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="tag">Built for Construction Companies</div>
+      <h1>Your Construction Business Is Losing <span>$5,000 to $12,000</span> Monthly to Missed Leads, Scheduling Gaps, and Slow Invoicing</h1>
+      <p>General contractors, home builders, commercial construction firms, and remodeling companies with 10 to 50 employees are bleeding revenue from leads that go cold on the job site, gaps between projects, and invoices that sit unpaid for weeks. We automate all of it without changing how your crews work.</p>
+      <a href="/audit/" class="hero-btn">Get Your Free Construction Audit</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="num">78%</div>
+        <div class="desc">of construction leads go cold when response time exceeds 30 minutes</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">$1,200</div>
+        <div class="desc">average revenue lost per scheduling gap day between projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">45 days</div>
+        <div class="desc">average time to collect on invoices without automated follow-up</div>
+      </div>
+      <div class="stat-card">
+        <div class="num green">3-5x</div>
+        <div class="desc">more Google reviews generated with automated post-project requests</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="problems">
+  <h2>The Four Problems Draining Your Construction Business</h2>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <h3>Missed Leads From the Job Site</h3>
+      <p>A homeowner submits a quote request at 2 PM. Your team is on a job site with no time to respond. By the time someone gets back to them the next morning, they have already hired the contractor who replied within 10 minutes.</p>
+      <div class="cost">Estimated cost: $2,000 - $4,500/month</div>
+    </div>
+    <div class="problem-card">
+      <h3>Scheduling Gaps Between Projects</h3>
+      <p>One project wraps up Thursday. The next one is not ready to start until the following Wednesday. Your crew sits idle for three days. Multiply that across a few months and you are looking at tens of thousands in lost productivity.</p>
+      <div class="cost">Estimated cost: $1,500 - $3,600/month</div>
+    </div>
+    <div class="problem-card">
+      <h3>Slow Invoicing and Payment Collection</h3>
+      <p>Invoices go out late because your office manager is buried in paperwork. Clients take 45 to 60 days to pay because there is no automated follow-up. Your cash flow suffers while materials and payroll never wait.</p>
+      <div class="cost">Estimated cost: $1,000 - $2,500/month in cash flow drag</div>
+    </div>
+    <div class="problem-card">
+      <h3>No Review Generation System</h3>
+      <p>You finish a $40,000 kitchen remodel. The client is thrilled. But nobody asks for a review while the excitement is fresh. Two weeks later, they have moved on. Your Google profile stays stuck at 12 reviews while competitors have 80.</p>
+      <div class="cost">Estimated cost: $500 - $1,400/month in lost organic leads</div>
+    </div>
+  </div>
+</div>
+
+<div class="practices">
+  <h2>We Work With Every Type of Construction Company</h2>
+  <div class="practice-grid">
+    <div class="practice-card">
+      <h3>General Contractors</h3>
+      <p>Lead capture, estimate follow-up, project scheduling, and review collection for residential and commercial GCs.</p>
+    </div>
+    <div class="practice-card">
+      <h3>Home Builders</h3>
+      <p>Buyer inquiry response, milestone updates, warranty request automation, and referral campaigns.</p>
+    </div>
+    <div class="practice-card">
+      <h3>Commercial Construction</h3>
+      <p>Bid follow-up, subcontractor coordination, progress reporting, and invoice automation at scale.</p>
+    </div>
+    <div class="practice-card">
+      <h3>Remodeling Companies</h3>
+      <p>Quote request capture, design consultation booking, project update sequences, and post-project reviews.</p>
+    </div>
+  </div>
+</div>
+
+<div class="solutions">
+  <div class="solutions-inner">
+    <h2>How We Fix It for Construction Companies</h2>
+    <div class="solution-item">
+      <div class="solution-num">1</div>
+      <div>
+        <h3>Instant Lead Capture and Response</h3>
+        <p>Every lead from your website, Google Business Profile, or social media gets a personalized response within 60 seconds -- day, night, or weekend. The message confirms what they need, asks qualifying questions, and lets them know exactly what happens next. Your office follows up with a warm lead instead of a cold one that already hired someone else.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">2</div>
+      <div>
+        <h3>Automated Estimate Follow-Up</h3>
+        <p>After you send an estimate, the system follows up at day 2, day 5, and day 10 with personalized messages. No pushy sales tactics -- just helpful check-ins that keep you top of mind. Contractors who follow up systematically close 30-40% more estimates than those who send one and wait.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">3</div>
+      <div>
+        <h3>Project Scheduling and Gap Elimination</h3>
+        <p>Automated pipeline management keeps your project calendar full. When a project is nearing completion, the system triggers outreach to pending leads and scheduled starts. Crew downtime drops because the next project is always queued and confirmed before the current one wraps.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">4</div>
+      <div>
+        <h3>Invoice Automation and Payment Follow-Up</h3>
+        <p>Invoices go out the day a milestone is hit or a project completes. Automated reminders at 3 days, 7 days, and 14 days keep collections moving without your office manager chasing clients. Average days-to-pay drops from 45 to under 18. Your cash flow stays healthy.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">5</div>
+      <div>
+        <h3>Automated Review Requests</h3>
+        <p>Within 24 hours of project completion, clients receive a direct link to leave a Google review. Sent while satisfaction is highest. More reviews means higher local search rankings means more inbound leads. Construction companies using automated review systems average 3-5x more reviews per quarter.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">6</div>
+      <div>
+        <h3>Subcontractor Coordination</h3>
+        <p>Automated notifications keep subcontractors aligned on scheduling, scope changes, and project milestones. No more back-and-forth texts that get buried. Everyone knows when they need to show up and what is expected. Fewer delays, fewer miscommunications, fewer costly rework days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="roi">
+  <h2>The ROI for a 20-Person Construction Company</h2>
+  <p class="roi-subtitle">Conservative monthly estimates based on industry benchmarks</p>
+  <div class="roi-grid">
+    <div class="roi-card">
+      <div class="num">$3,200</div>
+      <div class="label">Recovered from leads that would have gone cold (4 additional closed jobs)</div>
+    </div>
+    <div class="roi-card">
+      <div class="num">$1,800</div>
+      <div class="label">Saved from eliminating scheduling gaps (1.5 fewer idle crew days)</div>
+    </div>
+    <div class="roi-card">
+      <div class="num">$1,500</div>
+      <div class="label">Improved cash flow from faster invoice collection (27 fewer days to pay)</div>
+    </div>
+    <div class="roi-card">
+      <div class="num">$1,200</div>
+      <div class="label">New revenue from review-driven organic leads (2 additional inbound jobs)</div>
+    </div>
+  </div>
+  <div class="roi-total">
+    <div class="num">$7,700+/month</div>
+    <div class="label">Net monthly impact vs. typical automation cost of $1,500-$2,500/month</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Find Out What Your Construction Business Is Losing</h2>
+  <p>Free 3-minute audit. We analyze your lead response time, scheduling efficiency, and invoice cycle to show you exactly where revenue is slipping through. No commitment.</p>
+  <a href="/audit/" class="cta-btn">Get Your Free Construction Audit</a>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions -- Based in Circleville, Ohio -- Serving businesses worldwide -- <a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a></p>
+</footer>
+</body>
+</html>
