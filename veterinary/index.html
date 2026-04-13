@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI automation for veterinary clinics and animal hospitals. Reduce no-shows, automate vaccination recalls, generate reviews, and recover lost revenue without adding front desk staff.">
+<meta name="keywords" content="veterinary automation, vet clinic automation, animal hospital automation, veterinary no-show reduction, pet vaccination reminders, veterinary recall system, veterinary review generation, vet practice management">
+<title>AI Automation for Veterinary Clinics -- Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #1d4ed8 !important; }
+
+.hero { background: #0d1117; padding: 100px 60px 80px; }
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+.hero .tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
+.hero h1 { font-size: 44px; font-weight: 800; color: #fff; line-height: 1.12; letter-spacing: -1.5px; margin-bottom: 20px; }
+.hero h1 span { color: #2563eb; }
+.hero p { font-size: 18px; color: #9ca3af; line-height: 1.7; margin-bottom: 28px; }
+.hero-btn { display: inline-block; background: #2563eb; color: #fff; padding: 16px 36px; border-radius: 8px; font-weight: 700; font-size: 16px; }
+.hero-btn:hover { background: #1d4ed8; }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stat-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 28px; }
+.stat-card .num { font-size: 36px; font-weight: 800; color: #ef4444; margin-bottom: 4px; }
+.stat-card .num.green { color: #22c55e; }
+.stat-card .desc { font-size: 14px; color: #9ca3af; line-height: 1.5; }
+
+.problems { max-width: 900px; margin: 80px auto; padding: 0 40px; }
+.problems h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.problem-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px; }
+.problem-card h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.problem-card p { font-size: 15px; color: #6b7280; line-height: 1.7; }
+.problem-card .cost { font-size: 14px; font-weight: 700; color: #dc2626; margin-top: 12px; }
+
+.practices { max-width: 900px; margin: 80px auto; padding: 0 40px; }
+.practices h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 40px; text-align: center; }
+.practice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.practice-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; text-align: center; }
+.practice-card h3 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.practice-card p { font-size: 14px; color: #6b7280; line-height: 1.6; }
+
+.solutions { background: #f8fafc; padding: 80px 40px; }
+.solutions-inner { max-width: 900px; margin: 0 auto; }
+.solutions h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 40px; text-align: center; }
+.solution-item { display: flex; gap: 20px; margin-bottom: 32px; align-items: flex-start; }
+.solution-num { background: #2563eb; color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+.solution-item h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.solution-item p { font-size: 15px; color: #6b7280; line-height: 1.7; }
+
+.roi { max-width: 900px; margin: 80px auto; padding: 0 40px; }
+.roi h2 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 20px; text-align: center; }
+.roi-subtitle { font-size: 16px; color: #6b7280; text-align: center; margin-bottom: 40px; }
+.roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.roi-card { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 24px; text-align: center; }
+.roi-card .num { font-size: 32px; font-weight: 800; color: #16a34a; margin-bottom: 4px; }
+.roi-card .label { font-size: 14px; color: #374151; }
+.roi-total { background: #0f172a; border-radius: 12px; padding: 28px; text-align: center; margin-top: 24px; }
+.roi-total .num { font-size: 40px; font-weight: 800; color: #2563eb; }
+.roi-total .label { font-size: 16px; color: #9ca3af; margin-top: 4px; }
+
+.cta-section { background: #0d1117; padding: 80px 60px; text-align: center; }
+.cta-section h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+.cta-section p { font-size: 18px; color: #9ca3af; margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; background: #2563eb; color: #fff; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 16px; }
+.cta-btn:hover { background: #1d4ed8; }
+
+footer { background: #0d1117; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1f2937; }
+footer a { color: #2563eb; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; } .nav-links { gap: 16px; }
+  .hero { padding: 60px 20px 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero h1 { font-size: 30px; }
+  .problems { padding: 0 20px; margin: 60px auto; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .practice-grid { grid-template-columns: 1fr; }
+  .solutions { padding: 60px 20px; }
+  .roi { padding: 0 20px; }
+  .roi-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span></a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/calculator/">Calculator</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/audit/" class="nav-cta">Free Audit</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="tag">Built for Veterinary Clinics</div>
+      <h1>Your Veterinary Clinic Is Losing <span>$5,300+ Every Month</span> to Gaps That Automation Closes Overnight</h1>
+      <p>Vaccination recalls that never go out. No-shows that leave exam rooms empty. After-hours inquiries from worried pet owners that go unanswered until morning. Hundreds of lapsed patients who have not visited in over a year. We automate all of it for veterinary clinics and animal hospitals -- without disrupting how your veterinarians practice medicine.</p>
+      <a href="/audit/" class="hero-btn">Get Your Free Veterinary Clinic Audit</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="num">$150-$300</div>
+        <div class="desc">average revenue lost per missed veterinary appointment (exam + vaccines + diagnostics)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">40-60%</div>
+        <div class="desc">of pets are overdue for annual wellness visits at the average veterinary clinic</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">15-20</div>
+        <div class="desc">after-hours inquiries per week from pet owners who need answers now, not tomorrow</div>
+      </div>
+      <div class="stat-card">
+        <div class="num green">50-65%</div>
+        <div class="desc">of no-shows recovered through automated same-day rebooking sequences</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="problems">
+  <h2>The Four Problems Draining Your Veterinary Clinic</h2>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <h3>Vaccination and Wellness Recalls Going Unsent</h3>
+      <p>Pets are due for rabies boosters, DHPP, annual bloodwork, and dental cleanings. Your team means to send reminders but is buried in the daily chaos of walk-ins, emergencies, and packed schedules. Every unsent recall is a wellness visit that never happens -- and revenue that quietly disappears.</p>
+      <div class="cost">Estimated cost: $1,500 - $3,000/month in missed wellness revenue</div>
+    </div>
+    <div class="problem-card">
+      <h3>No-Shows Leaving Exam Rooms Empty</h3>
+      <p>A pet owner forgets their Tuesday afternoon appointment. The exam room sits empty. Nobody follows up that same day. By the time your front desk notices, the owner has moved on. Multiply that across 15-25 missed appointments per month and your schedule has permanent holes in it.</p>
+      <div class="cost">Estimated cost: $3,000 - $5,000/month</div>
+    </div>
+    <div class="problem-card">
+      <h3>After-Hours Inquiries Going Unanswered</h3>
+      <p>A dog starts vomiting at 9 PM. The owner texts or messages your clinic asking what to do. Nobody responds until 9 AM. By then, they have already visited an emergency vet -- or worse, they waited and the situation escalated. Every unanswered after-hours message is a missed opportunity to guide, retain, and serve your clients when they need you most.</p>
+      <div class="cost">Estimated cost: $800 - $1,500/month in lost trust and emergency referrals</div>
+    </div>
+    <div class="problem-card">
+      <h3>Lapsed Patients With No Reactivation</h3>
+      <p>Pets that have not been seen in 12 or more months sit dormant in your system. No follow-up. No outreach. Their owners assume you have forgotten about them -- and they drift to the clinic closer to their new apartment or the one their neighbor recommended. Your database is full of revenue that nobody is recovering.</p>
+      <div class="cost">Estimated cost: $1,200 - $2,500/month in lost lifetime value</div>
+    </div>
+  </div>
+</div>
+
+<div class="practices">
+  <h2>We Work With Every Type of Veterinary Practice</h2>
+  <div class="practice-grid">
+    <div class="practice-card">
+      <h3>General Veterinary Clinics</h3>
+      <p>Vaccination recall automation, no-show recovery, wellness visit reminders, and review generation for companion animal practices of all sizes.</p>
+    </div>
+    <div class="practice-card">
+      <h3>Animal Hospitals</h3>
+      <p>Multi-doctor scheduling optimization, post-surgical follow-up sequences, after-hours triage messaging, and patient reactivation campaigns.</p>
+    </div>
+    <div class="practice-card">
+      <h3>Specialty and Emergency Clinics</h3>
+      <p>Referral source nurturing, post-discharge follow-up automation, client communication sequences, and specialist availability updates.</p>
+    </div>
+    <div class="practice-card">
+      <h3>Mobile and Mixed Practices</h3>
+      <p>Appointment confirmation for farm and house visits, route-based scheduling reminders, large animal wellness recall, and multi-species client engagement.</p>
+    </div>
+  </div>
+</div>
+
+<div class="solutions">
+  <div class="solutions-inner">
+    <h2>How We Fix It for Veterinary Clinics</h2>
+    <div class="solution-item">
+      <div class="solution-num">1</div>
+      <div>
+        <h3>Vaccination and Wellness Recall Automation</h3>
+        <p>Every pet in your system gets automated reminders when vaccinations, annual exams, dental cleanings, or lab work come due. No more pulling reports and manually working through a recall list. Clinics that automate recall see 30-45% higher compliance rates and fill appointment slots that would otherwise sit empty week after week.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">2</div>
+      <div>
+        <h3>Appointment Confirmation Sequences</h3>
+        <p>72-hour email confirmation. 24-hour text reminder with one-tap confirm or reschedule. 2-hour same-day reminder. This three-touch sequence reduces no-shows by 40-55% compared to a single reminder. Pet owners are busy -- but when the reminder arrives on their lock screen with their pet's name, they show up.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">3</div>
+      <div>
+        <h3>After-Hours AI Response</h3>
+        <p>When a pet owner reaches out at 10 PM with a concern, your automated system responds instantly with relevant guidance, triage questions, and emergency referral information when warranted. Clients feel heard. Non-emergencies get booked for the next available slot automatically. Your team arrives in the morning with a full picture of what happened overnight.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">4</div>
+      <div>
+        <h3>Review Generation Engine</h3>
+        <p>Two hours after checkout, pet owners receive a direct link to leave a Google review. Sent while the relief of a healthy checkup or the gratitude after a successful treatment is still fresh. Veterinary clients have deep emotional connections to the people who care for their animals -- that translates to authentic, heartfelt reviews that dominate local search.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">5</div>
+      <div>
+        <h3>Lapsed Patient Reactivation</h3>
+        <p>Pets not seen in 6, 12, or 18 months receive targeted outreach sequences. A simple, warm message reminding owners that Bella is overdue for her annual visit. No guilt, no pressure -- just an easy path back to your schedule. Reactivation campaigns typically recover 15-25% of lapsed patients, turning a stale database into booked appointments.</p>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">6</div>
+      <div>
+        <h3>Post-Visit Follow-Up</h3>
+        <p>After surgeries, dental procedures, or sick visits, pet owners receive automated check-in messages at 24 hours, 72 hours, and one week. Recovery instructions are reinforced. Complications get flagged early. Owners feel supported instead of abandoned after checkout -- and your clinic catches issues before they become emergencies or complaints.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="roi">
+  <h2>The ROI for a Veterinary Clinic</h2>
+  <p class="roi-subtitle">Conservative monthly estimates based on industry benchmarks for a clinic with 5-15 employees</p>
+  <div class="roi-grid">
+    <div class="roi-card">
+      <div class="num">$2,200</div>
+      <div class="label">Preserved from no-show reduction (12-15 fewer missed appointments)</div>
+    </div>
+    <div class="roi-card">
+      <div class="num">$1,400</div>
+      <div class="label">Recovered from vaccination and wellness recall automation</div>
+    </div>
+    <div class="roi-card">
+      <div class="num">$900</div>
+      <div class="label">From lapsed patient reactivation (6-8 returned patients monthly)</div>
+    </div>
+    <div class="roi-card">
+      <div class="num">$800</div>
+      <div class="label">From after-hours response capturing next-day bookings and retaining clients</div>
+    </div>
+  </div>
+  <div class="roi-total">
+    <div class="num">$5,300+/month</div>
+    <div class="label">Net monthly impact vs. typical automation cost of $1,200-$2,500/month</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Find Out What Your Veterinary Clinic Is Losing</h2>
+  <p>Free 3-minute audit. We analyze your no-show rate, recall gaps, review count, and after-hours response time to show you exactly where revenue is slipping through. No commitment.</p>
+  <a href="/audit/" class="cta-btn">Get Your Free Veterinary Clinic Audit</a>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions -- Based in Circleville, Ohio -- Serving businesses worldwide -- <a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a></p>
+</footer>
+</body>
+</html>
