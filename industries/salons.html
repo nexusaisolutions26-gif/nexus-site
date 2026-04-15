@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI automation for salons and spas: appointment reminders, client retention, review generation, rebooking sequences, and new client follow-up. Keep your chairs full and your clients coming back.">
+<meta name="keywords" content="salon automation, spa automation, salon AI, salon appointment reminders, salon client retention, salon review generation, spa booking automation, salon rebooking">
+<title>AI Automation for Salons and Spas -- Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #e0e0e0; background: #0a0a0a; line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+
+nav { background: #0a0a0a; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1a1a1a; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #00c2ff; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #00c2ff; color: #0a0a0a !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #00a8e0 !important; }
+
+.hero { background: linear-gradient(180deg, #0a0a0a 0%, #0f1419 100%); padding: 100px 60px 80px; }
+.hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.hero .tag { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #00c2ff; margin-bottom: 20px; }
+.hero h1 { font-size: 46px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 24px; }
+.hero h1 span { color: #00c2ff; }
+.hero p { font-size: 18px; color: #9ca3af; line-height: 1.8; margin-bottom: 36px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.hero-btn { display: inline-block; background: #00c2ff; color: #0a0a0a; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: background 0.2s; }
+.hero-btn:hover { background: #00a8e0; }
+
+section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+section h2 { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+
+.pain-points { background: #0f1419; padding: 80px 40px; }
+.pain-points-inner { max-width: 900px; margin: 0 auto; }
+.pain-list { list-style: none; }
+.pain-list li { padding: 20px 0; border-bottom: 1px solid #1a2332; font-size: 17px; color: #c0c0c0; line-height: 1.7; }
+.pain-list li strong { color: #fff; }
+
+.solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.solution-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 32px; }
+.solution-card h3 { font-size: 18px; font-weight: 700; color: #00c2ff; margin-bottom: 10px; }
+.solution-card p { font-size: 15px; color: #9ca3af; line-height: 1.7; }
+
+.results-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.result-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 28px; text-align: center; }
+.result-card .num { font-size: 36px; font-weight: 800; color: #00c2ff; margin-bottom: 8px; }
+.result-card .label { font-size: 14px; color: #9ca3af; line-height: 1.5; }
+
+.cta-section { background: #0f1419; padding: 80px 60px; text-align: center; }
+.cta-section h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+.cta-section p { font-size: 18px; color: #9ca3af; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+footer { background: #0a0a0a; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1a1a1a; }
+footer a { color: #00c2ff; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; flex-wrap: wrap; gap: 12px; } .nav-links { gap: 16px; flex-wrap: wrap; }
+  .hero { padding: 60px 20px 40px; }
+  .hero h1 { font-size: 30px; }
+  section { padding: 60px 20px; }
+  .pain-points { padding: 60px 20px; }
+  .solutions-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span> Solutions</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/industries/">Industries</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://nexusaiconcepts.com/contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="tag">AI Automation for Salons and Spas</div>
+    <h1>Empty Chairs Cost You More Than <span>You Think -- Every Single Week</span></h1>
+    <p>A client books a color appointment worth over an hour of your stylist's time. No reminder goes out. They forget. The chair sits empty. Meanwhile, three new inquiries from social media went unanswered because your front desk was busy checking people in. Nexus AI makes sure every chair stays full and every lead gets a response.</p>
+    <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+  </div>
+</div>
+
+<div class="pain-points">
+  <div class="pain-points-inner">
+    <h2 style="font-size:32px;font-weight:800;color:#fff;margin-bottom:40px;text-align:center;">Why Your Salon or Spa Is Leaving Money on the Table</h2>
+    <ul class="pain-list">
+      <li><strong>No-shows are draining your revenue.</strong> Every empty chair is lost income that cannot be recovered. When a client does not show up for a scheduled appointment, the stylist or technician sits idle. The time is gone. Across a week, no-shows can cost a busy salon thousands in unrealized service revenue.</li>
+      <li><strong>Clients are not rebooking before they leave.</strong> A client finishes their appointment, pays, and walks out the door. They intend to come back in six weeks but never book the next visit. Life gets busy. Six weeks turns into three months. Some never return at all. Without a rebooking system, you are relying on memory and good intentions.</li>
+      <li><strong>New inquiries go unanswered for too long.</strong> Someone discovers your salon on Instagram or Google and sends a message asking about availability. Your team is busy with clients. Hours go by. By the time someone responds, the prospect has already booked elsewhere. In beauty, the first salon to respond often wins the client.</li>
+      <li><strong>Your best clients drift away silently.</strong> A loyal client who used to come every month gradually spaces out their visits. Then they stop coming entirely. You do not notice for months because there is no system flagging lapsed clients or reaching out to bring them back. By the time you realize they are gone, they have found a new stylist.</li>
+      <li><strong>Reviews do not reflect the experience you deliver.</strong> Clients leave your salon looking and feeling great. But they rarely think to post a review. Your Google listing has a fraction of the reviews it should. Competitors with more reviews rank higher in local search and attract clients that should be discovering you instead.</li>
+    </ul>
+  </div>
+</div>
+
+<section>
+  <h2>What Nexus AI Builds for Salons and Spas</h2>
+  <div class="solutions-grid">
+    <div class="solution-card">
+      <h3>Smart Appointment Reminders</h3>
+      <p>Every booked client receives confirmations and reminders at the right intervals via text and email. They can confirm with a single tap. If they need to cancel, the system immediately notifies your team and reaches out to waitlisted clients to fill the slot. No-show rates drop dramatically.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Automated Rebooking Sequences</h3>
+      <p>After every appointment, clients receive a personalized message encouraging them to book their next visit. The timing is based on the service they received -- six weeks for a cut, four weeks for color, monthly for facials. Rebooking becomes automatic instead of optional.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Instant New Client Response</h3>
+      <p>Every inquiry from your website, Instagram, Facebook, or Google profile receives an immediate, welcoming response. The system answers common questions about services and availability, captures their contact information, and guides them toward booking. No lead waits hours for a reply.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Lapsed Client Reactivation</h3>
+      <p>Clients who have not visited in a set period are automatically identified and receive a personalized re-engagement sequence. The messaging acknowledges their absence without pressure and gives them an easy path to rebook. Bringing back even a small percentage of lapsed clients adds meaningful revenue each month.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Review Generation After Every Visit</h3>
+      <p>Following each appointment, clients receive a simple, well-timed request to share their experience. Happy clients are directed to Google and Facebook. Any negative feedback is captured privately, giving you the chance to address concerns before they become public reviews.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Birthday and Special Occasion Outreach</h3>
+      <p>Clients receive automated messages on birthdays, anniversaries, and holidays with personalized offers or simply a warm message. These touchpoints build loyalty, keep your brand top of mind, and give clients a reason to book their next visit around a special occasion.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Results Salons and Spas Typically See</h2>
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="num">40-60%</div>
+      <div class="label">Reduction in no-shows with automated confirmation and reminder sequences</div>
+    </div>
+    <div class="result-card">
+      <div class="num">25-35%</div>
+      <div class="label">Increase in rebooking rate when clients are prompted automatically after visits</div>
+    </div>
+    <div class="result-card">
+      <div class="num">Under 2 Min</div>
+      <div class="label">Response time to new inquiries from social media, web, and messaging platforms</div>
+    </div>
+    <div class="result-card">
+      <div class="num">15-20%</div>
+      <div class="label">Reactivation of lapsed clients within the first 90 days of outreach</div>
+    </div>
+    <div class="result-card">
+      <div class="num">3-5x</div>
+      <div class="label">More Google reviews generated each month with post-visit automation</div>
+    </div>
+    <div class="result-card">
+      <div class="num">8-12 Hrs</div>
+      <div class="label">Saved per week on front desk follow-up, reminders, and manual rebooking outreach</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Find Out How Many Clients Your Salon Is Losing to Empty Chairs</h2>
+  <p>Send us a message. We will show you where no-shows, lapsed clients, and missed inquiries are quietly eating into your revenue -- and what it takes to fix it.</p>
+  <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions -- Serving businesses worldwide -- <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+</footer>
+</body>
+</html>

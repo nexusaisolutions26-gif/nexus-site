@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI automation for auto repair shops: lead follow-up, appointment reminders, service interval notifications, review generation, and customer retention. Keep your bays full and your customers loyal.">
+<meta name="keywords" content="auto repair automation, auto shop AI, mechanic lead follow-up, auto repair appointment reminders, auto shop review generation, auto repair customer retention, service reminder automation">
+<title>AI Automation for Auto Repair Shops -- Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #e0e0e0; background: #0a0a0a; line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+
+nav { background: #0a0a0a; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1a1a1a; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #00c2ff; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #00c2ff; color: #0a0a0a !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #00a8e0 !important; }
+
+.hero { background: linear-gradient(180deg, #0a0a0a 0%, #0f1419 100%); padding: 100px 60px 80px; }
+.hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.hero .tag { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #00c2ff; margin-bottom: 20px; }
+.hero h1 { font-size: 46px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 24px; }
+.hero h1 span { color: #00c2ff; }
+.hero p { font-size: 18px; color: #9ca3af; line-height: 1.8; margin-bottom: 36px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.hero-btn { display: inline-block; background: #00c2ff; color: #0a0a0a; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: background 0.2s; }
+.hero-btn:hover { background: #00a8e0; }
+
+section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+section h2 { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+
+.pain-points { background: #0f1419; padding: 80px 40px; }
+.pain-points-inner { max-width: 900px; margin: 0 auto; }
+.pain-list { list-style: none; }
+.pain-list li { padding: 20px 0; border-bottom: 1px solid #1a2332; font-size: 17px; color: #c0c0c0; line-height: 1.7; }
+.pain-list li strong { color: #fff; }
+
+.solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.solution-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 32px; }
+.solution-card h3 { font-size: 18px; font-weight: 700; color: #00c2ff; margin-bottom: 10px; }
+.solution-card p { font-size: 15px; color: #9ca3af; line-height: 1.7; }
+
+.results-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.result-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 28px; text-align: center; }
+.result-card .num { font-size: 36px; font-weight: 800; color: #00c2ff; margin-bottom: 8px; }
+.result-card .label { font-size: 14px; color: #9ca3af; line-height: 1.5; }
+
+.cta-section { background: #0f1419; padding: 80px 60px; text-align: center; }
+.cta-section h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+.cta-section p { font-size: 18px; color: #9ca3af; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+footer { background: #0a0a0a; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1a1a1a; }
+footer a { color: #00c2ff; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; flex-wrap: wrap; gap: 12px; } .nav-links { gap: 16px; flex-wrap: wrap; }
+  .hero { padding: 60px 20px 40px; }
+  .hero h1 { font-size: 30px; }
+  section { padding: 60px 20px; }
+  .pain-points { padding: 60px 20px; }
+  .solutions-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span> Solutions</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/industries/">Industries</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://nexusaiconcepts.com/contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="tag">AI Automation for Auto Repair Shops</div>
+    <h1>Your Best Customers Forget About You <span>Until Something Breaks</span></h1>
+    <p>A customer gets their oil changed and drives off. You will not hear from them again for eight months -- if at all. Meanwhile, the quick lube chain down the road sends automated reminders every 3,000 miles. Nexus AI gives independent shops the same automated follow-up systems that keep customers coming back, bays full, and revenue predictable.</p>
+    <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+  </div>
+</div>
+
+<div class="pain-points">
+  <div class="pain-points-inner">
+    <h2 style="font-size:32px;font-weight:800;color:#fff;margin-bottom:40px;text-align:center;">The Problems Holding Your Shop Back</h2>
+    <ul class="pain-list">
+      <li><strong>Customers only come in when something fails.</strong> Most vehicle owners know they should keep up with maintenance, but life gets in the way. Without reminders for oil changes, tire rotations, brake inspections, and fluid flushes, they wait until a warning light comes on -- and by then, they might end up at whatever shop is closest, not yours.</li>
+      <li><strong>Online leads go cold before you respond.</strong> Someone searches for a mechanic, finds your Google listing, and submits a request for a quote or appointment. Your service writer is under a car. The shop phone is ringing. By the time they respond, the customer has already taken their vehicle to a shop that answered faster.</li>
+      <li><strong>No-shows leave bays empty and technicians idle.</strong> A customer schedules a brake job for Tuesday morning. No confirmation or reminder goes out. They forget or decide to push it off. Your technician has an open bay. You lose the labor revenue and have no way to fill that slot on short notice.</li>
+      <li><strong>Declined services never get followed up on.</strong> Your technician performs an inspection and recommends a timing belt replacement and new shocks. The customer declines -- not because they disagree, but because they are not ready today. Nobody follows up. The work either goes undone or gets done at another shop months later.</li>
+      <li><strong>You are competing with chains that have marketing machines.</strong> National chains and quick lube franchises have corporate marketing teams running automated reminders, email campaigns, and review generation at scale. Independent shops deliver better work and better service, but without those same systems, they lose customers to convenience and visibility.</li>
+    </ul>
+  </div>
+</div>
+
+<section>
+  <h2>What Nexus AI Builds for Auto Repair Shops</h2>
+  <div class="solutions-grid">
+    <div class="solution-card">
+      <h3>Automated Service Reminders</h3>
+      <p>Based on the services performed and manufacturer-recommended intervals, customers receive timely reminders when their vehicle is due for maintenance. Oil changes, tire rotations, brake inspections, fluid services -- each one triggers an automated message at the right time, bringing customers back before they even think to go elsewhere.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Instant Lead Response</h3>
+      <p>Every online inquiry -- website form, Google message, social media DM -- receives an immediate, professional response. The system captures the vehicle information and service need, answers common questions, and moves the customer toward booking an appointment. No lead waits for your service writer to get off the lift.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Appointment Confirmations and Reminders</h3>
+      <p>Every scheduled customer receives automated confirmations and reminders via text and email. They can confirm with a single tap. If they cancel, the system immediately reaches out to customers on your waitlist to fill the opening. No-shows become the exception, not the norm.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Declined Service Follow-Up</h3>
+      <p>When a customer declines a recommended repair, the system records it and follows up at appropriate intervals. The messaging reinforces the importance of the service, addresses common objections, and makes it easy for the customer to schedule when they are ready. Work that used to be forgotten comes back.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Post-Service Review Requests</h3>
+      <p>After every completed repair or service, the customer receives a request to share their experience. Happy customers are directed to Google. Negative feedback is captured privately, giving you the chance to resolve issues before they become public complaints. Your online reputation grows steadily and authentically.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Customer Reactivation Campaigns</h3>
+      <p>Customers who have not visited in six months or more are automatically identified and receive a re-engagement sequence. The messaging is personalized to their vehicle and service history. Reactivating even a fraction of lapsed customers adds consistent monthly revenue without any advertising cost.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Results Auto Repair Shops Typically See</h2>
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="num">20-35%</div>
+      <div class="label">Increase in repeat visits from automated service interval reminders</div>
+    </div>
+    <div class="result-card">
+      <div class="num">30-45%</div>
+      <div class="label">Reduction in no-shows with confirmation and reminder sequences</div>
+    </div>
+    <div class="result-card">
+      <div class="num">Under 2 Min</div>
+      <div class="label">Response time to every online lead, including after hours and weekends</div>
+    </div>
+    <div class="result-card">
+      <div class="num">15-25%</div>
+      <div class="label">Recovery rate on previously declined repairs through automated follow-up</div>
+    </div>
+    <div class="result-card">
+      <div class="num">3-5x</div>
+      <div class="label">More Google reviews per month with post-service automation</div>
+    </div>
+    <div class="result-card">
+      <div class="num">10+ Hrs</div>
+      <div class="label">Saved per week on manual follow-up, reminders, and customer outreach</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Find Out How Much Revenue Your Shop Leaves on the Lift</h2>
+  <p>Send us a message. We will walk through where customers are slipping away and how automation brings them back -- without adding front desk staff or changing how your techs work.</p>
+  <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions -- Serving businesses worldwide -- <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+</footer>
+</body>
+</html>
