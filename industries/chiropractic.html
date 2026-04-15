@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI automation for chiropractic practices: patient lead response, appointment scheduling, recall campaigns, review generation, and retention. Fill your schedule without adding front desk staff.">
+<meta name="keywords" content="chiropractic automation, chiropractic AI, chiropractor lead follow-up, chiropractic scheduling automation, chiropractor review generation, chiropractic patient retention, chiropractic marketing automation">
+<title>AI Automation for Chiropractic Practices -- Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #e0e0e0; background: #0a0a0a; line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+
+nav { background: #0a0a0a; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1a1a1a; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #00c2ff; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #00c2ff; color: #0a0a0a !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #00a8e0 !important; }
+
+.hero { background: linear-gradient(180deg, #0a0a0a 0%, #0f1419 100%); padding: 100px 60px 80px; }
+.hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.hero .tag { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #00c2ff; margin-bottom: 20px; }
+.hero h1 { font-size: 46px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 24px; }
+.hero h1 span { color: #00c2ff; }
+.hero p { font-size: 18px; color: #9ca3af; line-height: 1.8; margin-bottom: 36px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.hero-btn { display: inline-block; background: #00c2ff; color: #0a0a0a; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: background 0.2s; }
+.hero-btn:hover { background: #00a8e0; }
+
+section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+section h2 { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+
+.pain-points { background: #0f1419; padding: 80px 40px; }
+.pain-points-inner { max-width: 900px; margin: 0 auto; }
+.pain-list { list-style: none; }
+.pain-list li { padding: 20px 0; border-bottom: 1px solid #1a2332; font-size: 17px; color: #c0c0c0; line-height: 1.7; }
+.pain-list li strong { color: #fff; }
+
+.solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.solution-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 32px; }
+.solution-card h3 { font-size: 18px; font-weight: 700; color: #00c2ff; margin-bottom: 10px; }
+.solution-card p { font-size: 15px; color: #9ca3af; line-height: 1.7; }
+
+.steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.step-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 32px; }
+.step-card .step-num { font-size: 14px; font-weight: 700; color: #00c2ff; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.step-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.step-card p { font-size: 15px; color: #9ca3af; line-height: 1.7; }
+
+.cta-section { background: #0f1419; padding: 80px 60px; text-align: center; }
+.cta-section h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+.cta-section p { font-size: 18px; color: #9ca3af; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+footer { background: #0a0a0a; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1a1a1a; }
+footer a { color: #00c2ff; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; flex-wrap: wrap; gap: 12px; } .nav-links { gap: 16px; flex-wrap: wrap; }
+  .hero { padding: 60px 20px 40px; }
+  .hero h1 { font-size: 30px; }
+  section { padding: 60px 20px; }
+  .pain-points { padding: 60px 20px; }
+  .solutions-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span> Solutions</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/industries/">Industries</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://nexusaiconcepts.com/contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="tag">AI Automation for Chiropractic Practices</div>
+    <h1>New Patients Search Online When They Are in Pain. <span>The First Practice to Respond Wins.</span></h1>
+    <p>Someone wakes up with debilitating back pain and starts searching for a chiropractor. They fill out inquiry forms at three practices. Two respond hours later or the next day. One responds in under two minutes with a warm message and available appointment times. That practice gets the new patient. Nexus AI makes sure that practice is yours.</p>
+    <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+  </div>
+</div>
+
+<div class="pain-points">
+  <div class="pain-points-inner">
+    <h2 style="font-size:32px;font-weight:800;color:#fff;margin-bottom:40px;text-align:center;">The Growth Killers in Your Chiropractic Practice</h2>
+    <ul class="pain-list">
+      <li><strong>New patient inquiries go unanswered for hours.</strong> When someone is in pain and looking for relief, they are not waiting around. If your front desk is busy with in-office patients and cannot respond quickly, that prospective patient moves on to the next practice in the search results.</li>
+      <li><strong>Patients drop off their care plan and never come back.</strong> A patient starts a treatment plan, feels some relief after a few visits, and stops showing up. Without consistent follow-up and re-engagement, those patients disappear -- along with the revenue from the remaining visits on their plan.</li>
+      <li><strong>No-shows leave gaps in your schedule and money on the table.</strong> A patient forgets their appointment or decides not to come without canceling. That is a time slot that could have been filled by someone else. Without automated reminders and confirmations, no-shows eat into your daily revenue.</li>
+      <li><strong>Your front desk is stretched too thin.</strong> Answering inquiries, checking patients in, verifying information, handling follow-up messages -- your front desk team is doing the work of three people. When they are overwhelmed, new patient outreach suffers and existing patient communication slows down.</li>
+      <li><strong>You rely on word of mouth but have few online reviews.</strong> Your patients get great results. They tell friends and family. But they rarely take the time to leave a Google review. Without a system that consistently asks for reviews after positive visits, your online presence does not reflect the quality of care you deliver.</li>
+    </ul>
+  </div>
+</div>
+
+<section>
+  <h2>What Nexus AI Builds for Chiropractic Practices</h2>
+  <div class="solutions-grid">
+    <div class="solution-card">
+      <h3>Instant New Patient Response</h3>
+      <p>Every inquiry -- web form, text, chat, social media message -- receives an immediate, professional response at any hour. The system captures the patient's concern, provides relevant information about your practice, and guides them toward scheduling their first visit.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Automated Appointment Reminders</h3>
+      <p>Patients receive confirmation messages when they schedule and reminders before their appointment. Missed appointments trigger automatic re-engagement to get the patient back on the books. Your schedule stays full and no-shows drop significantly.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Care Plan Follow-Up Sequences</h3>
+      <p>When a patient misses a visit or falls off their care plan, automated follow-up messages re-engage them with personalized outreach. The system keeps patients on track with their treatment, improving outcomes and protecting the revenue tied to their plan.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Post-Visit Review Generation</h3>
+      <p>After visits, patients receive a timely request to share their experience. Positive responses are directed to Google and review platforms. Negative feedback is captured privately so you can resolve concerns before they become public complaints.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Patient Reactivation Campaigns</h3>
+      <p>Patients who have not visited in months receive targeted outreach encouraging them to return. The system identifies inactive patients and re-engages them with relevant messaging, recovering revenue that would otherwise be permanently lost.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Referral and Wellness Campaigns</h3>
+      <p>Automated campaigns educate your patient base on wellness topics and encourage referrals. These sequences run in the background, keeping your practice top of mind and generating new patient leads from your existing satisfied patients.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>How It Works</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">Step 1</div>
+      <h3>We Audit Your Patient Journey</h3>
+      <p>We review how new patients find you, how inquiries are handled, and where patients drop off. We identify the specific gaps costing you new patients and plan completions.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 2</div>
+      <h3>We Build Your Automation System</h3>
+      <p>We configure AI-powered lead response, appointment reminders, care plan follow-ups, and review generation tailored to your chiropractic practice.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 3</div>
+      <h3>We Launch and Optimize</h3>
+      <p>Your system goes live. Every inquiry gets an instant response. Every appointment gets confirmed. Every completed visit triggers a review request. We monitor performance and refine continuously.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 4</div>
+      <h3>Your Schedule Stays Full</h3>
+      <p>Your team focuses on delivering excellent patient care while the automation handles outreach, follow-ups, and the front-office communication that used to fall through the cracks.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Find Out How Many New Patients You Are Losing to Slow Follow-Up</h2>
+  <p>Send us a message. We will show you exactly where patients are falling off and how automation keeps your schedule full and your care plans on track.</p>
+  <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions -- Serving businesses worldwide -- <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+</footer>
+</body>
+</html>
