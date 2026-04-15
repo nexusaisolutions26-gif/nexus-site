@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI automation for dental practices: patient intake, appointment reminders, recall systems, review generation, and lead follow-up. Fill more chairs and reduce no-shows without adding front desk staff.">
+<meta name="keywords" content="dental practice automation, dental AI, dental appointment reminders, dental patient intake, dental recall system, dental review generation, dental no-show reduction">
+<title>AI Automation for Dental Practices -- Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #e0e0e0; background: #0a0a0a; line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+
+nav { background: #0a0a0a; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1a1a1a; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #00c2ff; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #00c2ff; color: #0a0a0a !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #00a8e0 !important; }
+
+.hero { background: linear-gradient(180deg, #0a0a0a 0%, #0f1419 100%); padding: 100px 60px 80px; }
+.hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.hero .tag { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #00c2ff; margin-bottom: 20px; }
+.hero h1 { font-size: 46px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 24px; }
+.hero h1 span { color: #00c2ff; }
+.hero p { font-size: 18px; color: #9ca3af; line-height: 1.8; margin-bottom: 36px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.hero-btn { display: inline-block; background: #00c2ff; color: #0a0a0a; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 16px; transition: background 0.2s; }
+.hero-btn:hover { background: #00a8e0; }
+
+section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+section h2 { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+
+.pain-points { background: #0f1419; padding: 80px 40px; }
+.pain-points-inner { max-width: 900px; margin: 0 auto; }
+.pain-list { list-style: none; }
+.pain-list li { padding: 20px 0; border-bottom: 1px solid #1a2332; font-size: 17px; color: #c0c0c0; line-height: 1.7; }
+.pain-list li strong { color: #fff; }
+
+.solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.solution-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 32px; }
+.solution-card h3 { font-size: 18px; font-weight: 700; color: #00c2ff; margin-bottom: 10px; }
+.solution-card p { font-size: 15px; color: #9ca3af; line-height: 1.7; }
+
+.results-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.result-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 28px; text-align: center; }
+.result-card .num { font-size: 36px; font-weight: 800; color: #00c2ff; margin-bottom: 8px; }
+.result-card .label { font-size: 14px; color: #9ca3af; line-height: 1.5; }
+
+.cta-section { background: #0f1419; padding: 80px 60px; text-align: center; }
+.cta-section h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+.cta-section p { font-size: 18px; color: #9ca3af; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+footer { background: #0a0a0a; padding: 40px 60px; text-align: center; color: #6b7280; font-size: 14px; border-top: 1px solid #1a1a1a; }
+footer a { color: #00c2ff; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; flex-wrap: wrap; gap: 12px; } .nav-links { gap: 16px; flex-wrap: wrap; }
+  .hero { padding: 60px 20px 40px; }
+  .hero h1 { font-size: 30px; }
+  section { padding: 60px 20px; }
+  .pain-points { padding: 60px 20px; }
+  .solutions-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Nexus <span>AI</span> Solutions</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/industries/">Industries</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://nexusaiconcepts.com/contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="tag">AI Automation for Dental Practices</div>
+    <h1>Stop Losing Patients to <span>Missed Calls, No-Shows, and Silent Recall Lists</span></h1>
+    <p>Your front desk is overwhelmed. New patient inquiries go unanswered for hours. Recall patients drift to the practice down the street. Chairs sit empty because confirmations never went out. Nexus AI builds the automated systems that keep your schedule full and your patients engaged -- without hiring another receptionist.</p>
+    <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+  </div>
+</div>
+
+<div class="pain-points">
+  <div class="pain-points-inner">
+    <h2 style="font-size:32px;font-weight:800;color:#fff;margin-bottom:40px;text-align:center;">The Problems Every Dental Practice Knows Too Well</h2>
+    <ul class="pain-list">
+      <li><strong>New patient inquiries sit unanswered.</strong> Someone fills out your website form at 8 PM or calls during lunch. By the time your front desk follows up the next morning, they have already booked with another practice. Speed-to-lead in dental is measured in minutes, not days.</li>
+      <li><strong>No-shows destroy your production numbers.</strong> A patient books a crown prep worth several hundred dollars. No confirmation goes out. They forget. That chair sits empty for ninety minutes while your hygienist and assistant wait. Multiply that by four or five no-shows per week and the lost production is staggering.</li>
+      <li><strong>Recall patients disappear.</strong> Patients who need their six-month cleaning simply stop coming. Your recall list grows, but nobody has time to work it. Every lapsed recall patient represents years of lost hygiene revenue and potential restorative work that never gets diagnosed.</li>
+      <li><strong>Online reviews trickle in slowly.</strong> Your happiest patients walk out the door and never think to leave a review. Meanwhile, the one patient who had a bad day posts a one-star review that sits at the top of your Google listing. Your reputation does not reflect the quality of care you deliver.</li>
+      <li><strong>The front desk is buried.</strong> Your receptionist answers calls, checks patients in, verifies insurance, processes payments, and somehow is also supposed to follow up on treatment plans, work the recall list, and respond to online inquiries. Something always falls through the cracks.</li>
+    </ul>
+  </div>
+</div>
+
+<section>
+  <h2>What Nexus AI Builds for Dental Practices</h2>
+  <div class="solutions-grid">
+    <div class="solution-card">
+      <h3>Instant Lead Response</h3>
+      <p>When a prospective patient submits a form or sends a message, they receive an immediate, personalized response. The system captures their information, answers common questions about your practice, and moves them toward booking -- all within seconds, day or night.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Smart Appointment Confirmations</h3>
+      <p>Every scheduled patient receives automated confirmations and reminders via text and email at the right intervals. Patients can confirm with a single tap. If they need to reschedule, the system handles it and opens that slot for someone on your waitlist.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Automated Recall and Reactivation</h3>
+      <p>Patients due for hygiene appointments receive a sequence of friendly, well-timed messages that bring them back. Patients who have not visited in over a year get a separate reactivation campaign. Your recall list works itself instead of gathering dust.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Review Generation on Autopilot</h3>
+      <p>After every appointment, patients receive a simple prompt asking about their experience. Happy patients are guided directly to your Google or Facebook review page. Negative feedback is captured privately so you can resolve it before it goes public.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Treatment Follow-Up Sequences</h3>
+      <p>When a patient is presented with a treatment plan but does not schedule, the system follows up automatically. It addresses common concerns, reinforces the value of the recommended care, and makes it easy for the patient to book when they are ready.</p>
+    </div>
+    <div class="solution-card">
+      <h3>Centralized Communication Hub</h3>
+      <p>All patient messages -- text, email, web chat, social media -- flow into one dashboard. Your team sees every conversation in one place. No more toggling between platforms, no more messages slipping through the cracks.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Results Dental Practices Typically See</h2>
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="num">35-50%</div>
+      <div class="label">Reduction in no-shows through automated confirmations and reminders</div>
+    </div>
+    <div class="result-card">
+      <div class="num">2-3x</div>
+      <div class="label">More online reviews generated per month with automated post-visit requests</div>
+    </div>
+    <div class="result-card">
+      <div class="num">Under 2 Min</div>
+      <div class="label">Average response time to new patient inquiries, even after hours</div>
+    </div>
+    <div class="result-card">
+      <div class="num">20-30%</div>
+      <div class="label">Increase in recall patient reactivation within the first 90 days</div>
+    </div>
+    <div class="result-card">
+      <div class="num">10-15 Hrs</div>
+      <div class="label">Saved per week on front desk follow-up, confirmations, and recall outreach</div>
+    </div>
+    <div class="result-card">
+      <div class="num">15-25%</div>
+      <div class="label">Improvement in treatment plan acceptance through automated follow-up</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Ready to Fill More Chairs and Reclaim Your Front Desk?</h2>
+  <p>Send us a message. We will walk through exactly where your practice is losing patients and production -- and show you what automation can recover.</p>
+  <a href="https://nexusaiconcepts.com/contact" class="hero-btn">Send Us a Message</a>
+</div>
+
+<footer>
+  <p>Nexus AI Solutions -- Serving businesses worldwide -- <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+</footer>
+</body>
+</html>

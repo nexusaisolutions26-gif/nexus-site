@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Nexus AI Solutions. Send us a message to learn how AI automation can transform your business. No pressure, no commitments.">
+<title>Contact Us -- Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #e0e0e0; background: #0a0a0a; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+nav {
+  background: #0d1117;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  background: #2563eb;
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero {
+  background: #0d1117;
+  padding: 80px 60px 60px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+.hero h1 span { color: #2563eb; }
+.hero p {
+  font-size: 20px;
+  color: #9ca3af;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.contact-info p {
+  color: #9ca3af;
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.info-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(37,99,235,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 700;
+}
+.info-content h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.info-content p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact-form {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 40px;
+}
+.contact-form h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d1d5db;
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  background: #0d1117;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.submit-btn:hover { background: #1d4ed8; }
+
+.form-note {
+  text-align: center;
+  margin-top: 16px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.trust-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 60px 80px;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.trust-item {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+}
+.trust-item h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.trust-item p {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.alt-contact {
+  background: #111827;
+  border-top: 1px solid #1f2937;
+  padding: 60px;
+  text-align: center;
+}
+.alt-contact h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.alt-contact p {
+  color: #9ca3af;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.alt-contact a.email-link {
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+footer {
+  background: #0d1117;
+  border-top: 1px solid #1f2937;
+  padding: 40px 60px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+footer a { color: #2563eb; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .hero { padding: 60px 20px 40px; }
+  .hero h1 { font-size: 32px; }
+  .contact-section { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .alt-contact { padding: 40px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/" style="color:#fff;">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Let's Talk About <span>Your Business</span></h1>
+  <p>Send us a message. No pressure. No commitments. Just a real conversation about how AI automation can help your business capture more leads and save time.</p>
+</section>
+
+<section class="contact-section">
+  <div class="contact-info">
+    <h2>Why Reach Out?</h2>
+    <p>Every conversation starts with understanding your business. We listen first, then show you exactly what AI automation can do for your specific situation. No generic pitches. No wasted time.</p>
+
+    <div class="info-item">
+      <div class="info-icon">@</div>
+      <div class="info-content">
+        <h3>Email Us</h3>
+        <p>nexusaisolutions26@gmail.com</p>
+        <p>We respond within hours, not days.</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">FB</div>
+      <div class="info-content">
+        <h3>Message Us on Facebook</h3>
+        <p>Send a DM to Nexus AI Solutions on Facebook.</p>
+        <p>We check messages throughout the day.</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">AI</div>
+      <div class="info-content">
+        <h3>What We Build</h3>
+        <p>AI-powered lead capture, automated follow-up, review management, appointment reminders, and full business automation systems.</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">0</div>
+      <div class="info-content">
+        <h3>Zero Risk</h3>
+        <p>No long-term contracts. If it does not work, you do not pay. We are that confident in what we deliver.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form action="https://services.leadconnectorhq.com/funnels/submit" method="POST">
+      <input type="hidden" name="location_id" value="ixBJpsaV9nFZTFpQS8oC">
+      <input type="hidden" name="funnel_id" value="contact-page">
+
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="full_name" placeholder="John Smith" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@yourbusiness.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="business">Business Name</label>
+        <input type="text" id="business" name="company_name" placeholder="Your Business Name">
+      </div>
+
+      <div class="form-group">
+        <label for="industry">Industry</label>
+        <select id="industry" name="industry">
+          <option value="">Select your industry</option>
+          <option value="Restaurant">Restaurant / Food Service</option>
+          <option value="Dental">Dental Practice</option>
+          <option value="Law Firm">Law Firm</option>
+          <option value="Salon">Salon / Spa</option>
+          <option value="HVAC">HVAC / Plumbing</option>
+          <option value="Fitness">Fitness / Gym</option>
+          <option value="Auto Repair">Auto Repair</option>
+          <option value="Accounting">Accounting / Financial</option>
+          <option value="Veterinary">Veterinary</option>
+          <option value="Landscaping">Landscaping</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Construction">Construction / Contractor</option>
+          <option value="Medical">Medical / Healthcare</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">How Can We Help?</label>
+        <textarea id="message" name="message" placeholder="Tell us about your business and what challenges you are facing. We will get back to you with specific ideas."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+      <p class="form-note">We typically respond within a few hours. No spam. No sales pressure.</p>
+    </form>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <h3>No Long-Term Contracts</h3>
+      <p>Month-to-month service. Stay because it works, not because you are locked in. Cancel anytime with no penalties.</p>
+    </div>
+    <div class="trust-item">
+      <h3>We Handle Everything</h3>
+      <p>No technical skills required on your end. We build, install, and manage your entire AI automation system. You just see results.</p>
+    </div>
+    <div class="trust-item">
+      <h3>Results in Days, Not Months</h3>
+      <p>Most businesses are fully operational within 7 days. Your AI system starts capturing leads and following up from day one.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt-contact">
+  <h2>Prefer Email?</h2>
+  <p>Send us a message directly and we will get back to you.</p>
+  <a href="mailto:nexusaisolutions26@gmail.com" class="email-link">nexusaisolutions26@gmail.com</a>
+</section>
+
+<footer>
+  <p>Nexus AI Solutions -- AI Automation for Growing Businesses</p>
+  <p style="margin-top: 8px;"><a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a></p>
+</footer>
+
+</body>
+</html>
