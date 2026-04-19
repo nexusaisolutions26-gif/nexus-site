@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get the Nexus AI Readiness Assessment. A branded report showing exactly where AI saves your business time and money, delivered in 48 hours. Intro price $497, normally $997.">
+<title>AI Readiness Assessment — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+/* HERO */
+.hero { background: linear-gradient(180deg, #0A1628 0%, #0F203A 100%); color: #fff; padding: 80px 60px 60px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 900px; height: 900px; background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 60%); pointer-events: none; }
+.hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+.hero .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #60a5fa; margin-bottom: 18px; }
+.hero h1 { font-size: 56px; font-weight: 800; letter-spacing: -2px; line-height: 1.08; margin-bottom: 20px; }
+.hero h1 span { color: #60a5fa; }
+.hero .lead { font-size: 19px; color: #cbd5e1; max-width: 760px; margin: 0 auto 36px; line-height: 1.65; }
+
+/* PRICE PILL */
+.price-pill { display: inline-flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(96,165,250,0.3); border-radius: 999px; padding: 12px 24px; margin-bottom: 32px; }
+.price-pill .intro { color: #FBBF24; font-weight: 700; font-size: 17px; }
+.price-pill .regular { color: #94a3b8; font-size: 14px; text-decoration: line-through; }
+.price-pill .note { color: #94a3b8; font-size: 13px; }
+
+.hero-cta { display: inline-block; background: #2563eb; color: #fff; padding: 18px 44px; border-radius: 10px; font-size: 17px; font-weight: 700; transition: all 0.2s; }
+.hero-cta:hover { background: #1d4ed8; transform: translateY(-1px); }
+.hero-sub { font-size: 13px; color: #94a3b8; margin-top: 14px; }
+
+/* OUTCOME CARDS */
+.outcomes { background: #fff; padding: 72px 60px 48px; }
+.outcomes-inner { max-width: 1100px; margin: 0 auto; }
+.outcomes .label { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2563eb; margin-bottom: 14px; }
+.outcomes h2 { text-align: center; font-size: 36px; font-weight: 800; color: #0f172a; letter-spacing: -1px; margin-bottom: 44px; }
+.outcome-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.outcome-card { background: #f8fafc; border-radius: 14px; padding: 32px 28px; border: 1px solid #e2e8f0; }
+.outcome-card .big { font-size: 42px; font-weight: 800; color: #2563eb; letter-spacing: -1.5px; margin-bottom: 6px; }
+.outcome-card h3 { font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.outcome-card p { font-size: 14px; color: #6b7280; line-height: 1.6; }
+
+/* WHAT YOU GET */
+.what { background: #f8fafc; padding: 72px 60px; }
+.what-inner { max-width: 1100px; margin: 0 auto; }
+.what .label { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2563eb; margin-bottom: 14px; }
+.what h2 { text-align: center; font-size: 36px; font-weight: 800; color: #0f172a; letter-spacing: -1px; margin-bottom: 48px; }
+.what-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.what-item { background: #fff; border-radius: 12px; padding: 28px; border: 1px solid #e2e8f0; display: flex; gap: 16px; }
+.what-num { flex-shrink: 0; width: 42px; height: 42px; background: #2563eb; color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; }
+.what-item h3 { font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.what-item p { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* PROCESS */
+.process { background: #fff; padding: 72px 60px; }
+.process-inner { max-width: 1000px; margin: 0 auto; }
+.process .label { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2563eb; margin-bottom: 14px; }
+.process h2 { text-align: center; font-size: 36px; font-weight: 800; color: #0f172a; letter-spacing: -1px; margin-bottom: 44px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.step { text-align: left; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 26px 22px; position: relative; }
+.step-num { position: absolute; top: -14px; left: 20px; background: #2563eb; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; }
+.step h3 { font-size: 16px; font-weight: 700; color: #0f172a; margin: 8px 0 8px; }
+.step p { font-size: 13px; color: #6b7280; line-height: 1.6; }
+
+/* PROOF */
+.proof { background: #0A1628; color: #fff; padding: 72px 60px; text-align: center; }
+.proof-inner { max-width: 800px; margin: 0 auto; }
+.proof h2 { font-size: 32px; font-weight: 800; letter-spacing: -1px; margin-bottom: 22px; }
+.proof p { font-size: 17px; color: #cbd5e1; line-height: 1.8; }
+.proof strong { color: #fff; }
+
+/* FAQ */
+.faq { background: #fff; padding: 72px 60px; }
+.faq-inner { max-width: 820px; margin: 0 auto; }
+.faq h2 { text-align: center; font-size: 36px; font-weight: 800; color: #0f172a; margin-bottom: 44px; letter-spacing: -1px; }
+.faq-item { border-bottom: 1px solid #e5e7eb; padding: 22px 0; }
+.faq-item h3 { font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.faq-item p { font-size: 15px; color: #4b5563; line-height: 1.7; }
+
+/* FINAL CTA */
+.final-cta { background: linear-gradient(180deg, #0A1628 0%, #0F203A 100%); color: #fff; padding: 80px 60px; text-align: center; }
+.final-cta h2 { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 18px; line-height: 1.15; }
+.final-cta p { font-size: 17px; color: #cbd5e1; max-width: 600px; margin: 0 auto 32px; }
+
+footer { background: #0d1117; padding: 48px 60px; text-align: center; }
+footer .footer-logo { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+footer .footer-logo span { color: #2563eb; }
+footer p { color: #6b7280; font-size: 14px; margin-bottom: 4px; }
+footer a { color: #6b7280; }
+footer a:hover { color: #2563eb; }
+
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .mobile-menu-btn { display: block; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #0d1117; flex-direction: column; padding: 20px; gap: 16px; border-top: 1px solid #1f2937; }
+  .nav-links.show { display: flex; }
+  .hero { padding: 48px 24px; }
+  .hero h1 { font-size: 36px; letter-spacing: -1px; }
+  .hero .lead { font-size: 16px; }
+  .outcomes, .what, .process, .proof, .faq, .final-cta { padding: 48px 24px; }
+  .outcomes h2, .what h2, .process h2, .faq h2, .final-cta h2 { font-size: 28px; }
+  .outcome-grid, .what-grid, .steps { grid-template-columns: 1fr; }
+  footer { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Nexus <span>AI</span> Solutions</div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/assessment/" class="nav-cta">AI Assessment</a>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">AI Readiness Assessment</div>
+    <h1>Get the exact <span>playbook</span><br>for AI in your business.</h1>
+    <p class="lead">A senior AI implementation review of your actual operations, delivered as a branded report inside 48 hours. Identify every tool, automation, and process change that saves you time and puts revenue back on the table. No fluff. No generic advice. Built around your business.</p>
+
+    <div class="price-pill">
+      <span class="intro">$497 intro price</span>
+      <span class="regular">$997</span>
+      <span class="note">first 10 clients this month</span>
+    </div>
+    <br>
+    <a href="/assessment/intake/" class="hero-cta">Start my assessment</a>
+    <p class="hero-sub">No phone calls required. Fully async intake. Report in 48 hours.</p>
+  </div>
+</section>
+
+<!-- OUTCOME CARDS -->
+<section class="outcomes">
+  <div class="outcomes-inner">
+    <div class="label">What you walk away with</div>
+    <h2>Concrete numbers. Concrete tools. Concrete next steps.</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="big">~20 hrs</div>
+        <h3>Reclaimed per week</h3>
+        <p>Typical time savings once the quick-win tools are installed across the team.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="big">4-8</div>
+        <h3>Off-the-shelf tools</h3>
+        <p>Each mapped to a specific pain point in your business, with step-by-step install instructions.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="big">48 hrs</div>
+        <h3>Turnaround</h3>
+        <p>From completed intake to branded PDF in your inbox. Followed by a 30-minute review at your pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="what">
+  <div class="what-inner">
+    <div class="label">Inside your report</div>
+    <h2>Six sections built around your business</h2>
+    <div class="what-grid">
+      <div class="what-item">
+        <div class="what-num">1</div>
+        <div>
+          <h3>Headline outcome</h3>
+          <p>Hours reclaimed per week, dollars saved per month, and net value after tool costs. Right at the top, no hunting for the answer.</p>
+        </div>
+      </div>
+      <div class="what-item">
+        <div class="what-num">2</div>
+        <div>
+          <h3>Pain-point map</h3>
+          <p>Every friction point we identify in your operations, scored on effort vs. impact so you know exactly where to start.</p>
+        </div>
+      </div>
+      <div class="what-item">
+        <div class="what-num">3</div>
+        <div>
+          <h3>Recommended tools</h3>
+          <p>Named, priced, and matched to your specific pain points. Most are free or under $50/month. Each comes with install steps.</p>
+        </div>
+      </div>
+      <div class="what-item">
+        <div class="what-num">4</div>
+        <div>
+          <h3>4-day quick-win plan</h3>
+          <p>One small action per day, 15 to 30 minutes each, that gets the highest-leverage tools live without overwhelming your team.</p>
+        </div>
+      </div>
+      <div class="what-item">
+        <div class="what-num">5</div>
+        <div>
+          <h3>Upsell roadmap</h3>
+          <p>The heavier builds that follow the quick wins, with fixed prices and estimated monthly value so you can plan your next 90 days.</p>
+        </div>
+      </div>
+      <div class="what-item">
+        <div class="what-num">6</div>
+        <div>
+          <h3>30-minute review call</h3>
+          <p>You read the report first. Then we walk through it together, answer questions, and decide which build comes next if any.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-inner">
+    <div class="label">How it works</div>
+    <h2>Four steps. No calls. No back-and-forth.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Pay</h3>
+        <p>One secure checkout at the intro price of $497. No subscription. No auto-renewal.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Intake</h3>
+        <p>Answer our structured questionnaire on your own time. 12 to 20 minutes. No phone call needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Receive report</h3>
+        <p>Within 48 hours, your branded PDF lands in your inbox. Read through at your own pace.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Review</h3>
+        <p>Optional 30-minute review call to walk through recommendations and answer questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF / GUARANTEE -->
+<section class="proof">
+  <div class="proof-inner">
+    <h2>Simple guarantee.</h2>
+    <p>If your assessment does not identify at least <strong>$1,000 per month</strong> of time or revenue your business is leaving on the table, we refund you in full. We have never had to issue that refund.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <h2>Common questions</h2>
+
+    <div class="faq-item">
+      <h3>Why not just a free consultation?</h3>
+      <p>Free consultations are sales pitches. A paid assessment forces us to do real work for you up front - research your stack, map your pain points, find the right tools - and you walk away with a document you keep regardless of whether we ever work together again.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why $497 instead of $997?</h3>
+      <p>We are running an intro price for the first 10 clients of every month to build case studies across more industries. After that the price is $997 which is still a fraction of what a traditional operations consultant would charge.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How much of my time does this take?</h3>
+      <p>Between 12 and 20 minutes to complete the intake. The optional review call at the end is 30 minutes. Everything else is async on our end.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What industries do you work with?</h3>
+      <p>Every industry. We have delivered assessments for home-service contractors, professional services, healthcare practices, retail, and e-commerce. The framework is industry-agnostic because the patterns of wasted time are surprisingly universal.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I have to buy more services after the assessment?</h3>
+      <p>No. The assessment is a complete deliverable on its own. Most clients find at least one quick win they can implement themselves without any further help from us.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What makes this different from generic AI advice online?</h3>
+      <p>The report is grounded in your actual answers about your actual tools, team, and pain points. Every recommendation is tied to something you told us. No generic "try ChatGPT" suggestions.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Find out what AI is actually<br>worth to your business.</h2>
+  <p>Intro price locked at $497 for the first 10 clients this month. Report delivered in 48 hours.</p>
+  <a href="/assessment/intake/" class="hero-cta">Start my assessment</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Nexus <span>AI</span> Solutions</div>
+  <p>AI systems that earn their keep every month.</p>
+  <p style="margin-top: 14px;"><a href="/">Home</a> &nbsp;|&nbsp; <a href="/assessment/">Assessment</a> &nbsp;|&nbsp; <a href="/faq/">FAQ</a> &nbsp;|&nbsp; <a href="/contact/">Contact</a></p>
+  <p style="margin-top: 18px; font-size: 13px;">&copy; 2026 Nexus AI Solutions</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment Intake — Nexus AI Solutions</title>
+<meta name="description" content="Complete your Nexus AI Readiness Assessment intake. Answer at your own pace. Report delivered in 48 hours.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #0f172a; background: #f8fafc; line-height: 1.5; }
+a { text-decoration: none; color: inherit; }
+
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+
+.wrap { max-width: 820px; margin: 0 auto; padding: 48px 30px 80px; }
+.hdr { margin-bottom: 32px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2563eb; margin-bottom: 12px; }
+.hdr h1 { font-size: 32px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+.hdr p { color: #475569; font-size: 16px; line-height: 1.7; }
+
+/* progress */
+.progress { position: sticky; top: 0; background: #f8fafc; padding: 14px 0; margin-bottom: 22px; z-index: 10; border-bottom: 1px solid #e2e8f0; }
+.progress-bar { height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: #2563eb; width: 0%; transition: width 0.3s; }
+.progress-text { font-size: 13px; color: #475569; margin-top: 6px; }
+
+/* section */
+.section { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 28px 32px; margin-bottom: 18px; }
+.section h2 { font-size: 19px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.section .section-sub { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+
+.q { margin-bottom: 20px; }
+.q label { display: block; font-size: 14px; font-weight: 600; color: #1f2937; margin-bottom: 8px; }
+.q input[type=text], .q textarea, .q select { width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; font-family: inherit; color: #0f172a; background: #fff; }
+.q textarea { min-height: 90px; resize: vertical; }
+.q input:focus, .q textarea:focus, .q select:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+
+.submit { width: 100%; padding: 18px; background: #2563eb; color: #fff; border: none; border-radius: 10px; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
+.submit:hover { background: #1d4ed8; }
+.submit:disabled { background: #94a3b8; cursor: not-allowed; }
+.note { font-size: 13px; color: #64748b; margin-top: 12px; text-align: center; }
+
+.banner-ok { display: none; background: #ecfdf5; border: 1px solid #6ee7b7; color: #065f46; padding: 20px; border-radius: 12px; margin-bottom: 20px; font-size: 15px; }
+.banner-err { display: none; background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; padding: 14px 18px; border-radius: 10px; margin-bottom: 16px; font-size: 14px; }
+
+@media (max-width: 700px) {
+  nav { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .wrap { padding: 32px 18px 60px; }
+  .hdr h1 { font-size: 24px; }
+  .section { padding: 22px 18px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Nexus <span>AI</span> Solutions</div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/assessment/">Assessment</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="eyebrow">AI Readiness Assessment Intake</div>
+    <h1>Tell us about your business.</h1>
+    <p>Answer as much as you can. Skip anything that does not apply. The more context you share, the more specific and actionable your report will be. Your answers are confidential and only used to build your assessment.</p>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar"><div class="progress-bar-fill" id="bar"></div></div>
+    <div class="progress-text" id="progress-text">0 of 0 answered</div>
+  </div>
+
+  <div class="banner-ok" id="ok">
+    <strong>Thanks. Your intake is in.</strong><br>
+    You will receive your branded AI Readiness Assessment within 48 hours at the email you provided. Watch your inbox.
+  </div>
+  <div class="banner-err" id="err"></div>
+
+  <form id="intake-form" onsubmit="return submitForm(event)"></form>
+
+</div>
+
+<script>
+const QUESTIONS = null; // populated below
+const SPEC = {"sections":[
+  {"id":"contact","title":"How we reach you","questions":[
+    {"id":"contact_name","label":"Your name","type":"short","required":true},
+    {"id":"contact_email","label":"Email","type":"email","required":true},
+    {"id":"contact_phone","label":"Business phone (optional)","type":"short","required":false},
+    {"id":"order_id","label":"Order or receipt number (optional)","type":"short","required":false}
+  ]},
+  {"id":"business_basics","title":"About your business","questions":[
+    {"id":"business_name","label":"Business name","type":"short","required":true},
+    {"id":"industry","label":"Industry or primary service","type":"short","required":true},
+    {"id":"years_in_business","label":"How long have you been operating?","type":"short"},
+    {"id":"team_size","label":"How many people on your team (including owner, W2, 1099, VAs)?","type":"short"},
+    {"id":"annual_revenue_range","label":"Approximate annual revenue range","type":"choice","options":["Under $250K","$250K-$1M","$1M-$5M","$5M-$25M","$25M+"]},
+    {"id":"customer_type","label":"Who are your customers (B2B, B2C, both)?","type":"short"}
+  ]},
+  {"id":"stack","title":"What tools run your business today","questions":[
+    {"id":"crm","label":"What CRM or customer tracking system do you use? (or none)","type":"short"},
+    {"id":"comms","label":"How do customers contact you today? (phone, SMS, email, chat, web form, social DM)","type":"short"},
+    {"id":"scheduling","label":"How do appointments or jobs get scheduled?","type":"short"},
+    {"id":"invoicing_payments","label":"How do you invoice and get paid?","type":"short"},
+    {"id":"marketing_channels","label":"Where do most new customers come from? (rank if possible)","type":"long"},
+    {"id":"other_tools","label":"Any other tools you use daily? (spreadsheets, Slack, Google Workspace, Asana, etc.)","type":"long"}
+  ]},
+  {"id":"workflow","title":"What a typical week looks like","questions":[
+    {"id":"owner_day","label":"Walk us through a typical day as the owner. What consumes most of your time?","type":"long"},
+    {"id":"team_day","label":"What does a typical day look like for your team?","type":"long"},
+    {"id":"repetitive_tasks","label":"What tasks get done over and over every week that feel like copy-paste work?","type":"long"},
+    {"id":"new_customer_process","label":"From first inquiry to paying customer - walk us through every step.","type":"long"},
+    {"id":"after_sale_process","label":"After someone becomes a customer - what happens next?","type":"long"}
+  ]},
+  {"id":"pain","title":"Where it hurts","questions":[
+    {"id":"biggest_headache","label":"What is the biggest headache in your business right now?","type":"long"},
+    {"id":"missed_leads","label":"Do you ever miss or lose leads because no one responded fast enough? Describe.","type":"long"},
+    {"id":"team_burnout","label":"Where is your team most overloaded or burned out?","type":"long"},
+    {"id":"data_problems","label":"Is information scattered across multiple tools that do not talk to each other? Examples?","type":"long"},
+    {"id":"reporting","label":"How do you track how the business is doing? Are reports manual?","type":"long"},
+    {"id":"bottleneck","label":"If you could remove one bottleneck tomorrow, what would it be?","type":"long"}
+  ]},
+  {"id":"leads","title":"Lead handling","questions":[
+    {"id":"leads_per_week","label":"Roughly how many inbound leads per week?","type":"short"},
+    {"id":"first_response_time","label":"How fast does the first response typically go out?","type":"short"},
+    {"id":"after_hours","label":"What happens to leads that come in after hours or on weekends?","type":"long"},
+    {"id":"followup_cadence","label":"If a lead goes quiet, who follows up and when?","type":"long"},
+    {"id":"close_rate","label":"Roughly what percent of inquiries become paying customers?","type":"short"},
+    {"id":"avg_deal_size","label":"Average value of a customer (deal size or first-year revenue)?","type":"short"}
+  ]},
+  {"id":"reviews","title":"Customer experience and reputation","questions":[
+    {"id":"review_count","label":"Roughly how many Google or Facebook reviews do you have?","type":"short"},
+    {"id":"review_process","label":"How do you currently ask for reviews?","type":"long"},
+    {"id":"repeat_customers","label":"How much of your revenue comes from repeat customers?","type":"short"},
+    {"id":"churn_signals","label":"What usually causes a customer to churn?","type":"long"}
+  ]},
+  {"id":"ai","title":"Where you are with AI today","questions":[
+    {"id":"current_ai","label":"What AI tools, if any, are you or your team already using?","type":"long"},
+    {"id":"tried_failed","label":"Have you tried to set up any automation or AI before that did not work? What happened?","type":"long"},
+    {"id":"biggest_fear","label":"What is your biggest concern about implementing AI?","type":"long"}
+  ]},
+  {"id":"goals","title":"Where you want to be","questions":[
+    {"id":"twelve_month_goal","label":"Where do you want this business 12 months from now?","type":"long"},
+    {"id":"hours_back","label":"If you could hand 10 hours of work per week to AI, what would you hand off first?","type":"long"},
+    {"id":"budget_range","label":"Rough budget range for the right AI automation","type":"choice","options":["Under $500/mo","$500-$2,000/mo","$2,000-$5,000/mo","$5,000+/mo","One-time project only","Not sure yet"]},
+    {"id":"decision_timeline","label":"If the right solution showed up, how fast would you implement?","type":"choice","options":["This week","This month","This quarter","Still exploring"]}
+  ]},
+  {"id":"wrap","title":"Anything else","questions":[
+    {"id":"anything_else","label":"Anything else we should know?","type":"long"},
+    {"id":"how_heard","label":"How did you find out about Nexus AI?","type":"short"}
+  ]}
+]};
+
+// === Render form from spec ===
+const formEl = document.getElementById('intake-form');
+let totalQ = 0;
+
+SPEC.sections.forEach(sec => {
+  const s = document.createElement('div');
+  s.className = 'section';
+  const h = document.createElement('h2');
+  h.textContent = sec.title;
+  s.appendChild(h);
+  sec.questions.forEach(q => {
+    totalQ++;
+    const wrap = document.createElement('div');
+    wrap.className = 'q';
+    const lab = document.createElement('label');
+    lab.textContent = q.label + (q.required ? ' *' : '');
+    lab.setAttribute('for', q.id);
+    wrap.appendChild(lab);
+
+    let input;
+    if (q.type === 'long') {
+      input = document.createElement('textarea');
+    } else if (q.type === 'choice') {
+      input = document.createElement('select');
+      const o0 = document.createElement('option');
+      o0.value = '';
+      o0.textContent = 'Select...';
+      input.appendChild(o0);
+      (q.options || []).forEach(opt => {
+        const o = document.createElement('option');
+        o.value = opt; o.textContent = opt;
+        input.appendChild(o);
+      });
+    } else {
+      input = document.createElement('input');
+      input.type = q.type === 'email' ? 'email' : 'text';
+    }
+    input.id = q.id;
+    input.name = q.id;
+    if (q.required) input.required = true;
+    input.addEventListener('input', updateProgress);
+    input.addEventListener('change', updateProgress);
+    wrap.appendChild(input);
+    s.appendChild(wrap);
+  });
+  formEl.appendChild(s);
+});
+
+const submit = document.createElement('button');
+submit.type = 'submit';
+submit.className = 'submit';
+submit.textContent = 'Submit intake';
+formEl.appendChild(submit);
+
+const note = document.createElement('p');
+note.className = 'note';
+note.textContent = 'Your report will be delivered within 48 hours at the email above. No call is required unless you want one.';
+formEl.appendChild(note);
+
+function updateProgress() {
+  const inputs = formEl.querySelectorAll('input, textarea, select');
+  let answered = 0;
+  inputs.forEach(i => {
+    if ((i.value || '').trim() !== '') answered++;
+  });
+  const pct = Math.min(100, Math.round((answered / totalQ) * 100));
+  document.getElementById('bar').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = answered + ' of ' + totalQ + ' answered';
+}
+updateProgress();
+
+// === Submit handler ===
+// Submissions are POSTed to the intake worker endpoint configured below.
+// The worker is a small serverless function that authenticates to GHL
+// server-side (so API keys never touch the browser) and creates the
+// contact record with the full intake JSON attached for the report
+// generator to pick up.
+//
+// Default endpoint points at the Cloudflare Worker subdomain we own.
+// Override for local testing by setting window.NEXUS_INTAKE_ENDPOINT
+// before this script loads.
+const NEXUS_INTAKE_ENDPOINT = window.NEXUS_INTAKE_ENDPOINT
+  || 'https://nexus-intake.nexusaisolutions26.workers.dev/submit';
+
+async function submitForm(e) {
+  e.preventDefault();
+  const answers = {};
+  const sections = [];
+  SPEC.sections.forEach(sec => {
+    const qs = [];
+    sec.questions.forEach(q => {
+      const el = document.getElementById(q.id);
+      const val = (el && el.value || '').trim();
+      answers[q.id] = val;
+      qs.push({ id: q.id, label: q.label, answer: val });
+    });
+    sections.push({ id: sec.id, title: sec.title, questions: qs });
+  });
+
+  const payload = {
+    submitted_at: new Date().toISOString(),
+    contact_name: answers.contact_name || '',
+    contact_email: answers.contact_email || '',
+    contact_phone: answers.contact_phone || '',
+    client_name: answers.business_name || answers.contact_name || 'client',
+    client_email: answers.contact_email || '',
+    industry: answers.industry || '',
+    biggest_headache: answers.biggest_headache || '',
+    anything_else: answers.anything_else || '',
+    answers: sections,
+  };
+
+  submit.disabled = true;
+  submit.textContent = 'Submitting...';
+  const err = document.getElementById('err');
+  err.style.display = 'none';
+
+  const intakeJson = JSON.stringify(payload);
+  // Save a local copy first so the submission is never lost on any failure.
+  try { localStorage.setItem('nexus_last_intake', intakeJson); } catch(_) {}
+
+  try {
+    const resp = await fetch(NEXUS_INTAKE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: intakeJson,
+    });
+
+    if (resp.ok) {
+      document.getElementById('ok').style.display = 'block';
+      formEl.style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return false;
+    }
+    let txt = '';
+    try { txt = await resp.text(); } catch(_) {}
+    throw new Error('Server returned ' + resp.status + ' ' + txt.slice(0,200));
+  } catch (e1) {
+    // Fallback: mailto so the submission is never lost even if the worker is down.
+    const mail = 'nexusaisolutions26@gmail.com';
+    const subj = encodeURIComponent('Assessment intake - ' + payload.client_name);
+    const body = encodeURIComponent(intakeJson);
+    const link = 'mailto:' + mail + '?subject=' + subj + '&body=' + body;
+    err.innerHTML = 'Online submission failed. Your answers are saved in this browser. ' +
+                    '<a href="' + link + '" style="color:#1d4ed8; font-weight:600;">Click here to email them in</a> so we can build your report.';
+    err.style.display = 'block';
+    submit.disabled = false;
+    submit.textContent = 'Submit intake';
+  }
+  return false;
+}
+</script>
+
+</body>
+</html>
