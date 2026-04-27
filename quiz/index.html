@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="60-second quiz: find the right Nexus AI tier for your business. $97 to $4,500/mo. Stripe checkout. Async-only delivery.">
+<title>Which AI Tier Fits Your Business? - Nexus AI Solutions</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Which AI Tier Fits Your Business? - Nexus AI Solutions">
+<meta property="og:description" content="60-second quiz. We recommend $97, $497, or one of the monthly tiers based on your answers.">
+<meta property="og:url" content="https://nexusaiconcepts.com/quiz/">
+<meta property="og:image" content="https://nexusaiconcepts.com/assessment/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nexusaiconcepts.com/quiz/">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Helvetica Neue',Arial,sans-serif; color:#0f172a; background:#0A1628; line-height:1.6; min-height:100vh; }
+a { text-decoration:none; color:inherit; }
+nav { background:#0d1117; padding:18px 60px; display:flex; justify-content:space-between; align-items:center; }
+.nav-logo { color:#fff; font-size:20px; font-weight:700; }
+.nav-logo span { color:#2563eb; }
+.nav-links { display:flex; gap:28px; align-items:center; }
+.nav-links a { color:#9ca3af; font-size:14px; }
+.nav-links a:hover { color:#fff; }
+.nav-cta { background:#2563eb; color:#fff !important; padding:9px 18px; border-radius:6px; font-size:13px; font-weight:600; }
+
+.wrap { max-width:680px; margin:50px auto; padding:0 24px; }
+.hero { text-align:center; margin-bottom:32px; color:#fff; }
+.hero .eyebrow { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#60a5fa; margin-bottom:12px; }
+.hero h1 { font-size:36px; font-weight:800; letter-spacing:-1px; margin-bottom:10px; line-height:1.15; }
+.hero p { font-size:16px; color:#cbd5e1; max-width:520px; margin:0 auto; }
+
+.card { background:#fff; border-radius:18px; padding:36px 32px; box-shadow:0 24px 80px rgba(0,0,0,0.35); }
+.progress { display:flex; gap:6px; margin-bottom:26px; }
+.progress span { flex:1; height:6px; background:#e2e8f0; border-radius:99px; }
+.progress span.active { background:#2563eb; }
+
+.question { display:none; }
+.question.active { display:block; }
+.q-text { font-size:22px; font-weight:800; color:#0f172a; margin-bottom:20px; line-height:1.3; }
+.options { display:flex; flex-direction:column; gap:10px; }
+.option { background:#f8fafc; border:2px solid #e2e8f0; border-radius:12px; padding:16px 18px; text-align:left; cursor:pointer; font-size:15px; color:#0f172a; transition:all 0.2s; font-family:inherit; }
+.option:hover { border-color:#2563eb; background:#eff6ff; }
+.option:active { transform:scale(0.99); }
+
+.result { display:none; text-align:center; }
+.result.active { display:block; }
+.result .badge { display:inline-block; background:#eff6ff; color:#2563eb; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:5px 12px; border-radius:99px; margin-bottom:14px; }
+.result h2 { font-size:30px; font-weight:800; color:#0f172a; margin-bottom:10px; letter-spacing:-0.5px; }
+.result .price { font-size:42px; font-weight:800; color:#0f172a; margin:8px 0 4px; letter-spacing:-1px; }
+.result .unit { font-size:14px; color:#64748b; margin-bottom:18px; }
+.result .why { background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px 20px; text-align:left; margin:20px 0; }
+.result .why strong { color:#0f172a; }
+.result .why p { font-size:14px; color:#475569; line-height:1.6; margin-bottom:6px; }
+.result .cta { display:block; background:#2563eb; color:#fff !important; padding:16px; border-radius:10px; font-size:16px; font-weight:700; margin-top:16px; transition:background 0.2s; }
+.result .cta:hover { background:#1d4ed8; }
+.result .alt { font-size:13px; color:#64748b; margin-top:14px; }
+.result .alt a { color:#2563eb; }
+.result .restart { display:inline-block; margin-top:18px; font-size:13px; color:#94a3b8; cursor:pointer; }
+.result .restart:hover { color:#2563eb; }
+
+footer { text-align:center; padding:30px 20px; color:#64748b; font-size:13px; }
+footer a { color:#60a5fa; }
+
+@media (max-width:600px){
+  nav { padding:14px 20px; }
+  .nav-links { gap:16px; font-size:13px; }
+  .hero h1 { font-size:28px; }
+  .card { padding:24px 20px; }
+  .q-text { font-size:18px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/assessment/" class="nav-cta">$497 Assessment</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">60-second quiz</div>
+    <h1>Which AI tier fits your business?</h1>
+    <p>5 questions. We will tell you exactly which one to start with - $97, $497, or one of the monthly retainers.</p>
+  </div>
+
+  <div class="card" id="card">
+    <div class="progress" id="progress">
+      <span class="active"></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="question active" data-q="0">
+      <div class="q-text">How big is your business right now?</div>
+      <div class="options">
+        <button class="option" data-score="snapshot">Solo or 1-2 people, under $250K revenue</button>
+        <button class="option" data-score="assessment">Small team (3-9), $250K-$1M revenue</button>
+        <button class="option" data-score="foundation">Mid-sized (10-25), $1M-$5M revenue</button>
+        <button class="option" data-score="growth">Established (25-50), $5M-$15M revenue</button>
+        <button class="option" data-score="scale">Larger (50+), $15M+ revenue</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="1">
+      <div class="q-text">What is the biggest leak in your business right now?</div>
+      <div class="options">
+        <button class="option" data-score="snapshot">Honestly not sure - I want one specific recommendation first</button>
+        <button class="option" data-score="assessment">Multiple things at once - I need a full operational map</button>
+        <button class="option" data-score="foundation">Slow lead response, follow-up, and review collection</button>
+        <button class="option" data-score="growth">Custom workflow problems unique to my industry</button>
+        <button class="option" data-score="scale">We need full-stack AI transformation across departments</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="2">
+      <div class="q-text">How much time per week is the owner spending on tasks AI could handle?</div>
+      <div class="options">
+        <button class="option" data-score="snapshot">A few hours - just want a starting point</button>
+        <button class="option" data-score="assessment">10-15 hours - want a real plan</button>
+        <button class="option" data-score="foundation">15-25 hours - need someone to run the systems for me</button>
+        <button class="option" data-score="growth">25+ hours and the team is also drowning</button>
+        <button class="option" data-score="scale">Owner has not been the bottleneck for years - we need ops-wide AI now</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="3">
+      <div class="q-text">What is your budget for this?</div>
+      <div class="options">
+        <button class="option" data-score="snapshot">Under $200 to start - I want to test the water</button>
+        <button class="option" data-score="assessment">$500 one-time for a complete audit feels right</button>
+        <button class="option" data-score="foundation">$1,000-$1,500 a month for managed automation</button>
+        <button class="option" data-score="growth">$2,500 a month for advanced custom builds</button>
+        <button class="option" data-score="scale">$4,500+ a month for full-stack transformation</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="4">
+      <div class="q-text">When do you want to see results?</div>
+      <div class="options">
+        <button class="option" data-score="snapshot">Tomorrow - I just need one specific fix to install today</button>
+        <button class="option" data-score="assessment">This week - PDF in my inbox in 48 hours, install over the next month</button>
+        <button class="option" data-score="foundation">This quarter - install over 30 days, tune monthly</button>
+        <button class="option" data-score="growth">This quarter and beyond - ongoing builds and tuning</button>
+        <button class="option" data-score="scale">Long-term partnership - dedicated capacity and quarterly strategy</button>
+      </div>
+    </div>
+
+    <div class="result" id="result"></div>
+  </div>
+</div>
+
+<footer>
+  Nexus AI Solutions  &nbsp;|&nbsp;  Async-only delivery  &nbsp;|&nbsp;  No phone calls, ever  &nbsp;|&nbsp;  <a href="https://nexusaiconcepts.com">nexusaiconcepts.com</a>
+</footer>
+
+<script>
+const TIERS = {
+  snapshot: {
+    badge: "Recommended for you",
+    name: "AI Quick Win Snapshot",
+    price: "$97",
+    unit: "one-time / 24-hour delivery",
+    why: "You want a fast, specific, low-risk first step. The Snapshot gives you a one-page report on the single highest-leverage AI fix for your business - the exact tool, install steps, and projected hours saved. The $97 applies as credit toward the full $497 Assessment if you upgrade within 14 days.",
+    cta_text: "Get the $97 Snapshot",
+    cta_url: "https://link.fastpaydirect.com/payment-link/69ec9f9618fa6ef48488a49c?utm_source=quiz&utm_content=snapshot",
+    fallback_text: "Or jump to the full picture",
+    fallback_url: "https://link.fastpaydirect.com/payment-link/69ec050b7dd3512d92079e03?utm_source=quiz&utm_content=snapshot-fallback",
+    fallback_label: "$497 AI Readiness Assessment"
+  },
+  assessment: {
+    badge: "Recommended for you",
+    name: "AI Readiness Assessment",
+    price: "$497",
+    unit: "one-time / 48-hour delivery / refund guarantee",
+    why: "You want the full operational map - pain points scored on effort vs. impact, 4 to 8 specific tools matched to your real workflows, a 4-day quick-win plan, and an upsell roadmap with fixed prices. Refund in full if we do not find $1,000+/month of value.",
+    cta_text: "Get the $497 Assessment",
+    cta_url: "https://link.fastpaydirect.com/payment-link/69ec050b7dd3512d92079e03?utm_source=quiz&utm_content=assessment",
+    fallback_text: "Or start smaller",
+    fallback_url: "https://link.fastpaydirect.com/payment-link/69ec9f9618fa6ef48488a49c?utm_source=quiz&utm_content=assessment-fallback",
+    fallback_label: "$97 Quick Win Snapshot"
+  },
+  foundation: {
+    badge: "Recommended for you",
+    name: "Foundation Tier",
+    price: "$1,200/mo",
+    unit: "monthly / cancel any time",
+    why: "You need someone to install and run the systems for you. Foundation covers speed-to-lead AI agent across web/SMS/email/social DM, multi-touch follow-up automation, and review request automation - plus monthly tuning and a written brief. Most clients recover the cost within the first month from speed-to-lead alone.",
+    cta_text: "Start Foundation Tier",
+    cta_url: "https://link.fastpaydirect.com/payment-link/69ec05a0557558e89e52384e?utm_source=quiz&utm_content=foundation",
+    fallback_text: "Want a paid review first?",
+    fallback_url: "https://link.fastpaydirect.com/payment-link/69ec050b7dd3512d92079e03?utm_source=quiz&utm_content=foundation-fallback",
+    fallback_label: "$497 AI Readiness Assessment"
+  },
+  growth: {
+    badge: "Recommended for you",
+    name: "Growth Tier",
+    price: "$2,500/mo",
+    unit: "monthly / cancel any time",
+    why: "You need Foundation plus advanced workflow automation. Growth includes 2-3 custom workflow builds per quarter, a custom GPT or AI agent tailored to your team, a live ops dashboard pulling from your existing tools, and bi-weekly written updates.",
+    cta_text: "Start Growth Tier",
+    cta_url: "https://link.fastpaydirect.com/payment-link/69ec06397dd3512d92079e05?utm_source=quiz&utm_content=growth",
+    fallback_text: "Want to start with a paid review?",
+    fallback_url: "https://link.fastpaydirect.com/payment-link/69ec050b7dd3512d92079e03?utm_source=quiz&utm_content=growth-fallback",
+    fallback_label: "$497 AI Readiness Assessment"
+  },
+  scale: {
+    badge: "Recommended for you",
+    name: "Scale Tier",
+    price: "$4,500/mo",
+    unit: "monthly / cancel any time",
+    why: "Full-stack AI transformation with priority delivery. Multiple custom agents covering distinct departments, deep integration with your existing stack, weekly written progress briefs, and quarterly written strategic reviews. For businesses where AI needs to be running across the whole operation, not just a single workflow.",
+    cta_text: "Start Scale Tier",
+    cta_url: "https://link.fastpaydirect.com/payment-link/69ec06d3557558e89e523852?utm_source=quiz&utm_content=scale",
+    fallback_text: "Start with the assessment if you prefer",
+    fallback_url: "https://link.fastpaydirect.com/payment-link/69ec050b7dd3512d92079e03?utm_source=quiz&utm_content=scale-fallback",
+    fallback_label: "$497 AI Readiness Assessment"
+  }
+};
+
+const TIER_ORDER = ["snapshot", "assessment", "foundation", "growth", "scale"];
+const scores = {snapshot:0, assessment:0, foundation:0, growth:0, scale:0};
+let current = 0;
+const qs = document.querySelectorAll(".question");
+const dots = document.querySelectorAll("#progress span");
+
+document.querySelectorAll(".option").forEach(btn => {
+  btn.addEventListener("click", () => {
+    scores[btn.dataset.score] += 1;
+    qs[current].classList.remove("active");
+    current++;
+    if (current < qs.length) {
+      qs[current].classList.add("active");
+      dots[current].classList.add("active");
+    } else {
+      showResult();
+    }
+  });
+});
+
+function showResult() {
+  // Pick highest-scoring tier; ties resolve toward more conservative tier (lower index)
+  let bestTier = TIER_ORDER[0];
+  let bestScore = -1;
+  TIER_ORDER.forEach(t => {
+    if (scores[t] > bestScore) { bestScore = scores[t]; bestTier = t; }
+  });
+  const t = TIERS[bestTier];
+  const result = document.getElementById("result");
+  result.innerHTML = `
+    <span class="badge">${t.badge}</span>
+    <h2>${t.name}</h2>
+    <div class="price">${t.price}</div>
+    <div class="unit">${t.unit}</div>
+    <div class="why"><p><strong>Why this fits:</strong></p><p>${t.why}</p></div>
+    <a href="${t.cta_url}" class="cta">${t.cta_text}</a>
+    <p class="alt">${t.fallback_text}: <a href="${t.fallback_url}">${t.fallback_label}</a></p>
+    <span class="restart" onclick="location.reload()">Take quiz again</span>
+  `;
+  result.classList.add("active");
+}
+</script>
+
+</body>
+</html>
