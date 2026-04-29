@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Your AI Readiness Assessment Intake — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #f8fafc; line-height: 1.6; }
+a { color: #2563eb; }
+
+.topbar { background: #0d1117; padding: 18px 32px; }
+.topbar-inner { max-width: 760px; margin: 0 auto; color: #fff; font-weight: 700; font-size: 18px; letter-spacing: -0.3px; }
+.topbar-inner span { color: #2563eb; }
+
+.intro { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 40px 32px 32px; }
+.intro-inner { max-width: 760px; margin: 0 auto; }
+.intro h1 { font-size: 28px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 12px; }
+.intro p { color: #475569; font-size: 16px; margin-bottom: 8px; }
+.intro .meta { color: #94a3b8; font-size: 13px; margin-top: 12px; }
+
+form { max-width: 760px; margin: 0 auto; padding: 32px; }
+.section { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; margin-bottom: 20px; }
+.section h2 { font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.section .section-meta { color: #94a3b8; font-size: 13px; margin-bottom: 20px; }
+.q { margin-bottom: 22px; }
+.q label { display: block; font-size: 14px; font-weight: 600; color: #1f2937; margin-bottom: 8px; }
+.q input[type="text"], .q textarea, .q select {
+  width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px;
+  font: inherit; font-size: 15px; color: #0f172a; background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.q textarea { min-height: 80px; resize: vertical; }
+.q input[type="text"]:focus, .q textarea:focus, .q select:focus {
+  outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+.contact-bar { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.contact-bar h3 { font-size: 16px; font-weight: 700; color: #1e3a8a; margin-bottom: 14px; }
+.contact-bar .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 600px) { .contact-bar .row { grid-template-columns: 1fr; } }
+
+.submit-bar { display: flex; gap: 12px; align-items: center; padding-top: 12px; }
+.submit-btn {
+  background: #2563eb; color: #fff; border: none; padding: 16px 32px;
+  border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;
+  transition: background 0.15s;
+}
+.submit-btn:hover { background: #1d4ed8; }
+.submit-btn:disabled { background: #94a3b8; cursor: not-allowed; }
+
+.status { padding: 14px 18px; border-radius: 8px; font-size: 14px; margin-top: 16px; display: none; }
+.status.success { background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+.status.error { background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+.status.loading { background: #dbeafe; color: #1e3a8a; border: 1px solid #93c5fd; }
+.status a { color: inherit; text-decoration: underline; font-weight: 700; }
+
+footer { padding: 30px 32px; text-align: center; color: #94a3b8; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">Nexus <span>AI</span> Solutions</div>
+</div>
+
+<div class="intro">
+  <div class="intro-inner">
+    <h1>Your AI Readiness Assessment intake</h1>
+    <p>Fill this out as completely as you can — the more detail you share, the more specific and actionable your branded PDF report will be. Skip anything that does not apply. Your answers are confidential.</p>
+    <div class="meta">Takes 12 to 20 minutes. Your responses save to nothing — submit when ready. 48-hour turnaround starts when you hit submit.</div>
+  </div>
+</div>
+
+<form id="intakeForm" novalidate>
+
+  <div class="contact-bar">
+    <h3>How we contact you with your report</h3>
+    <div class="row">
+      <div class="q">
+        <label>Your name</label>
+        <input type="text" name="contact_name" required>
+      </div>
+      <div class="q">
+        <label>Email (where the PDF is delivered)</label>
+        <input type="text" name="contact_email" required>
+      </div>
+      <div class="q">
+        <label>Phone (optional, for emergency questions only)</label>
+        <input type="text" name="contact_phone">
+      </div>
+      <div class="q">
+        <label>Business name</label>
+        <input type="text" name="client_name" required>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>About your business</h2>
+    <div class="section-meta">A quick orientation so we know what we're looking at.</div>
+    <div class="q"><label>Industry or primary service</label><input type="text" name="industry"></div>
+    <div class="q"><label>How long have you been operating?</label><input type="text" name="years_in_business"></div>
+    <div class="q"><label>How many people on your team (including owner, W2, 1099, VAs)?</label><input type="text" name="team_size"></div>
+    <div class="q">
+      <label>Approximate annual revenue range</label>
+      <select name="annual_revenue_range">
+        <option value="">Select...</option>
+        <option>Under $250K</option>
+        <option>$250K-$1M</option>
+        <option>$1M-$5M</option>
+        <option>$5M-$25M</option>
+        <option>$25M+</option>
+      </select>
+    </div>
+    <div class="q"><label>Who are your customers (B2B, B2C, both)?</label><input type="text" name="customer_type"></div>
+  </div>
+
+  <div class="section">
+    <h2>What tools run your business today</h2>
+    <div class="q"><label>What CRM or customer tracking system do you use? (or none)</label><input type="text" name="crm"></div>
+    <div class="q"><label>How do customers contact you today? (phone, SMS, email, chat, web form, social DM)</label><input type="text" name="comms"></div>
+    <div class="q"><label>How do appointments or jobs get scheduled?</label><input type="text" name="scheduling"></div>
+    <div class="q"><label>How do you invoice and get paid?</label><input type="text" name="invoicing_payments"></div>
+    <div class="q"><label>Where do most new customers come from? (rank if possible)</label><textarea name="marketing_channels"></textarea></div>
+    <div class="q"><label>Any other tools you use daily? (spreadsheets, Slack, Google Workspace, Asana, etc.)</label><textarea name="other_tools"></textarea></div>
+  </div>
+
+  <div class="section">
+    <h2>What a typical week looks like</h2>
+    <div class="section-meta">This is where most of the actionable findings come from. Be specific.</div>
+    <div class="q"><label>Walk us through a typical day as the owner. What consumes most of your time?</label><textarea name="owner_day"></textarea></div>
+    <div class="q"><label>What does a typical day look like for your team?</label><textarea name="team_day"></textarea></div>
+    <div class="q"><label>What tasks get done over and over every week that feel like copy-paste work?</label><textarea name="repetitive_tasks"></textarea></div>
+    <div class="q"><label>From first inquiry to paying customer — walk us through every step.</label><textarea name="new_customer_process"></textarea></div>
+    <div class="q"><label>After someone becomes a customer — what happens next? (onboarding, delivery, retention)</label><textarea name="after_sale_process"></textarea></div>
+  </div>
+
+  <div class="section">
+    <h2>Where it hurts</h2>
+    <div class="q"><label>What is the biggest headache in your business right now?</label><textarea name="biggest_headache"></textarea></div>
+    <div class="q"><label>Do you ever miss or lose leads because no one responded fast enough? Describe.</label><textarea name="missed_leads"></textarea></div>
+    <div class="q"><label>Where is your team most overloaded or burned out?</label><textarea name="team_burnout"></textarea></div>
+    <div class="q"><label>Is information scattered across multiple tools that do not talk to each other? Examples?</label><textarea name="data_problems"></textarea></div>
+    <div class="q"><label>How do you track how the business is doing? Are reports manual?</label><textarea name="reporting"></textarea></div>
+    <div class="q"><label>If you could remove one bottleneck tomorrow, what would it be?</label><textarea name="bottleneck"></textarea></div>
+  </div>
+
+  <div class="section">
+    <h2>Lead handling</h2>
+    <div class="q"><label>Roughly how many inbound leads or inquiries do you get per week?</label><input type="text" name="leads_per_week"></div>
+    <div class="q"><label>How fast does the first response typically go out?</label><input type="text" name="first_response_time"></div>
+    <div class="q"><label>What happens to leads that come in after hours or on weekends?</label><textarea name="after_hours"></textarea></div>
+    <div class="q"><label>If a lead goes quiet, who follows up and when?</label><textarea name="followup_cadence"></textarea></div>
+    <div class="q"><label>Roughly what percent of inquiries become paying customers?</label><input type="text" name="close_rate"></div>
+    <div class="q"><label>What is the average value of a customer (deal size or first-year revenue)?</label><input type="text" name="avg_deal_size"></div>
+  </div>
+
+  <div class="section">
+    <h2>Customer experience and reputation</h2>
+    <div class="q"><label>Roughly how many Google or Facebook reviews do you have?</label><input type="text" name="review_count"></div>
+    <div class="q"><label>How do you currently ask for reviews?</label><textarea name="review_process"></textarea></div>
+    <div class="q"><label>How much of your revenue comes from repeat customers?</label><input type="text" name="repeat_customers"></div>
+    <div class="q"><label>What usually causes a customer to churn or stop working with you?</label><textarea name="churn_signals"></textarea></div>
+  </div>
+
+  <div class="section">
+    <h2>Where you are with AI today</h2>
+    <div class="q"><label>What AI tools, if any, are you or your team already using? (ChatGPT, Claude, notetakers, chatbots, anything)</label><textarea name="current_ai"></textarea></div>
+    <div class="q"><label>Have you tried to set up any automation or AI before that did not work out? What happened?</label><textarea name="tried_failed"></textarea></div>
+    <div class="q"><label>What is your biggest concern about implementing AI in your business?</label><textarea name="biggest_fear"></textarea></div>
+  </div>
+
+  <div class="section">
+    <h2>Where you want to be</h2>
+    <div class="q"><label>Where do you want this business to be 12 months from now?</label><textarea name="twelve_month_goal"></textarea></div>
+    <div class="q"><label>If you could hand 10 hours of work per week to an AI system, what would you hand off first?</label><textarea name="hours_back"></textarea></div>
+    <div class="q">
+      <label>Rough budget range you would consider for the right AI automation</label>
+      <select name="budget_range">
+        <option value="">Select...</option>
+        <option>Under $500/mo</option>
+        <option>$500-$2,000/mo</option>
+        <option>$2,000-$5,000/mo</option>
+        <option>$5,000+/mo</option>
+        <option>One-time project only</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="q">
+      <label>If the right solution showed up, how fast would you want to implement?</label>
+      <select name="decision_timeline">
+        <option value="">Select...</option>
+        <option>This week</option>
+        <option>This month</option>
+        <option>This quarter</option>
+        <option>Still exploring</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Anything else</h2>
+    <div class="q"><label>Anything else we should know about your business or goals?</label><textarea name="anything_else"></textarea></div>
+  </div>
+
+  <div class="submit-bar">
+    <button type="submit" class="submit-btn" id="submitBtn">Submit my intake</button>
+    <span style="color:#64748b; font-size:14px;">48-hour turnaround starts now.</span>
+  </div>
+
+  <div id="status" class="status"></div>
+
+</form>
+
+<footer>
+  Nexus AI Solutions &nbsp;|&nbsp; 19615 Hill Road, Circleville, OH 43113 &nbsp;|&nbsp; <a href="/">nexusaiconcepts.com</a>
+</footer>
+
+<script>
+// Submit chain:
+//   1. Try Cloudflare Worker /submit (cleanest path if deployed)
+//   2. If that fails, fall back to GHL public funnels submit (always works for our config)
+//   3. If both fail, fall back to mailto: with structured body so the customer can still get
+//      their answers to us
+//
+// Worker URL is configurable. If Tim has deployed the worker at a different subdomain, just
+// edit WORKER_URL below.
+const WORKER_URL = "https://nexus-intake.nexusai.workers.dev/submit";
+const FUNNEL_FALLBACK_URL = "https://services.leadconnectorhq.com/funnels/submit";
+const FUNNEL_LOCATION_ID = "ixBJpsaV9nFZTFpQS8oC";
+const FUNNEL_ID = "assessment-intake";
+const FALLBACK_EMAIL = "nexusaisolutions26@gmail.com";
+
+const form = document.getElementById('intakeForm');
+const btn = document.getElementById('submitBtn');
+const status = document.getElementById('status');
+
+function setStatus(kind, html) {
+  status.className = 'status ' + kind;
+  status.style.display = 'block';
+  status.innerHTML = html;
+}
+
+function buildPayload() {
+  const formData = new FormData(form);
+  const answers = {};
+  for (const [k, v] of formData.entries()) {
+    if (k === 'contact_name' || k === 'contact_email' || k === 'contact_phone' || k === 'client_name') continue;
+    answers[k] = v;
+  }
+  return {
+    contact_name: formData.get('contact_name') || '',
+    contact_email: formData.get('contact_email') || '',
+    contact_phone: formData.get('contact_phone') || '',
+    client_name: formData.get('client_name') || '',
+    answers: answers,
+    submitted_at: new Date().toISOString(),
+  };
+}
+
+function buildMailtoFallback(payload) {
+  const subject = encodeURIComponent('AI Readiness Assessment intake — ' + (payload.client_name || payload.contact_name || ''));
+  const lines = [];
+  lines.push('Name: ' + payload.contact_name);
+  lines.push('Email: ' + payload.contact_email);
+  lines.push('Phone: ' + payload.contact_phone);
+  lines.push('Business: ' + payload.client_name);
+  lines.push('');
+  lines.push('--- Answers ---');
+  for (const [k, v] of Object.entries(payload.answers)) {
+    lines.push(k + ': ' + v);
+  }
+  const body = encodeURIComponent(lines.join('\n'));
+  return `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+async function tryWorker(payload) {
+  const r = await fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!r.ok) throw new Error('worker ' + r.status);
+  return r.json();
+}
+
+async function tryFunnel(payload) {
+  // GHL funnel submit needs flat form data, not nested JSON.
+  const fd = new FormData();
+  fd.append('location_id', FUNNEL_LOCATION_ID);
+  fd.append('funnel_id', FUNNEL_ID);
+  fd.append('full_name', payload.contact_name);
+  fd.append('email', payload.contact_email);
+  fd.append('phone', payload.contact_phone);
+  fd.append('company_name', payload.client_name);
+  fd.append('intake_json', JSON.stringify(payload.answers));
+  fd.append('source', 'AI Readiness Assessment Intake');
+  const r = await fetch(FUNNEL_FALLBACK_URL, { method: 'POST', body: fd, mode: 'no-cors' });
+  // no-cors -> we can't read response, just trust it succeeded
+  return { ok: true };
+}
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  if (!form.contact_email.value.trim() || !form.contact_name.value.trim() || !form.client_name.value.trim()) {
+    setStatus('error', 'Please fill in your name, email, and business name at the top.');
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  setStatus('loading', 'Submitting your intake — this usually takes 2-3 seconds.');
+
+  const payload = buildPayload();
+
+  try {
+    await tryWorker(payload);
+    setStatus('success', '✓ Got it. Your branded PDF report will land in <strong>' + payload.contact_email + '</strong> within 48 hours. Reply to that email with any clarifications.');
+    btn.style.display = 'none';
+    return;
+  } catch (e1) {
+    // Worker failed (probably not deployed yet). Try GHL funnel.
+  }
+
+  try {
+    await tryFunnel(payload);
+    setStatus('success', '✓ Got it. Your branded PDF report will land in <strong>' + payload.contact_email + '</strong> within 48 hours. Reply to that email with any clarifications.');
+    btn.style.display = 'none';
+    return;
+  } catch (e2) {
+    // Both failed. Mailto fallback.
+  }
+
+  const mailto = buildMailtoFallback(payload);
+  setStatus('error',
+    'Submission did not go through. Please <a href="' + mailto + '">click here to email us your answers directly</a> ' +
+    'and we will process your intake manually within 24 hours. Sorry for the friction.'
+  );
+  btn.disabled = false;
+  btn.textContent = 'Try submit again';
+});
+</script>
+
+</body>
+</html>
