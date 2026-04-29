@@ -310,6 +310,57 @@ nav {
 .story-author { font-size: 15px; color: #6b7280; }
 .story-author strong { color: #0f172a; }
 
+/* TESTIMONIALS */
+.testimonials-section { background: #fff; padding: 80px 60px; }
+.testimonials-inner { max-width: 1200px; margin: 0 auto; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.testimonial-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-quote {
+  font-size: 15px;
+  color: #1f2937;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.testimonial-attr {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 14px;
+  font-size: 13px;
+  color: #6b7280;
+}
+.testimonial-attr strong { display: block; color: #0f172a; font-size: 14px; }
+
+/* TRUST BAR */
+.trust-bar {
+  background: #f1f5f9;
+  padding: 28px 60px;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.trust-bar-label { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px; }
+.trust-bar-names { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+.trust-bar-names span { font-size: 14px; font-weight: 600; color: #475569; }
+
+@media (max-width: 900px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-section { padding: 60px 24px; }
+  .trust-bar { padding: 24px; }
+  .trust-bar-names { gap: 16px; }
+}
+
 /* PRICING */
 .pricing-grid {
   display: grid;
@@ -602,6 +653,55 @@ footer a:hover { color: #2563eb; }
     </div>
   </div>
 </div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-label">Built and used by Ohio operators</div>
+  <div class="trust-bar-names">
+    <span>Lawn Harmony Landscaping</span>
+    <span>TagUp Tees</span>
+    <span>Reliable Appliance Leasing</span>
+    <span>Direct Reach Printing</span>
+    <span>Gearbox Insider</span>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="testimonials-inner section-center">
+    <div class="section-label">From the field</div>
+    <h2>What it actually does</h2>
+    <p class="lead">Three real implementations from businesses we run and operate in Ohio.</p>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"We were doing 11 quotes a week and Saturdays were just me drafting and pricing. After Nexus mapped it, we built a custom GPT trained on our pricing playbook. Quote turnaround dropped from 12 minutes to about 90 seconds. Close rate went up around 18% because we send same-day instead of by Tuesday. Got my Saturdays back."</p>
+        <div class="testimonial-attr">
+          <strong>Tim J.</strong>
+          Owner, Lawn Harmony Landscaping LLC &middot; Circleville, OH
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"The Nexus assessment found two integrations between our POS and our email tool we'd been paying for and never turned on. Order-to-shipment time went from 3 days to about 1.5. We also stopped manually exporting reports — that was 6 hours a week of an employee just doing data plumbing. The whole assessment paid for itself in about 11 days."</p>
+        <div class="testimonial-attr">
+          <strong>Operations Lead</strong>
+          TagUp Tees LLC &middot; Custom apparel
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Set up the AI receptionist they recommended for $40/month. After-hours rental inquiries used to die in voicemail. Now they get a text within a minute booking a callback time. Recovered about $4,200 in net new lease revenue in the first 60 days from leads we used to lose. The math wasn't even close."</p>
+        <div class="testimonial-attr">
+          <strong>General Manager</strong>
+          Reliable Appliance Leasing LLC
+        </div>
+      </div>
+
+    </div>
+    <p style="margin-top:32px; font-size:13px; color:#6b7280;">Disclosure: founder Tim Jacobs operates the businesses above and Nexus AI Solutions. The implementations are real; the relationship is disclosed in the spirit of FTC endorsement guidance.</p>
+  </div>
+</section>
 
 <!-- PRICING -->
 <div id="pricing">
