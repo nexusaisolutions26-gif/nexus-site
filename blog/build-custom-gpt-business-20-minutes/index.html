@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A practical, no-fluff walkthrough for building your first custom GPT trained on your business's actual content. No coding required.">
+<meta name="keywords" content="custom GPT for business, ChatGPT custom GPT setup, build custom GPT, train ChatGPT on my business, ChatGPT for small business">
+<title>How to Build a Custom GPT for Your Business in 20 Minutes - Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #1d4ed8 !important; }
+.post-hero { background: #0d1117; padding: 80px 60px 60px; text-align: center; }
+.post-hero .tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
+.post-hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.15; max-width: 820px; margin: 0 auto 16px; letter-spacing: -1px; }
+.post-hero .meta { font-size: 14px; color: #6b7280; }
+article { max-width: 720px; margin: 60px auto; padding: 0 40px; font-size: 17px; color: #374151; line-height: 1.8; }
+article h2 { font-size: 28px; font-weight: 700; color: #0f172a; margin: 48px 0 16px; line-height: 1.3; }
+article h3 { font-size: 22px; font-weight: 700; color: #0f172a; margin: 36px 0 12px; }
+article p { margin-bottom: 20px; }
+article ul, article ol { margin: 0 0 24px 24px; }
+article li { margin-bottom: 8px; }
+article strong { color: #0f172a; }
+.stat-box { background: #f0f9ff; border-left: 4px solid #2563eb; padding: 20px 24px; margin: 28px 0; border-radius: 0 8px 8px 0; }
+.stat-box p { margin: 0; font-weight: 600; color: #1e40af; }
+.cta-box { background: #0d1117; color: #fff; padding: 48px; border-radius: 12px; text-align: center; margin: 48px 0; }
+.cta-box h3 { color: #fff; margin-bottom: 12px; font-size: 24px; }
+.cta-box p { color: #9ca3af; margin-bottom: 24px; }
+.cta-box a { background: #2563eb; color: #fff; padding: 14px 32px; border-radius: 8px; font-weight: 600; display: inline-block; }
+.cta-box a:hover { background: #1d4ed8; }
+footer { background: #0d1117; color: #6b7280; text-align: center; padding: 40px 20px; font-size: 14px; margin-top: 80px; }
+footer a { color: #60a5fa; }
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .post-hero { padding: 60px 20px 40px; }
+  .post-hero h1 { font-size: 28px; }
+  article { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/assessment/" class="nav-cta">$497 Assessment</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="tag">Practical Guide</div>
+  <h1>How to Build a Custom GPT for Your Business in 20 Minutes</h1>
+  <div class="meta">April 27, 2026 · 6 min read</div>
+</div>
+
+<article>
+
+<p>Custom GPTs are the single best per-dollar AI feature ChatGPT has shipped for small business. They cost nothing extra if you have a Plus or Team subscription. Setup takes about 20 minutes. Most owners haven't built one yet because the documentation makes it sound more complicated than it is.</p>
+
+<p>Here's the no-fluff version.</p>
+
+<h2>What a custom GPT actually is</h2>
+
+<p>It's a saved version of ChatGPT pre-loaded with your specific instructions and reference documents. Instead of pasting context every time you use it, you set the context once and call the saved GPT whenever you need that specific job done.</p>
+
+<p>The most useful pattern for small business is <strong>one custom GPT per recurring written task</strong> — quotes, customer emails, SOPs, social posts, product descriptions, whatever you find yourself drafting the same way over and over.</p>
+
+<div class="stat-box"><p>Service business owners we've worked with typically save 4-8 hours a week per custom GPT once it's set up. The setup is one-time. The saved time runs forever.</p></div>
+
+<h2>The 20-minute setup, exactly</h2>
+
+<p>Open ChatGPT. You need a Plus account ($20/month) or a Team account. Free tier doesn't save custom GPTs.</p>
+
+<p><strong>Step 1 (3 min):</strong> Click your profile picture, then "My GPTs," then "Create a GPT."</p>
+
+<p><strong>Step 2 (5 min):</strong> Pick the recurring task. Write a clear name and description. For a quote drafter, it might be:</p>
+
+<ul><li>Name: "Quote Drafter — [Your Business Name]"</li>
+<li>Description: "Drafts homeowner-friendly quotes in our standard format from a job description."</li></ul>
+
+<p><strong>Step 3 (8 min):</strong> In the Instructions field, write what the GPT should do. Be specific. The pattern that works best:</p>
+
+<pre style="background:#f4f4f4;padding:14px;border-left:3px solid #888;font-size:13px;overflow-x:auto;border-radius:0 8px 8px 0;">You draft quotes for [BUSINESS]. We do [TYPE OF WORK].
+
+Format every quote as:
+- Project summary (2-3 sentences in plain language for a homeowner)
+- Scope of work (bullet list)
+- Three pricing tiers (Good / Better / Best) with the middle option as the recommended choice
+- What's included
+- Timeline estimate
+- Standard terms
+
+Pricing rules:
+- Labor markup: [X%]
+- Materials markup: [Y%]
+- Minimum job: $[Z]
+
+Tone: practical, plain language, no contractor jargon. Always end with one line about scheduling.</pre>
+
+<p><strong>Step 4 (3 min):</strong> Upload 2-3 of your past quotes as Knowledge files. PDFs or text files. Keep prices intact in the examples — the GPT learns your pricing patterns.</p>
+
+<p><strong>Step 5 (1 min):</strong> Save. Pin it to your sidebar.</p>
+
+<p>Now any new job description gets pasted in, the GPT drafts a complete quote in your house style, you eyeball for 60 seconds, send.</p>
+
+<h2>What to build first</h2>
+
+<p>If you've never built a custom GPT before, build one of these — they're the fastest payback for most small businesses:</p>
+
+<ol><li><strong>Customer email rewriter.</strong> Paste a draft, get a polite, on-brand version under 100 words. Used multiple times daily once it's saved.</li>
+<li><strong>Quote/proposal drafter.</strong> Already covered above. Highest single-task ROI for service businesses.</li>
+<li><strong>Review responder.</strong> Paste a Google review (good or bad), get three brand-appropriate reply drafts.</li>
+<li><strong>Social caption writer.</strong> Trained on your past 20 best-performing posts. New caption in 30 seconds.</li>
+<li><strong>SOP generator.</strong> Paste a Loom transcript, get a clean step-by-step procedure another employee could follow.</li></ol>
+
+<p>Don't try to build all five at once. Build one. Use it for a week. Build the next.</p>
+
+<h2>What stops most owners</h2>
+
+<p>The two reasons custom GPTs don't get built in most small businesses:</p>
+
+<ul><li><strong>"I don't have time for this Saturday."</strong> Fair. But the math is: 20 minutes setup buys 4-8 hours back per week, every week, forever. The Saturday pays for itself in three days.</li>
+<li><strong>"I don't know what to put in the Instructions field."</strong> This is the actual blocker. People stare at a blank instructions box and quit. Solution: write the instructions as if you were training a brand-new employee on the task. Same level of detail. The GPT needs the same context a person would.</li></ul>
+
+<div class="cta-box">
+<h3>Want a list of which custom GPTs to build for your specific business?</h3>
+<p>Our $497 AI Readiness Assessment ranks the 4-8 highest-impact custom GPTs (and other tools) for your operations, with the exact instructions to paste into each one. Branded PDF, 48 hours.</p>
+<a href="/assessment/">Get My Assessment</a>
+</div>
+
+<h2>A word on the alternatives</h2>
+
+<p>You don't strictly need ChatGPT. Anthropic's Claude has Projects (similar concept). Google Gemini has Gems. They all do roughly the same thing.</p>
+
+<p>The reason we keep recommending ChatGPT specifically for small business: the Knowledge file upload (the part where you train it on your past examples) is the most polished. For service businesses uploading PDFs of past quotes, that matters.</p>
+
+<p>If you already have Claude or Gemini and don't want to switch, the same setup works there. The 20-minute investment still pays back the same way.</p>
+
+</article>
+
+<footer>
+  <p>&copy; 2026 Nexus AI Solutions · <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/assessment/">Assessment</a></p>
+</footer>
+
+</body>
+</html>
