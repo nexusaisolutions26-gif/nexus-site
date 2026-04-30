@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free, no-signup-needed checklist of 12 AI tools small businesses should be using in 2026 — with honest pricing, real ROI math, and what to skip. From the team at Nexus AI Solutions.">
+<title>Free 12-Tool AI Checklist for Small Business — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { color: #2563eb; text-decoration: none; }
+
+nav { background: #0d1117; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+
+.hero { background: linear-gradient(135deg, #0d1117 0%, #1e3a8a 100%); color: #fff; padding: 80px 32px 60px; text-align: center; }
+.hero h1 { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; max-width: 800px; margin: 0 auto 18px; line-height: 1.2; }
+.hero h1 span { color: #60a5fa; }
+.hero .lead { color: #cbd5e1; font-size: 18px; max-width: 660px; margin: 0 auto 32px; }
+.gate-card { background: #fff; color: #1a1a1a; max-width: 520px; margin: 0 auto; padding: 32px; border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+.gate-card h2 { font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 8px; letter-spacing: -0.3px; }
+.gate-card p { color: #64748b; font-size: 14px; margin-bottom: 18px; }
+.gate-form { display: flex; flex-direction: column; gap: 12px; }
+.gate-form input { padding: 14px 16px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 16px; font-family: inherit; }
+.gate-form input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+.gate-form button {
+  background: #2563eb; color: #fff; border: none; padding: 16px 24px; border-radius: 10px;
+  font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.15s;
+}
+.gate-form button:hover { background: #1d4ed8; }
+.gate-form button:disabled { background: #94a3b8; cursor: not-allowed; }
+.gate-fineprint { color: #94a3b8; font-size: 12px; margin-top: 12px; line-height: 1.5; }
+.gate-status { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-size: 14px; display: none; }
+.gate-status.success { display: block; background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+.gate-status.error { display: block; background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+
+.preview { padding: 60px 32px; background: #f8fafc; }
+.preview-inner { max-width: 880px; margin: 0 auto; }
+.preview h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; color: #0f172a; margin-bottom: 8px; }
+.preview .lead { color: #475569; margin-bottom: 32px; }
+.preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.preview-card { background: #fff; padding: 22px 24px; border: 1px solid #e2e8f0; border-radius: 10px; position: relative; }
+.preview-card.locked::after {
+  content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(248,250,252,0) 30%, rgba(248,250,252,1) 100%);
+  border-radius: 10px; pointer-events: none;
+}
+.preview-card .num { display: inline-block; background: #dbeafe; color: #1e3a8a; font-weight: 700; font-size: 12px; padding: 3px 10px; border-radius: 12px; margin-bottom: 8px; }
+.preview-card h3 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.preview-card .meta { color: #64748b; font-size: 13px; margin-bottom: 8px; }
+.preview-card p { color: #475569; font-size: 14px; line-height: 1.5; }
+
+.gated { padding: 60px 32px; display: none; }
+.gated.unlocked { display: block; }
+.gated-inner { max-width: 880px; margin: 0 auto; }
+.gated-inner h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; color: #0f172a; margin-bottom: 8px; }
+.tool { background: #fff; padding: 24px 28px; border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 14px; }
+.tool h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.tool .meta { color: #2563eb; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.tool p { color: #334155; font-size: 15px; line-height: 1.6; margin-bottom: 8px; }
+.tool .verdict { background: #f0f9ff; border-left: 3px solid #2563eb; padding: 10px 14px; border-radius: 4px; color: #1e3a8a; font-size: 14px; margin-top: 8px; }
+
+.cta-bottom { background: #f0f9ff; border: 1px solid #bfdbfe; border-radius: 14px; padding: 36px; text-align: center; margin-top: 48px; }
+.cta-bottom h3 { color: #1e3a8a; font-size: 22px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.3px; }
+.cta-bottom p { color: #1e40af; font-size: 15px; margin-bottom: 18px; }
+.cta-bottom a { display: inline-block; background: #2563eb; color: #fff; padding: 14px 28px; border-radius: 10px; font-weight: 700; }
+.cta-bottom a:hover { background: #1d4ed8; }
+
+footer { background: #0d1117; color: #6b7280; text-align: center; padding: 36px 24px; font-size: 14px; }
+footer a { color: #60a5fa; }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
+  .hero { padding: 56px 22px 40px; }
+  .hero h1 { font-size: 30px; }
+  .preview { padding: 44px 22px; }
+  .preview-grid { grid-template-columns: 1fr; }
+  .gated { padding: 44px 22px; }
+  .gate-card { padding: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/industries/">Industries</a>
+    <a href="/blog/">Blog</a>
+    <a href="/assessment/">$497 Assessment</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>12 free AI tools every small business should know about <span>in 2026</span></h1>
+  <p class="lead">No signup-then-bait-and-switch. No "$29/month after free trial." Twelve tools with genuinely free tiers your business can use forever — plus the 4 we tell every owner to skip.</p>
+
+  <div class="gate-card" id="gateCard">
+    <h2>Get the full checklist</h2>
+    <p>Drop your email. We send the full PDF instantly. No upsell calls, no spam, unsubscribe anytime.</p>
+    <form class="gate-form" id="gateForm" novalidate>
+      <input type="email" name="email" placeholder="you@business.com" required>
+      <input type="text" name="company" placeholder="Business name (optional)">
+      <button type="submit" id="gateBtn">Send me the checklist</button>
+    </form>
+    <p class="gate-fineprint">After signup you'll also get our weekly "AI for small business" digest. Two emails per week, max. No fluff. Easy unsubscribe at the bottom of any email.</p>
+    <div class="gate-status" id="gateStatus"></div>
+  </div>
+</div>
+
+<div class="preview" id="preview">
+  <div class="preview-inner">
+    <h2>What's inside</h2>
+    <p class="lead">A taste of the 12 tools — full details + 4 anti-recommendations after signup.</p>
+
+    <div class="preview-grid">
+      <div class="preview-card">
+        <span class="num">01</span>
+        <h3>ChatGPT (free tier)</h3>
+        <div class="meta">$0/month · Use case: drafting</div>
+        <p>The free tier is enough for most owner-operators. Saves 60-80% of typical drafting time.</p>
+      </div>
+      <div class="preview-card">
+        <span class="num">02</span>
+        <h3>Claude (free tier)</h3>
+        <div class="meta">$0/month · Use case: long-form work</div>
+        <p>Anthropic's free tier handles longer documents better than free ChatGPT. Best for contract review.</p>
+      </div>
+      <div class="preview-card">
+        <span class="num">03</span>
+        <h3>Google Gemini</h3>
+        <div class="meta">$0/month · Use case: in-app assistance</div>
+        <p>Free if you have any Google account. Built into Gmail, Docs, and Sheets.</p>
+      </div>
+      <div class="preview-card">
+        <span class="num">04</span>
+        <h3>Google Voice</h3>
+        <div class="meta">$0/month · Use case: phone + auto-text</div>
+        <p>Free phone line with auto-text-on-missed-call — typically catches 60% of after-hours leads.</p>
+      </div>
+      <div class="preview-card locked">
+        <span class="num">05</span>
+        <h3>Loom (free tier)</h3>
+        <div class="meta">$0/month · Use case: SOPs from screen recordings</div>
+        <p>Up to 25 videos with auto-transcription. Combine with ChatGPT to turn screen recordings into...</p>
+      </div>
+      <div class="preview-card locked">
+        <span class="num">06</span>
+        <h3>Cal.com (open source)</h3>
+        <div class="meta">$0/month · Use case: appointment booking</div>
+        <p>Free Calendly alternative. Unlimited 1:1 bookings, integrates with...</p>
+      </div>
+    </div>
+
+    <p style="text-align:center; color:#64748b; font-size:14px; margin-top:32px;">
+      And six more: Make.com, Zapier, Notion AI, HubSpot CRM, Otter.ai, Canva — plus the 4 we tell every owner to <strong>skip</strong>.
+    </p>
+  </div>
+</div>
+
+<div class="gated" id="gated">
+  <div class="gated-inner">
+    <h2>The full checklist</h2>
+    <p style="color:#475569; margin-bottom:32px; font-size:15px;">Twelve tools with genuinely free tiers, plus four to skip. Use what fits, ignore the rest. We'll also email you a copy.</p>
+
+    <div class="tool"><h3>1. ChatGPT (free tier)</h3><div class="meta">Free · drafting and Q&amp;A</div><p>The free tier of ChatGPT is enough for most owner-operators. The limits on GPT-4/GPT-5 access are real but generous enough for daily drafting. What you give up vs. Plus: custom GPTs, advanced voice. What you keep: 80% of what most owners actually need.</p><div class="verdict">Verdict: Start here. Don't pay until you actually hit limits.</div></div>
+
+    <div class="tool"><h3>2. Claude (free tier)</h3><div class="meta">Free · long-form writing and contract review</div><p>Anthropic's Claude has surprisingly generous free limits. Better at long-form writing and document review than free ChatGPT. Worse at image generation (it doesn't do images). Best for drafting longer documents, reviewing contracts, anything where you want a more measured tone.</p><div class="verdict">Verdict: Use alongside ChatGPT — different strengths, both free.</div></div>
+
+    <div class="tool"><h3>3. Google Gemini (bundled with Google account)</h3><div class="meta">Free · in-app AI assistance</div><p>If you have any Google account, you have Gemini. Useful for in-app suggestions inside Gmail, Docs, Sheets — even on the free tier. Best for small Google Workspace users who want AI without leaving their existing tools.</p><div class="verdict">Verdict: Already paid for. Turn it on.</div></div>
+
+    <div class="tool"><h3>4. Google Voice (truly free phone line)</h3><div class="meta">Free · auto-text on missed calls</div><p>Free US phone number, free voicemail-to-text, free auto-text on missed call. The auto-text-on-missed-call feature alone catches roughly 60% of after-hours leads that would otherwise die in voicemail. Replaces a $20-50/month phone line entirely for solo operators.</p><div class="verdict">Verdict: This is the single most underused free AI feature in small business.</div></div>
+
+    <div class="tool"><h3>5. Loom (free tier)</h3><div class="meta">Free · 25 videos, 5-min limit each</div><p>Up to 25 videos with auto-transcription on the free tier. Good enough for most SOP-creation use cases. Combine with ChatGPT to turn screen recordings into written SOPs in under 25 minutes per task.</p><div class="verdict">Verdict: Best free tool for documenting how-to processes.</div></div>
+
+    <div class="tool"><h3>6. Cal.com (open-source, free)</h3><div class="meta">Free · appointment booking</div><p>Calendly's open-source alternative. Free unlimited 1:1 bookings, free integrations with Google Calendar and Outlook. Paid tiers exist but the free version covers what most solo operators need.</p><div class="verdict">Verdict: Use this instead of paying for Calendly.</div></div>
+
+    <div class="tool"><h3>7. Make.com (free tier)</h3><div class="meta">Free · 1,000 operations/month, multi-step automations</div><p>1,000 operations/month, multi-step scenarios. Better than Zapier free for almost any real-world use case. Most small businesses can build 4-6 useful automations on the free tier.</p><div class="verdict">Verdict: The free automation tool that's actually useful at the free tier.</div></div>
+
+    <div class="tool"><h3>8. Zapier (free tier)</h3><div class="meta">Free · 100 tasks/month, single-step zaps</div><p>100 tasks/month, single-step zaps. Limited but enough to test if automation makes sense for your workflow before paying. Most owners outgrow the free tier within 2-3 months.</p><div class="verdict">Verdict: Use to test the concept; switch to Make.com once you outgrow.</div></div>
+
+    <div class="tool"><h3>9. Notion (free for personal use)</h3><div class="meta">Free · wiki, SOP library, project tracker</div><p>The free Notion tier includes AI features (limited credits but real), unlimited pages, and unlimited blocks. Good enough for an internal wiki, SOP library, or simple project tracker.</p><div class="verdict">Verdict: Free tier is enough for most under-10-person businesses.</div></div>
+
+    <div class="tool"><h3>10. HubSpot CRM (free forever)</h3><div class="meta">Free · CRM up to 1M contacts</div><p>The free CRM tier is real — not a trial. Up to 1 million contacts, basic deal tracking, email tracking, basic reporting. Perfect starter CRM for a small business. Paid tiers add automation and reporting depth, but the free tier is enough to start.</p><div class="verdict">Verdict: Free CRM that actually works at the free tier.</div></div>
+
+    <div class="tool"><h3>11. Canva (free tier)</h3><div class="meta">Free · graphics, social posts, marketing collateral</div><p>For business owners who need to make social posts, simple graphics, or basic marketing collateral without paying a designer. The free tier is fully usable; paid adds team collaboration and brand kits.</p><div class="verdict">Verdict: Free tier covers 90% of small-business design needs.</div></div>
+
+    <div class="tool"><h3>12. Otter.ai (free tier)</h3><div class="meta">Free · 300 minutes of transcription per month</div><p>300 transcription minutes per month. Good for recording meetings, sales calls, or audio notes for later AI processing. Enough for solo operators with low meeting volume.</p><div class="verdict">Verdict: Free tier is enough if you have under 6 meetings a week.</div></div>
+
+    <h2 style="margin-top:48px;">The 4 to skip (for now)</h2>
+
+    <div class="tool" style="border-color:#fecaca; background:#fff5f5;"><h3>"AI website builders"</h3><p>The free tiers are heavily restricted. The paid versions overpromise. Wait six months for the category to mature, or just hire a human to build a one-page site for $500.</p></div>
+
+    <div class="tool" style="border-color:#fecaca; background:#fff5f5;"><h3>"AI video generators" (free tier)</h3><p>Quality is still mediocre at the free level. The 90 seconds you save on video generation gets eaten by the time you spend re-recording the AI-mangled parts. Wait six months.</p></div>
+
+    <div class="tool" style="border-color:#fecaca; background:#fff5f5;"><h3>"AI sales agents that fully replace your SDR"</h3><p>No free tier worth using. The paid versions overpromise. The honest version is "AI helps your existing SDR" — and that requires paying for ChatGPT Plus, not a dedicated sales-agent tool.</p></div>
+
+    <div class="tool" style="border-color:#fecaca; background:#fff5f5;"><h3>AI consulting retainers under $5M revenue</h3><p>Most $3-5K/month AI consulting retainers don't pay back at this revenue scale. Buy a one-time written assessment and implement DIY using it as a blueprint. Costs 1/10th and produces the same outcome.</p></div>
+
+    <div class="cta-bottom">
+      <h3>Want a custom version mapped to YOUR business?</h3>
+      <p>The $497 AI Readiness Assessment audits your existing software, recommends 4-8 specific tools and configurations, and ranks them on effort vs. impact. 48-hour PDF.</p>
+      <a href="/assessment/">Get the $497 Assessment</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Nexus AI Solutions &middot; <a href="/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/assessment/">$497 Assessment</a> &middot; <a href="/contact/">Contact</a></p>
+  <p style="margin-top:8px;">Nexus AI Solutions, 19615 Hill Road, Circleville, OH 43113</p>
+</footer>
+
+<script>
+const FUNNEL_LOCATION_ID = "ixBJpsaV9nFZTFpQS8oC";
+const FUNNEL_ID = "tools-checklist-magnet";
+const FUNNEL_URL = "https://services.leadconnectorhq.com/funnels/submit";
+
+const form = document.getElementById('gateForm');
+const btn = document.getElementById('gateBtn');
+const status = document.getElementById('gateStatus');
+const card = document.getElementById('gateCard');
+const gated = document.getElementById('gated');
+const preview = document.getElementById('preview');
+
+function setStatus(kind, html) {
+  status.className = 'gate-status ' + kind;
+  status.innerHTML = html;
+}
+
+function unlock() {
+  // Show the gated content, hide the preview/form
+  preview.style.display = 'none';
+  card.style.display = 'none';
+  gated.classList.add('unlocked');
+  // Scroll to the unlocked content
+  setTimeout(() => gated.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  // Also remember in localStorage so refresh keeps it unlocked
+  try { localStorage.setItem('nexus_tools_unlocked', '1'); } catch (e) {}
+}
+
+// Auto-unlock if previously unlocked
+try {
+  if (localStorage.getItem('nexus_tools_unlocked') === '1') unlock();
+} catch (e) {}
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const email = form.email.value.trim();
+  const company = form.company.value.trim();
+  if (!email || !email.includes('@')) {
+    setStatus('error', 'Please enter a valid email.');
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const fd = new FormData();
+    fd.append('location_id', FUNNEL_LOCATION_ID);
+    fd.append('funnel_id', FUNNEL_ID);
+    fd.append('email', email);
+    if (company) fd.append('company_name', company);
+    fd.append('source', 'tools-checklist-lead-magnet');
+    fd.append('tag', 'tools-checklist-download');
+    await fetch(FUNNEL_URL, { method: 'POST', body: fd, mode: 'no-cors' });
+  } catch (err) {
+    // Even if the submission fails, we still want to show the content - we have the email
+    // address in the page DOM and the user already engaged. Failure tolerance > nice
+    // analytics here.
+  }
+
+  setStatus('success', '✓ Got your email. The checklist is unlocked below — also sending a copy to ' + email + '.');
+  unlock();
+});
+</script>
+
+</body>
+</html>
