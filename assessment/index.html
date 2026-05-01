@@ -427,5 +427,84 @@ footer a:hover { color: #2563eb; }
   <p style="margin-top: 18px; font-size: 13px;">&copy; 2026 Nexus AI Solutions</p>
 </footer>
 
+<!-- EXIT-INTENT CAPTURE: catches visitors about to bounce, pitches $147 waitlist -->
+<div id="exitIntent" style="display:none; position:fixed; inset:0; background:rgba(13,17,23,0.85); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:#fff; max-width:520px; border-radius:16px; padding:36px 32px; position:relative;">
+    <button onclick="dismissExit()" style="position:absolute; top:12px; right:14px; background:none; border:none; font-size:24px; color:#94a3b8; cursor:pointer; line-height:1;">&times;</button>
+    <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#2563eb; margin-bottom:8px;">Wait — before you go</p>
+    <h3 style="font-size:24px; font-weight:800; color:#0f172a; letter-spacing:-0.3px; line-height:1.2; margin-bottom:12px;">$497 not the right fit yet?</h3>
+    <p style="color:#475569; font-size:15px; line-height:1.6; margin-bottom:18px;">We just opened a smaller <strong>$147 single-area Quick Audit</strong> — pick ONE area (leads, scheduling, or quoting), get a tailored 4-6 page PDF in 24 hours.</p>
+    <p style="color:#92400e; background:#fef3c7; border:1px solid #fbbf24; padding:10px 14px; border-radius:8px; font-size:14px; margin-bottom:18px; line-height:1.5;">
+      <strong>First 5 waitlist signups get the audit FREE</strong> in exchange for a written testimonial. No payment required.
+    </p>
+    <form id="exitForm" style="display:flex; gap:8px; flex-wrap:wrap;" novalidate>
+      <input type="email" name="email" placeholder="you@business.com" required style="flex:1; min-width:200px; padding:12px 14px; border:1px solid #cbd5e1; border-radius:8px; font:inherit; font-size:15px;">
+      <button type="submit" style="background:#2563eb; color:#fff; border:none; padding:12px 22px; border-radius:8px; font-size:15px; font-weight:700; cursor:pointer; white-space:nowrap;">Reserve my spot</button>
+    </form>
+    <div id="exitStatus" style="margin-top:12px; padding:10px 14px; border-radius:6px; font-size:14px; display:none;"></div>
+    <p style="font-size:12px; color:#94a3b8; margin-top:14px; line-height:1.5;">No spam. We'll email when the audit is live (a few days). You can also <a href="/quick-audit/" style="color:#2563eb;">read the full Quick Audit page</a>.</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Don't show if already shown this session, or if user already on the assessment funnel
+  if (sessionStorage.getItem('nexus_exit_shown') === '1') return;
+
+  const modal = document.getElementById('exitIntent');
+  const form = document.getElementById('exitForm');
+  const status = document.getElementById('exitStatus');
+  let triggered = false;
+
+  function show() {
+    if (triggered) return;
+    triggered = true;
+    sessionStorage.setItem('nexus_exit_shown', '1');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Mouse leaving toward top of viewport = exit intent (desktop)
+  document.addEventListener('mouseout', function(e) {
+    if (e.clientY <= 0 && !e.relatedTarget && !e.toElement) show();
+  });
+
+  // Mobile: show after 30 seconds of scrolling
+  let scrollTimer = null;
+  window.addEventListener('scroll', function() {
+    if (scrollTimer) return;
+    scrollTimer = setTimeout(() => { /* once per session, after a real scroll */ }, 30000);
+  }, { passive: true });
+
+  // After 45s on page, show as a fallback (gentle prompt for slow readers)
+  setTimeout(show, 45000);
+
+  window.dismissExit = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = e.target.email.value.trim();
+    if (!email || !email.includes('@')) return;
+    try {
+      const fd = new FormData();
+      fd.append('location_id', 'ixBJpsaV9nFZTFpQS8oC');
+      fd.append('funnel_id', 'quick-audit-waitlist-exit-intent');
+      fd.append('email', email);
+      fd.append('source', 'assessment-exit-intent');
+      fd.append('tag', 'quick-audit-waitlist');
+      await fetch('https://services.leadconnectorhq.com/funnels/submit', {
+        method: 'POST', body: fd, mode: 'no-cors'
+      });
+    } catch (err) {}
+    status.style.cssText = 'margin-top:12px; padding:10px 14px; border-radius:6px; font-size:14px; background:#dcfce7; color:#14532d; display:block;';
+    status.textContent = '✓ Reserved. Watch your inbox — first 5 signups get the audit free.';
+    setTimeout(() => { dismissExit(); }, 3500);
+  });
+})();
+</script>
+
 </body>
 </html>
