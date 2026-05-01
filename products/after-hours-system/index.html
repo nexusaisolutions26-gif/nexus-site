@@ -117,12 +117,12 @@ footer a { color: #60a5fa; }
   </div>
 
   <div class="gate">
-    <h3>Get launch-day access</h3>
-    <p>The After-Hours Lead Capture System is in final review. Drop your email and we'll send a launch-day discount + first access. First 15 buyers get it for $24 instead of $39.</p>
-    <div class="price-line">$39 · or $24 for first 15 buyers</div>
+    <h3>Get the system — $39</h3>
+    <p>Drop your email. We'll send you a Stripe payment link by email within 30 minutes. Pay → instant PDF download with the complete 28-page system. Refund anytime in the first 30 days.</p>
+    <div class="price-line">$39 · One-time · Instant delivery</div>
     <form class="gate-form" id="gateForm" novalidate>
       <input type="email" name="email" placeholder="you@business.com" required>
-      <button type="submit">Get notified</button>
+      <button type="submit">Send me the invoice</button>
     </form>
     <div class="gate-status" id="gateStatus"></div>
   </div>
@@ -155,7 +155,7 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: fd, mode: 'no-cors' });
   } catch (err) {}
   document.getElementById('gateStatus').className = 'gate-status success';
-  document.getElementById('gateStatus').innerHTML = '✓ You are on the list. First 15 signups get the $24 launch price.';
+  document.getElementById('gateStatus').innerHTML = '✓ Got it. Watch your inbox for an invoice email from Nexus AI Solutions within 30 min. Pay via the Stripe link inside, and your PDF download lands in your inbox immediately.';
 });
 </script>
 

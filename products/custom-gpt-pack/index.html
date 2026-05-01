@@ -130,12 +130,12 @@ footer a { color: #60a5fa; }
   </div>
 
   <div class="gate">
-    <h3>Get notified when the pack drops</h3>
-    <p>The 12-Industry Custom GPT Pack is in final QA. Drop your email + which industry you'd use it for. First 25 buyers get it for $14 instead of $24, plus a free 30-min loom walkthrough.</p>
-    <div class="price-line">$24 · or $14 + free walkthrough for first 25</div>
+    <h3>Get the pack — $24</h3>
+    <p>Drop your email. We'll send you a Stripe payment link by email within 30 minutes. Pay → instant PDF download with all 12 industry GPT instruction sets. Refund anytime in the first 30 days.</p>
+    <div class="price-line">$24 · One-time · Instant delivery</div>
     <form class="gate-form" id="gateForm" novalidate>
       <input type="email" name="email" placeholder="you@business.com" required>
-      <button type="submit">Get notified</button>
+      <button type="submit">Send me the invoice</button>
     </form>
     <div class="gate-status" id="gateStatus"></div>
   </div>
@@ -168,7 +168,7 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: fd, mode: 'no-cors' });
   } catch (err) {}
   document.getElementById('gateStatus').className = 'gate-status success';
-  document.getElementById('gateStatus').innerHTML = '✓ You are on the list. First 25 signups get the $14 launch price + free walkthrough.';
+  document.getElementById('gateStatus').innerHTML = '✓ Got it. Watch your inbox for an invoice email from Nexus AI Solutions within 30 min. Pay via the Stripe link inside, and your PDF download lands in your inbox immediately.';
 });
 </script>
 

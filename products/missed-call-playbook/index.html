@@ -116,12 +116,12 @@ footer a { color: #60a5fa; }
   </div>
 
   <div class="gate">
-    <h3>Get notified when it's live</h3>
-    <p>The Missed-Call Text-Back Playbook is in final review. Drop your email and we'll send a launch-day discount + first access. First 20 buyers get it for $9 instead of $14.</p>
-    <div class="price-line">$14 · or $9 for first 20 buyers</div>
+    <h3>Get the playbook — $14</h3>
+    <p>Drop your email. We'll send you a Stripe payment link by email within 30 minutes. Pay → instant PDF download. Refund anytime in the first 30 days, no questions.</p>
+    <div class="price-line">$14 · One-time · Instant delivery</div>
     <form class="gate-form" id="gateForm" novalidate>
       <input type="email" name="email" placeholder="you@business.com" required>
-      <button type="submit">Get notified</button>
+      <button type="submit">Send me the invoice</button>
     </form>
     <div class="gate-status" id="gateStatus"></div>
   </div>
@@ -154,7 +154,7 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: fd, mode: 'no-cors' });
   } catch (err) {}
   document.getElementById('gateStatus').className = 'gate-status success';
-  document.getElementById('gateStatus').innerHTML = '✓ You are on the list. We will email when the playbook is live (a few days). First 20 signups get the $9 launch price.';
+  document.getElementById('gateStatus').innerHTML = '✓ Got it. Watch your inbox for an invoice email from Nexus AI Solutions within 30 min. Pay via the Stripe link inside, and your PDF download lands in your inbox immediately.';
 });
 </script>
 
