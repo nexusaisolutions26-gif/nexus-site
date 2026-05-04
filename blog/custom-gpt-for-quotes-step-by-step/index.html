@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A complete, no-fluff walkthrough for building a custom ChatGPT trained on your past quotes. Cuts typical quoting time from 15 minutes to under 2.">
+<meta name="keywords" content="custom GPT for quotes, ChatGPT quote drafter setup, AI quoting tool small business, how to train custom GPT, ChatGPT for contractors">
+<title>Build a Custom GPT for Quoting in 20 Minutes — Step-by-Step Walkthrough - Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+nav { background: #0d1117; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #9ca3af; font-size: 15px; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+.nav-cta:hover { background: #1d4ed8 !important; }
+.post-hero { background: #0d1117; padding: 80px 60px 60px; text-align: center; }
+.post-hero .tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #60a5fa; margin-bottom: 16px; }
+.post-hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.15; max-width: 820px; margin: 0 auto 16px; letter-spacing: -1px; }
+.post-hero .meta { font-size: 14px; color: #6b7280; }
+article { max-width: 720px; margin: 60px auto; padding: 0 40px; font-size: 17px; color: #374151; line-height: 1.8; }
+article h2 { font-size: 28px; font-weight: 700; color: #0f172a; margin: 48px 0 16px; line-height: 1.3; }
+article h3 { font-size: 22px; font-weight: 700; color: #0f172a; margin: 36px 0 12px; }
+article p { margin-bottom: 20px; }
+article ul, article ol { margin: 0 0 24px 24px; }
+article li { margin-bottom: 8px; }
+article strong { color: #0f172a; }
+.stat-box { background: #f0f9ff; border-left: 4px solid #2563eb; padding: 20px 24px; margin: 28px 0; border-radius: 0 8px 8px 0; }
+.stat-box p { margin: 0; font-weight: 600; color: #1e40af; }
+.cta-box { background: #0d1117; color: #fff; padding: 48px; border-radius: 12px; text-align: center; margin: 48px 0; }
+.cta-box h3 { color: #fff; margin-bottom: 12px; font-size: 24px; }
+.cta-box p { color: #9ca3af; margin-bottom: 24px; }
+.cta-box a { background: #2563eb; color: #fff; padding: 14px 32px; border-radius: 8px; font-weight: 600; display: inline-block; }
+.cta-box a:hover { background: #1d4ed8; }
+footer { background: #0d1117; color: #6b7280; text-align: center; padding: 40px 20px; font-size: 14px; margin-top: 80px; }
+footer a { color: #60a5fa; }
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .post-hero { padding: 60px 20px 40px; }
+  .post-hero h1 { font-size: 28px; }
+  article { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/assessment/" class="nav-cta">$497 Assessment</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="tag">Practical Guide</div>
+  <h1>Build a Custom GPT for Quoting in 20 Minutes — Step-by-Step Walkthrough</h1>
+  <div class="meta">May 8, 2026 · 8 min read</div>
+</div>
+
+<article>
+
+<p>This is the single highest-ROI custom GPT for service businesses. We've watched plumbers, electricians, landscapers, and HVAC techs cut quoting time from 15 minutes to under 2 with this exact setup. Below is the whole thing — start to finish, no skipped steps.</p>
+
+<h2>What you need before starting</h2>
+
+<ul><li>ChatGPT Plus or Team subscription ($20/month). The free tier doesn't save custom GPTs.</li>
+<li>3 of your past quotes, ideally diverse (one small, one medium, one larger). PDFs or text — either works.</li>
+<li>Your standard pricing rules (labor markup, materials markup, minimum job, etc.).</li>
+<li>About 20 minutes.</li></ul>
+
+<h2>Step 1 — Open the GPT builder (1 min)</h2>
+
+<ol><li>Open ChatGPT.</li>
+<li>Click your profile picture → "My GPTs".</li>
+<li>Click "Create a GPT".</li></ol>
+
+<p>You'll see two panes: "Create" on the left (chat-based builder) and "Configure" on the right (manual fields). Use the Configure pane — it's faster for this specific task.</p>
+
+<h2>Step 2 — Name and describe (2 min)</h2>
+
+<p>In the Configure pane:</p>
+
+<ul><li><strong>Name:</strong> "[Your Business] Quote Drafter" — e.g., "Lawn Harmony Quote Drafter"</li>
+<li><strong>Description:</strong> "Drafts homeowner-friendly quotes in our standard format from a job description. Uses our pricing rules and house style."</li>
+<li><strong>Profile picture:</strong> Optional. Use your business logo or just let it auto-generate.</li></ul>
+
+<h2>Step 3 — The instructions field (8 min, the most important step)</h2>
+
+<p>This is where most people quit too early. Don't. The quality of your instructions field is 80% of the GPT's quality.</p>
+
+<p>Paste this template and customize the bracketed parts:</p>
+
+<pre style="background:#f4f4f4;padding:14px;border-left:3px solid #888;font-size:13px;overflow-x:auto;border-radius:0 8px 8px 0;">You draft quotes for [BUSINESS NAME], a [TYPE OF BUSINESS] in [LOCATION].
+
+When the user pastes a job description, generate a complete quote using
+this exact format:
+
+PROJECT SUMMARY (2-3 sentences in plain language for a homeowner)
+
+SCOPE OF WORK (bulleted list, 4-8 bullets, specific tasks)
+
+PRICING
+
+Three tiers — Good / Better / Best. Always recommend the middle option
+explicitly. Use these rules:
+- Labor markup: [X]%
+- Materials markup: [Y]%
+- Minimum job size: $[Z]
+- [Any other pricing rules]
+
+WHAT'S INCLUDED (bulleted list)
+
+WHAT'S NOT INCLUDED (bulleted list — be explicit about exclusions)
+
+TIMELINE
+
+Estimated start window and completion window. Include any
+weather/seasonal caveats relevant to our work.
+
+TERMS
+
+[Your standard terms — payment schedule, deposit %, warranty, etc.]
+
+VOICE RULES:
+- Plain language a homeowner would understand. No contractor jargon.
+- Direct sentences. Avoid corporate cliches.
+- End every quote with one sentence about how to schedule.
+- Never invent specifics — if the job description is missing key
+  information (square footage, scope details, location specifics),
+  ask for it before drafting.</pre>
+
+<p>Customize this for your specific business. Spend 5-10 minutes getting the bracketed values right. The time you spend here pays back every quote you draft afterward.</p>
+
+<h2>Step 4 — Knowledge files (5 min)</h2>
+
+<p>This is what makes the GPT actually drafted in YOUR style.</p>
+
+<p>In the Configure pane, scroll to "Knowledge" and click "Upload files."</p>
+
+<p>Upload 2-3 of your past quotes. Best results if they're:</p>
+
+<ul><li>One small, one medium, one larger job.</li>
+<li>All with prices intact (the GPT learns your pricing patterns from these).</li>
+<li>Recent (within the last year is ideal).</li>
+<li>Diverse in scope (don't upload three identical-style jobs).</li></ul>
+
+<p>You can upload PDFs directly. The GPT will reference these examples when drafting new quotes.</p>
+
+<h2>Step 5 — Capabilities and conversation starters (2 min)</h2>
+
+<p>In the Configure pane, leave the default capabilities (Web Browsing, DALL·E, Code Interpreter) on. They don't hurt and occasionally help.</p>
+
+<p>For "Conversation starters," paste a few examples that show what the GPT does:</p>
+
+<ul><li>"Draft a quote for [paste job description]"</li>
+<li>"Quote for a 200-foot fence install on level ground"</li>
+<li>"Quote for a kitchen sink replacement, customer's materials"</li></ul>
+
+<p>These show up as buttons when you open the GPT — useful for muscle memory.</p>
+
+<h2>Step 6 — Save and test (3 min)</h2>
+
+<ol><li>Click "Save" → "Only me" (you can change to shared later if you have a team).</li>
+<li>Click "View GPT" — opens your new GPT.</li>
+<li>Test it. Paste a real job description from yesterday or last week.</li>
+<li>Check the output against what you would have drafted manually.</li></ol>
+
+<p>The first draft will probably need tweaks. Click "Edit GPT" and refine the instructions or upload an additional past quote to fix anything that's off.</p>
+
+<h2>Step 7 — Pin it (30 seconds)</h2>
+
+<p>In the GPT view, click the three dots (top right) → "Pin to sidebar." Now you can call it from anywhere in ChatGPT in two clicks.</p>
+
+<p>For team accounts: change "Only me" to "Anyone in [Workspace]" so your team can use it too.</p>
+
+<div class="cta-box">
+<h3>Want a tailored set of custom GPTs for YOUR business beyond just quoting?</h3>
+<p>Our $497 AI Readiness Assessment includes the 4-8 highest-impact custom GPTs for your specific operations, with the exact instructions to paste into each. Plus 3 other AI implementations ranked by effort vs. impact. Branded PDF, 48 hours.</p>
+<a href="/assessment/">Get My Assessment</a>
+</div>
+
+<h2>Common mistakes to avoid</h2>
+
+<p>After watching dozens of business owners build these, the top three failure modes:</p>
+
+<ol><li><strong>Skimping on the instructions field.</strong> A 100-character instruction produces a generic quote. A 600-character instruction with your specific rules produces something usable.</li>
+<li><strong>Uploading old or unrepresentative past quotes.</strong> If you upload three quotes from 2 years ago, the GPT will draft in your 2-year-ago style. Use recent examples.</li>
+<li><strong>Not iterating after the first test.</strong> The first version of the GPT is rarely the final version. Plan to refine the instructions 2-3 times based on what the early drafts produce.</li></ol>
+
+<h2>What you should expect</h2>
+
+<p>After a properly-built custom GPT:</p>
+
+<ul><li><strong>Quote drafting time:</strong> drops from 15 minutes to 90 seconds for typical jobs.</li>
+<li><strong>Close rate:</strong> typically up 10-20% because quotes go out same-day instead of by Tuesday.</li>
+<li><strong>Consistency:</strong> every quote uses the same format, same voice, same tier structure. No more "did I include the warranty section in this one?"</li></ul>
+
+<p>The whole thing pays back inside the first week of use for most service businesses.</p>
+
+<h2>A note on alternatives</h2>
+
+<p>You don't strictly need ChatGPT. Anthropic's Claude has Projects (similar). Google Gemini has Gems. They all do roughly the same thing.</p>
+
+<p>The reason we keep recommending ChatGPT specifically for service business quoting: the Knowledge file upload (the part where you train it on past quotes) is the most polished. For uploading PDFs of past jobs, that matters.</p>
+
+<p>If you're already on Claude or Gemini, the same setup pattern works there. The 20-minute investment still pays back the same way.</p>
+
+
+<!-- AUTO-INJECTED CONVERSION BLOCK (multi-funnel, do not edit by hand) -->
+<div style="max-width:880px; margin:60px auto 30px; padding:0 32px;">
+  <div style="background:linear-gradient(135deg,#0d1117 0%,#1e3a8a 100%); color:#fff; border-radius:16px; padding:36px 32px;">
+    <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#fbbf24; margin-bottom:8px;">Ready for a custom version</p>
+    <h2 style="font-size:24px; font-weight:800; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.25;">Want this mapped to YOUR business?</h2>
+    <p style="color:#cbd5e1; font-size:15px; margin-bottom:20px; line-height:1.6;">The article above gives you patterns. The $497 AI Readiness Assessment audits YOUR specific operations and recommends the 4-8 highest-ROI tools mapped to your team and existing software. 48-hour PDF.</p>
+    <a href="/assessment/" style="display:inline-block; background:#fbbf24; color:#0f172a; padding:12px 24px; border-radius:8px; font-weight:700; text-decoration:none; font-size:15px;">Get My $497 Assessment</a>
+    <a href="/case-studies/" style="display:inline-block; color:#bfdbfe; padding:12px 18px; text-decoration:none; font-size:14px;">Or see 3 real case studies &rarr;</a>
+    <div style="margin-top:22px; padding-top:18px; border-top:1px solid #1f2937;">
+      <p style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#9ca3af; margin-bottom:10px;">Or grab something free first</p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <a href="/tools-checklist/" style="background:rgba(96,165,250,0.10); color:#bfdbfe; padding:6px 12px; border-radius:18px; font-size:12px; border:1px solid rgba(96,165,250,0.25); text-decoration:none;">12-tool AI checklist</a>
+        <a href="/free-quote-gpt/" style="background:rgba(96,165,250,0.10); color:#bfdbfe; padding:6px 12px; border-radius:18px; font-size:12px; border:1px solid rgba(96,165,250,0.25); text-decoration:none;">Free quote-GPT prompt</a>
+        <a href="/assessment/samples/" style="background:rgba(96,165,250,0.10); color:#bfdbfe; padding:6px 12px; border-radius:18px; font-size:12px; border:1px solid rgba(96,165,250,0.25); text-decoration:none;">10 sample PDFs</a>
+        <a href="/quick-audit/" style="background:rgba(251,191,36,0.10); color:#fde68a; padding:6px 12px; border-radius:18px; font-size:12px; border:1px solid rgba(251,191,36,0.30); text-decoration:none;">$147 quick audit</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END AUTO-INJECTED CONVERSION BLOCK -->
+
+</article>
+
+<footer>
+  <p>&copy; 2026 Nexus AI Solutions · <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/assessment/">Assessment</a></p>
+</footer>
+
+</body>
+</html>
