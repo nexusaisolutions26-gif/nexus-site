@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free 90-second AI audit for small business. Answer 5 questions, get a personalized estimate of how much money your business is leaving on the table from missed leads, slow follow-up, and manual ops work. No signup until you see the result.">
+<title>Free 90-Second AI Audit — How Much Are You Leaving on the Table? — Nexus AI</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #f8fafc; line-height: 1.6; }
+a { text-decoration: none; color: #2563eb; }
+
+nav { background: #0d1117; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+
+.hero { background: linear-gradient(135deg, #0d1117 0%, #1e3a8a 100%); color: #fff; padding: 56px 32px 40px; text-align: center; }
+.hero .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fbbf24; margin-bottom: 14px; }
+.hero h1 { font-size: 36px; font-weight: 800; letter-spacing: -1px; max-width: 720px; margin: 0 auto 14px; line-height: 1.2; }
+.hero h1 span { color: #60a5fa; }
+.hero .lead { color: #cbd5e1; font-size: 16px; max-width: 580px; margin: 0 auto; }
+
+.audit-wrap { max-width: 720px; margin: -20px auto 60px; padding: 0 24px; position: relative; z-index: 2; }
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 36px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+.q { display: none; }
+.q.active { display: block; }
+.q-num { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #2563eb; margin-bottom: 8px; }
+.q h2 { font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 18px; letter-spacing: -0.4px; line-height: 1.3; }
+.q .help { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+
+.choices { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.choice {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+  padding: 16px 20px; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  font-size: 15px; color: #1f2937; display: flex; align-items: center; gap: 12px;
+}
+.choice:hover { border-color: #2563eb; background: #eff6ff; }
+.choice.selected { border-color: #2563eb; background: #dbeafe; color: #1e3a8a; font-weight: 600; }
+.choice .label { flex: 1; }
+.choice .picker { width: 18px; height: 18px; border: 2px solid #cbd5e1; border-radius: 50%; flex-shrink: 0; }
+.choice.selected .picker { border-color: #2563eb; background: radial-gradient(circle, #2563eb 0 5px, transparent 6px); }
+
+.input-num { width: 100%; padding: 14px 18px; border: 2px solid #e2e8f0; border-radius: 10px; font: inherit; font-size: 16px; }
+.input-num:focus { outline: none; border-color: #2563eb; }
+
+.nav-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.btn-back { color: #64748b; background: none; border: none; padding: 10px 14px; font: inherit; font-size: 14px; cursor: pointer; }
+.btn-next { background: #2563eb; color: #fff; border: none; padding: 13px 28px; border-radius: 10px; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; }
+.btn-next:disabled { background: #94a3b8; cursor: not-allowed; }
+.btn-next:hover:not(:disabled) { background: #1d4ed8; }
+
+.progress { height: 6px; background: #f1f5f9; border-radius: 100px; overflow: hidden; margin-bottom: 28px; }
+.progress-bar { height: 100%; background: #2563eb; transition: width 0.3s; }
+
+.result { display: none; }
+.result.active { display: block; }
+.result h2 { font-size: 28px; font-weight: 800; color: #0f172a; letter-spacing: -0.6px; margin-bottom: 10px; }
+.result .big-number { font-size: 42px; font-weight: 800; color: #dc2626; line-height: 1.1; margin: 14px 0; }
+.result .big-label { color: #64748b; font-size: 14px; }
+
+.findings { background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 22px; margin: 24px 0; }
+.findings h3 { color: #78350f; font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.findings ul { padding-left: 20px; color: #78350f; font-size: 14px; }
+.findings li { margin-bottom: 6px; line-height: 1.55; }
+
+.email-gate { background: #f0f9ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 22px 26px; margin: 24px 0; }
+.email-gate h3 { color: #1e3a8a; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.email-gate p { color: #1e40af; font-size: 14px; margin-bottom: 12px; line-height: 1.55; }
+.email-gate-form { display: flex; gap: 8px; }
+.email-gate-form input { flex: 1; padding: 12px 14px; border: 1px solid #93c5fd; border-radius: 8px; font: inherit; font-size: 15px; }
+.email-gate-form button { background: #2563eb; color: #fff; border: none; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; }
+.email-gate-form button:hover { background: #1d4ed8; }
+.gate-status { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 14px; display: none; background: #dcfce7; color: #14532d; }
+
+.upsell { background: #0d1117; color: #fff; border-radius: 12px; padding: 26px 28px; margin-top: 24px; }
+.upsell h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+.upsell p { color: #cbd5e1; font-size: 14px; margin-bottom: 14px; }
+.upsell a { display: inline-block; background: #fbbf24; color: #0f172a; padding: 11px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; }
+
+footer { background: #0d1117; color: #6b7280; text-align: center; padding: 30px 24px; font-size: 13px; }
+footer a { color: #60a5fa; }
+
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; flex-wrap: wrap; gap: 10px; }
+  .hero { padding: 44px 20px 30px; } .hero h1 { font-size: 26px; }
+  .audit-wrap { padding: 0 16px; }
+  .card { padding: 24px 22px; }
+  .email-gate-form { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products/">Products</a>
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/blog/">Blog</a>
+    <a href="/assessment/">$497 Assessment</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Free · 90 seconds · No signup until you see the result</div>
+  <h1>How much is your business <span>leaving on the table</span> right now?</h1>
+  <p class="lead">5 questions. Personalized estimate of monthly revenue you're probably losing to slow lead response, manual ops work, and after-hours gaps.</p>
+</div>
+
+<div class="audit-wrap">
+  <div class="card">
+    <div class="progress"><div class="progress-bar" id="progressBar" style="width:20%;"></div></div>
+
+    <div class="q active" data-q="1">
+      <div class="q-num">Question 1 of 5</div>
+      <h2>What's your typical customer worth in first-year revenue?</h2>
+      <p class="help">Your average deal size or first-year value. Round to the nearest $100.</p>
+      <div class="choices" data-key="customer_value">
+        <div class="choice" data-value="200"><div class="picker"></div><div class="label">Under $200 (small recurring services, retail)</div></div>
+        <div class="choice" data-value="500"><div class="picker"></div><div class="label">$200-$800 (residential service, single-visit work)</div></div>
+        <div class="choice" data-value="1500"><div class="picker"></div><div class="label">$800-$2,500 (mid-ticket service, B2B SMB)</div></div>
+        <div class="choice" data-value="5000"><div class="picker"></div><div class="label">$2,500-$10,000 (high-ticket service, multi-month)</div></div>
+        <div class="choice" data-value="15000"><div class="picker"></div><div class="label">$10,000+ (enterprise, multi-year)</div></div>
+      </div>
+      <div class="nav-row"><span></span><button class="btn-next" disabled>Next</button></div>
+    </div>
+
+    <div class="q" data-q="2">
+      <div class="q-num">Question 2 of 5</div>
+      <h2>Roughly how many inbound calls or web inquiries does your business get per week?</h2>
+      <p class="help">Just the new-customer ones — repeat-customer calls don't count.</p>
+      <div class="choices" data-key="leads_per_week">
+        <div class="choice" data-value="3"><div class="picker"></div><div class="label">Under 5 a week</div></div>
+        <div class="choice" data-value="10"><div class="picker"></div><div class="label">5-15 a week</div></div>
+        <div class="choice" data-value="25"><div class="picker"></div><div class="label">15-30 a week</div></div>
+        <div class="choice" data-value="60"><div class="picker"></div><div class="label">30-100 a week</div></div>
+        <div class="choice" data-value="150"><div class="picker"></div><div class="label">100+ a week</div></div>
+      </div>
+      <div class="nav-row"><button class="btn-back">&larr; Back</button><button class="btn-next" disabled>Next</button></div>
+    </div>
+
+    <div class="q" data-q="3">
+      <div class="q-num">Question 3 of 5</div>
+      <h2>What happens to a call that comes in at 7 PM on a Tuesday?</h2>
+      <p class="help">Be honest. This is the single biggest revenue leak in most service businesses.</p>
+      <div class="choices" data-key="after_hours">
+        <div class="choice" data-value="0.05"><div class="picker"></div><div class="label">Goes to voicemail. Caller usually doesn't leave a message.</div></div>
+        <div class="choice" data-value="0.20"><div class="picker"></div><div class="label">Voicemail, we call back next morning.</div></div>
+        <div class="choice" data-value="0.45"><div class="picker"></div><div class="label">We have an auto-text setup but it's the default robotic version.</div></div>
+        <div class="choice" data-value="0.65"><div class="picker"></div><div class="label">We have a customized auto-text that gets replies.</div></div>
+        <div class="choice" data-value="0.80"><div class="picker"></div><div class="label">We have an AI receptionist that actually answers.</div></div>
+      </div>
+      <div class="nav-row"><button class="btn-back">&larr; Back</button><button class="btn-next" disabled>Next</button></div>
+    </div>
+
+    <div class="q" data-q="4">
+      <div class="q-num">Question 4 of 5</div>
+      <h2>How long does it take to draft a typical quote or proposal?</h2>
+      <p class="help">From first reading the inquiry to having something you'd send.</p>
+      <div class="choices" data-key="quote_minutes">
+        <div class="choice" data-value="25"><div class="picker"></div><div class="label">20-40 minutes per quote</div></div>
+        <div class="choice" data-value="12"><div class="picker"></div><div class="label">10-20 minutes per quote</div></div>
+        <div class="choice" data-value="5"><div class="picker"></div><div class="label">Under 10 minutes (templates work)</div></div>
+        <div class="choice" data-value="2"><div class="picker"></div><div class="label">Under 2 minutes (already automated)</div></div>
+        <div class="choice" data-value="0"><div class="picker"></div><div class="label">We don't quote (subscription/service business)</div></div>
+      </div>
+      <div class="nav-row"><button class="btn-back">&larr; Back</button><button class="btn-next" disabled>Next</button></div>
+    </div>
+
+    <div class="q" data-q="5">
+      <div class="q-num">Question 5 of 5</div>
+      <h2>What does your typical week look like for recurring admin work?</h2>
+      <p class="help">Reports, billing, follow-ups, scheduling, social media — the not-revenue work.</p>
+      <div class="choices" data-key="admin_hours">
+        <div class="choice" data-value="2"><div class="picker"></div><div class="label">Under 5 hours a week (already pretty automated)</div></div>
+        <div class="choice" data-value="8"><div class="picker"></div><div class="label">5-12 hours a week</div></div>
+        <div class="choice" data-value="18"><div class="picker"></div><div class="label">12-25 hours a week</div></div>
+        <div class="choice" data-value="35"><div class="picker"></div><div class="label">25+ hours a week (it's eating my Saturdays)</div></div>
+      </div>
+      <div class="nav-row"><button class="btn-back">&larr; Back</button><button class="btn-next" id="seeResult">See my result &rarr;</button></div>
+    </div>
+
+    <div class="result" id="result">
+      <h2>Your business is probably leaving</h2>
+      <div class="big-number" id="bigNumber">$0</div>
+      <div class="big-label">on the table per month</div>
+
+      <div class="findings" id="findings">
+        <h3>Where the money is leaking</h3>
+        <ul id="findingsList"></ul>
+      </div>
+
+      <div class="email-gate" id="emailGate">
+        <h3>Want a tailored plan, free?</h3>
+        <p>Drop your email and we'll send you the 4 highest-ROI fixes for YOUR specific situation — based on the answers above. No upsell call. Just useful.</p>
+        <form class="email-gate-form" id="emailForm" novalidate>
+          <input type="email" name="email" placeholder="you@business.com" required>
+          <button type="submit">Send me the plan</button>
+        </form>
+        <div class="gate-status" id="gateStatus"></div>
+      </div>
+
+      <div class="upsell">
+        <h3>Or get a written assessment built around your actual operations</h3>
+        <p>The $497 AI Readiness Assessment is the long-form version: 4-8 specific tools mapped to YOUR business with install steps, expected ROI, and a 4-day quick-win plan. Refund if we don't find $1,000+/mo of value.</p>
+        <a href="/assessment/">See the $497 Assessment</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Nexus AI Solutions &middot; <a href="/">Home</a> &middot; <a href="/products/">Products</a> &middot; <a href="/blog/">Blog</a></p>
+  <p style="margin-top:8px;">Nexus AI Solutions, 19615 Hill Road, Circleville, OH 43113</p>
+</footer>
+
+<script>
+const state = { customer_value: 0, leads_per_week: 0, after_hours: 0, quote_minutes: 0, admin_hours: 0 };
+let currentQ = 1;
+
+function showQ(n) {
+  document.querySelectorAll('.q').forEach(q => q.classList.remove('active'));
+  document.querySelector(`.q[data-q="${n}"]`).classList.add('active');
+  document.getElementById('progressBar').style.width = (n * 20) + '%';
+  currentQ = n;
+}
+
+function showResult() {
+  document.querySelectorAll('.q').forEach(q => q.classList.remove('active'));
+  document.getElementById('result').classList.add('active');
+  document.getElementById('progressBar').style.width = '100%';
+
+  // Calc lost revenue per month
+  const cv = state.customer_value;
+  const lpw = state.leads_per_week;
+  const ah = state.after_hours;
+  const qm = state.quote_minutes;
+  const admin = state.admin_hours;
+
+  // Assumptions: 25% close rate, 30% of all calls happen after hours
+  // Quote-time loss: longer quotes -> some leads churn waiting
+  // Admin-time loss: hours per week -> opportunity cost at $50/hr
+  const closeRate = 0.25;
+  const afterHoursPct = 0.30;
+  const weekdaysPerMonth = 4.3;
+  const recoveryGap = Math.max(0, 0.65 - ah);  // gap from "good" auto-text to current
+
+  const afterHoursLoss = lpw * afterHoursPct * recoveryGap * closeRate * cv * weekdaysPerMonth;
+  const quoteLoss = (qm > 12 ? lpw * 0.15 * cv * weekdaysPerMonth : 0);  // slow quotes lose ~15% of leads
+  const adminLoss = admin * weekdaysPerMonth * 50;  // opportunity cost at $50/hr
+
+  const totalMonthly = Math.round(afterHoursLoss + quoteLoss + adminLoss);
+  document.getElementById('bigNumber').textContent = '$' + totalMonthly.toLocaleString();
+
+  const findings = [];
+  if (afterHoursLoss > 200) findings.push(`<strong>~$${Math.round(afterHoursLoss).toLocaleString()}/mo</strong> in after-hours leads dying because the gap isn't covered. Free fix: customized auto-text on missed call. Setup is 5 minutes.`);
+  if (quoteLoss > 200) findings.push(`<strong>~$${Math.round(quoteLoss).toLocaleString()}/mo</strong> in slow-quote drop-off. A custom GPT trained on your past quotes drops drafting to ~90 seconds.`);
+  if (adminLoss > 1000) findings.push(`<strong>~$${Math.round(adminLoss).toLocaleString()}/mo</strong> in admin opportunity cost. The recurring 30-50 weekly tasks owners do manually are the highest-ROI place to add automation.`);
+  if (cv >= 1500) findings.push(`At your ticket size ($${cv}+), even one recovered lead per month justifies any of our paid playbooks.`);
+  if (findings.length === 0) findings.push('Your operation looks tight. The biggest gains might be in growth speed (response time, follow-up cadence) rather than ops efficiency. The $497 Assessment maps that out specifically.');
+  document.getElementById('findingsList').innerHTML = findings.map(f => `<li>${f}</li>`).join('');
+}
+
+document.querySelectorAll('.choices').forEach(group => {
+  const key = group.dataset.key;
+  group.querySelectorAll('.choice').forEach(c => {
+    c.addEventListener('click', () => {
+      group.querySelectorAll('.choice').forEach(o => o.classList.remove('selected'));
+      c.classList.add('selected');
+      state[key] = parseFloat(c.dataset.value);
+      group.closest('.q').querySelector('.btn-next').disabled = false;
+    });
+  });
+});
+
+document.querySelectorAll('.btn-next').forEach(b => {
+  b.addEventListener('click', () => {
+    if (b.id === 'seeResult') { showResult(); return; }
+    if (currentQ < 5) showQ(currentQ + 1);
+  });
+});
+document.querySelectorAll('.btn-back').forEach(b => {
+  b.addEventListener('click', () => { if (currentQ > 1) showQ(currentQ - 1); });
+});
+
+document.getElementById('emailForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const email = e.target.email.value.trim();
+  if (!email || !email.includes('@')) return;
+  try {
+    const fd = new FormData();
+    fd.append('location_id', 'ixBJpsaV9nFZTFpQS8oC');
+    fd.append('funnel_id', 'interactive-audit');
+    fd.append('email', email);
+    fd.append('source', 'interactive-audit');
+    fd.append('tag', 'audit-completed');
+    fd.append('audit_payload', JSON.stringify(state));
+    await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: fd, mode: 'no-cors' });
+  } catch (err) {}
+  const status = document.getElementById('gateStatus');
+  status.style.display = 'block';
+  status.textContent = '✓ Got it. The 4-fix plan is on its way to ' + email + ' (allow 30 min for delivery).';
+});
+</script>
+
+</body>
+</html>
