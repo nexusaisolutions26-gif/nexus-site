@@ -215,5 +215,43 @@ footer a { color: #60a5fa; }
   <p style="margin-top:8px;">Nexus AI Solutions, 19615 Hill Road, Circleville, OH 43113</p>
 </footer>
 
+<!-- EXIT-INTENT: catches visitors about to bounce, offers the free interactive audit instead -->
+<div id="exitIntent" style="display:none; position:fixed; inset:0; background:rgba(13,17,23,0.85); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:#fff; max-width:520px; border-radius:16px; padding:36px 32px; position:relative;">
+    <button onclick="dismissExit()" style="position:absolute; top:12px; right:14px; background:none; border:none; font-size:24px; color:#94a3b8; cursor:pointer; line-height:1;">&times;</button>
+    <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#2563eb; margin-bottom:8px;">Wait — before you go</p>
+    <h3 style="font-size:24px; font-weight:800; color:#0f172a; letter-spacing:-0.3px; line-height:1.2; margin-bottom:12px;">$297/mo not the right fit yet?</h3>
+    <p style="color:#475569; font-size:15px; line-height:1.6; margin-bottom:16px;">Take our free <strong>90-second interactive audit</strong> instead. 5 questions, instant personalized "$X/month leaving on the table" calculation. No signup until you see your result.</p>
+    <p style="color:#92400e; background:#fef3c7; border:1px solid #fbbf24; padding:10px 14px; border-radius:8px; font-size:14px; margin-bottom:18px; line-height:1.5;">
+      <strong>Most owners discover $1,000-$5,000/mo</strong> in recoverable revenue from the audit alone. Free, takes 90 seconds.
+    </p>
+    <a href="/audit/interactive/" style="display:block; background:#2563eb; color:#fff; padding:13px 24px; border-radius:8px; font-size:15px; font-weight:700; text-decoration:none; text-align:center;">Take the free 90-second audit &rarr;</a>
+    <p style="font-size:12px; color:#94a3b8; margin-top:14px; line-height:1.5; text-align:center;">No spam. No upsell call. Just see what your number is.</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  if (sessionStorage.getItem('nexus_platform_exit_shown') === '1') return;
+  const modal = document.getElementById('exitIntent');
+  let triggered = false;
+  function show() {
+    if (triggered) return;
+    triggered = true;
+    sessionStorage.setItem('nexus_platform_exit_shown', '1');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  document.addEventListener('mouseout', function(e) {
+    if (e.clientY <= 0 && !e.relatedTarget && !e.toElement) show();
+  });
+  setTimeout(show, 60000); // also fire after 60s on page (slow-reader fallback)
+  window.dismissExit = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+})();
+</script>
+
 </body>
 </html>
