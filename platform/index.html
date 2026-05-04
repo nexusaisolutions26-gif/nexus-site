@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Managed CRM + automation platform for small business. We run the same GoHighLevel-based stack we use for our own businesses — CRM, automated follow-up, missed-call text-back, AI receptionist, review automation, booking, social posting — set up and managed for you. $297-$697/mo.">
+<title>Managed Operations Platform — $297-$697/mo — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+a { text-decoration: none; color: #2563eb; }
+
+nav { background: #0d1117; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+
+.hero { background: linear-gradient(135deg, #0d1117 0%, #1e3a8a 100%); color: #fff; padding: 80px 32px 60px; text-align: center; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fbbf24; margin-bottom: 14px; }
+.hero h1 { font-size: 46px; font-weight: 800; letter-spacing: -1.5px; max-width: 820px; margin: 0 auto 18px; line-height: 1.15; }
+.hero h1 span { color: #60a5fa; }
+.hero .lead { font-size: 18px; color: #cbd5e1; max-width: 700px; margin: 0 auto 14px; line-height: 1.6; }
+.hero .meta { color: #fbbf24; font-size: 14px; font-weight: 600; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 60px 32px; }
+.section h2 { font-size: 28px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 12px; }
+.section .lead { color: #475569; font-size: 16px; margin-bottom: 32px; max-width: 760px; }
+
+.what-it-is { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 28px 32px; margin-bottom: 32px; }
+.what-it-is h2 { font-size: 22px; }
+.what-it-is .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
+@media (max-width: 768px) { .what-it-is .feature-grid { grid-template-columns: 1fr; } }
+.feature { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 18px; }
+.feature h3 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.feature p { color: #475569; font-size: 13px; line-height: 1.5; }
+
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+@media (max-width: 900px) { .tiers { grid-template-columns: 1fr; } }
+.tier { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px 28px; display: flex; flex-direction: column; }
+.tier.featured { border-color: #2563eb; box-shadow: 0 14px 40px rgba(37,99,235,0.12); position: relative; }
+.tier.featured::before {
+  content: 'Most popular'; position: absolute; top: -12px; left: 24px;
+  background: #2563eb; color: #fff; font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 12px; letter-spacing: 1px;
+}
+.tier h3 { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+.tier .price { font-size: 32px; font-weight: 800; color: #1e3a8a; margin-bottom: 4px; line-height: 1.1; }
+.tier .price-period { font-size: 14px; color: #64748b; font-weight: 500; }
+.tier .desc { color: #64748b; font-size: 14px; margin: 12px 0 18px; line-height: 1.5; }
+.tier ul { list-style: none; padding: 0; margin-bottom: 22px; flex-grow: 1; }
+.tier li { padding: 8px 0 8px 24px; font-size: 14px; color: #334155; line-height: 1.5; position: relative; }
+.tier li::before {
+  content: '✓'; position: absolute; left: 0; top: 8px;
+  color: #16a34a; font-weight: 700; font-size: 14px;
+}
+.tier .cta { display: block; background: #2563eb; color: #fff !important; text-align: center; padding: 13px 0; border-radius: 10px; font-weight: 700; font-size: 15px; }
+.tier .cta:hover { background: #1d4ed8; }
+.tier .cta.secondary { background: transparent; color: #2563eb !important; border: 1px solid #cbd5e1; }
+.tier .setup { font-size: 12px; color: #94a3b8; margin-top: 10px; text-align: center; }
+
+.compare { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 28px 32px; margin-bottom: 32px; }
+.compare h2 { font-size: 20px; }
+.compare table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+.compare th, .compare td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e2e8f0; }
+.compare th { font-weight: 700; color: #0f172a; background: #fff; }
+.compare td:first-child { font-weight: 600; color: #1f2937; }
+.compare .cell-yes { color: #16a34a; font-weight: 700; }
+.compare .cell-no { color: #94a3b8; }
+
+.disclosure { background: #fef3c7; border: 1px solid #fbbf24; border-radius: 10px; padding: 16px 20px; margin-top: 24px; color: #78350f; font-size: 13px; line-height: 1.6; }
+.disclosure strong { color: #78350f; }
+
+footer { background: #0d1117; color: #6b7280; text-align: center; padding: 36px 24px; font-size: 14px; }
+footer a { color: #60a5fa; }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; flex-wrap: wrap; gap: 10px; }
+  .hero { padding: 56px 22px 40px; } .hero h1 { font-size: 32px; }
+  .section { padding: 44px 22px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/platform/">Platform</a>
+    <a href="/products/">Products</a>
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/assessment/">$497 Assessment</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">New · Managed Operations Platform</div>
+  <h1>The same operations stack <span>I run for my own businesses</span> — set up and managed for yours.</h1>
+  <p class="lead">CRM + automated follow-up + missed-call text-back + AI receptionist + review automation + booking + social planner + workflow automation. All on one platform we manage for you. You keep doing the actual work; we keep the operational layer running.</p>
+  <p class="meta">$297–$697/month · No long-term contract · Set up in 7-14 days</p>
+</div>
+
+<div class="section">
+
+  <div class="disclosure">
+    <strong>Honest disclosure:</strong> the platform is built on GoHighLevel, the same software we use to run Lawn Harmony Landscaping, TagUp Tees, and our internal Nexus AI operations. We resell it under our own brand at our own price because we already operate it daily. You get the same battle-tested stack, set up by the operator who actually uses it.
+  </div>
+
+  <div class="what-it-is">
+    <h2>What you actually get</h2>
+    <div class="feature-grid">
+      <div class="feature"><h3>Customer database (CRM)</h3><p>Full contact + deal pipeline. Tags, custom fields, segmentation. Replaces messy spreadsheets.</p></div>
+      <div class="feature"><h3>Auto-text on missed calls</h3><p>Setup + custom message templates. Recovers $1,500-$5,000/mo for typical service businesses.</p></div>
+      <div class="feature"><h3>Email + SMS automation</h3><p>Multi-step nurture sequences. Birthday, anniversary, recall, post-purchase. We build the templates with you.</p></div>
+      <div class="feature"><h3>Booking calendar</h3><p>Self-serve calendar link. Two-way Google/Outlook sync. Customers book themselves; you stop chasing.</p></div>
+      <div class="feature"><h3>Review automation</h3><p>Auto-request Google + Facebook reviews after every job. Filter negatives privately, surface positives publicly.</p></div>
+      <div class="feature"><h3>Social planner (FB / IG / GBP)</h3><p>Schedule weeks of posts at once. Auto-post to Facebook, Instagram, Google Business Profile.</p></div>
+      <div class="feature"><h3>AI receptionist (higher tiers)</h3><p>Answers calls 24/7, captures leads, books callbacks, logs to CRM with conversation summary.</p></div>
+      <div class="feature"><h3>Custom workflow automation</h3><p>"When X happens, do Y, then Z" — connect everything. No-code Zapier-style automation built in.</p></div>
+    </div>
+  </div>
+
+  <h2>Three tiers — pick what fits</h2>
+  <p class="lead">Each tier is a complete platform. Higher tiers add depth (more automation, more channels, more setup hand-holding). All include the core CRM + missed-call setup + reviews automation.</p>
+
+  <div class="tiers">
+
+    <div class="tier">
+      <h3>Starter</h3>
+      <div class="price">$297<span class="price-period">/month</span></div>
+      <p class="desc">Solo or 1-3 person business. Replaces 4-6 separate tools you already pay for, plus adds the basics you don't have.</p>
+      <ul>
+        <li>Full CRM + pipelines</li>
+        <li>Missed-call text-back setup</li>
+        <li>Booking calendar + auto-reminders</li>
+        <li>Email automation (5 sequences built for you)</li>
+        <li>Review automation (Google + FB)</li>
+        <li>Social planner (post once, distributes everywhere)</li>
+        <li>Monthly check-in + tweaks</li>
+        <li>Email support, async</li>
+      </ul>
+      <a href="/platform/start/?tier=starter" class="cta">Get Starter</a>
+      <p class="setup">$497 one-time setup · waived if you stay 6+ months</p>
+    </div>
+
+    <div class="tier featured">
+      <h3>Growth</h3>
+      <div class="price">$497<span class="price-period">/month</span></div>
+      <p class="desc">Most service businesses with 4-15 people. Adds the operational layer that makes the team scale without adding headcount.</p>
+      <ul>
+        <li>Everything in Starter</li>
+        <li>AI receptionist (24/7 call answering)</li>
+        <li>Up to 15 custom workflow automations</li>
+        <li>Multi-user CRM (up to 5 team members)</li>
+        <li>SMS + email broadcast capability</li>
+        <li>Custom reporting dashboard</li>
+        <li>Bi-weekly tweaks + new automation builds</li>
+        <li>Priority email + Loom support</li>
+      </ul>
+      <a href="/platform/start/?tier=growth" class="cta">Get Growth</a>
+      <p class="setup">$997 one-time setup · waived if you stay 6+ months</p>
+    </div>
+
+    <div class="tier">
+      <h3>Pro</h3>
+      <div class="price">$697<span class="price-period">/month</span></div>
+      <p class="desc">Service businesses with 15+ people, multi-location, or complex operations needing deep customization.</p>
+      <ul>
+        <li>Everything in Growth</li>
+        <li>Unlimited custom workflow automations</li>
+        <li>Unlimited team members in CRM</li>
+        <li>Custom AI agents for specific tasks</li>
+        <li>Memberships / course delivery (if relevant)</li>
+        <li>Multi-location pipelines</li>
+        <li>Weekly tweaks + new automation builds</li>
+        <li>Dedicated async slack-like channel</li>
+      </ul>
+      <a href="/platform/start/?tier=pro" class="cta">Get Pro</a>
+      <p class="setup">$1,997 one-time setup · waived if you stay 6+ months</p>
+    </div>
+
+  </div>
+
+  <div class="compare">
+    <h2>What this replaces</h2>
+    <p style="color:#475569; font-size:14px; margin-top:8px;">Most small businesses we onboard already pay for 5-7 separate tools that do parts of what this platform does. Common stack we replace:</p>
+    <table>
+      <thead><tr><th>What you probably pay for now</th><th>Typical monthly cost</th><th>Replaced by Platform?</th></tr></thead>
+      <tbody>
+        <tr><td>Standalone CRM (HubSpot/Pipedrive)</td><td>$50-$200</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Email marketing (Mailchimp/ActiveCampaign)</td><td>$30-$200</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Booking tool (Calendly Premium)</td><td>$15-$30</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Review automation (Birdeye/Podium)</td><td>$200-$400</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Social scheduler (Buffer/Hootsuite)</td><td>$15-$50</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Automation tool (Zapier mid-tier)</td><td>$30-$80</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>SMS marketing (Twilio + tooling)</td><td>$50-$150</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>AI receptionist (separate service)</td><td>$40-$200</td><td class="cell-yes">Yes (Growth tier+)</td></tr>
+      </tbody>
+    </table>
+    <p style="color:#475569; font-size:13px; margin-top:14px;">Most clients save $200-$600/month in tool consolidation alone, before counting time saved or revenue recovered from the new automations.</p>
+  </div>
+
+  <div style="background:#0d1117; color:#fff; border-radius:16px; padding:32px; text-align:center;">
+    <h3 style="font-size:20px; font-weight:800; margin-bottom:10px;">Not sure which tier fits?</h3>
+    <p style="color:#cbd5e1; font-size:15px; max-width:600px; margin:0 auto 18px;">The $497 written Assessment maps your specific operation, recommends 4-8 specific automations, and tells you whether Starter / Growth / Pro is right for YOUR business. Refund if no $1,000+/mo of value found.</p>
+    <a href="/assessment/" style="display:inline-block; background:#fbbf24; color:#0f172a; padding:14px 28px; border-radius:10px; font-weight:700;">See the $497 Assessment</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Nexus AI Solutions &middot; <a href="/">Home</a> &middot; <a href="/products/">Products</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/contact/">Contact</a></p>
+  <p style="margin-top:8px;">Nexus AI Solutions, 19615 Hill Road, Circleville, OH 43113</p>
+</footer>
+
+</body>
+</html>

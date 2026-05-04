@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Start Your Platform Setup — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #f8fafc; line-height: 1.6; padding: 0; }
+a { color: #2563eb; text-decoration: none; }
+nav { background: #0d1117; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+
+.hero { background: linear-gradient(135deg, #0d1117 0%, #1e3a8a 100%); color: #fff; padding: 60px 32px 40px; text-align: center; }
+.hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -1px; max-width: 640px; margin: 0 auto 12px; }
+.hero p { color: #cbd5e1; font-size: 16px; max-width: 580px; margin: 0 auto; }
+
+.wrap { max-width: 640px; margin: -10px auto 60px; padding: 0 24px; position: relative; }
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 36px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+h2 { font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 14px; letter-spacing: -0.3px; }
+.tier-summary { background: #f0f9ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 16px 20px; margin-bottom: 22px; }
+.tier-summary .name { font-size: 16px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px; }
+.tier-summary .price { font-size: 22px; font-weight: 800; color: #1e3a8a; }
+.tier-summary .price small { font-size: 14px; font-weight: 500; color: #475569; }
+.tier-summary p { color: #1e40af; font-size: 13px; margin-top: 6px; }
+
+.q { margin-bottom: 16px; }
+.q label { display: block; font-size: 14px; font-weight: 600; color: #1f2937; margin-bottom: 6px; }
+.q input, .q textarea, .q select {
+  width: 100%; padding: 11px 14px; border: 1px solid #cbd5e1; border-radius: 8px;
+  font: inherit; font-size: 15px; color: #0f172a; background: #fff;
+}
+.q input:focus, .q textarea:focus, .q select:focus {
+  outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+.q textarea { min-height: 80px; resize: vertical; }
+
+.btn-submit {
+  background: #2563eb; color: #fff; border: none; padding: 15px 30px;
+  border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;
+  width: 100%; margin-top: 12px;
+}
+.btn-submit:hover { background: #1d4ed8; }
+.btn-submit:disabled { background: #94a3b8; cursor: not-allowed; }
+.status { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-size: 14px; display: none; }
+.status.success { display: block; background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+
+.what-happens { background: #fffbeb; border: 1px solid #fbbf24; border-radius: 10px; padding: 16px 20px; margin-top: 22px; }
+.what-happens h3 { color: #78350f; font-size: 14px; font-weight: 800; margin-bottom: 8px; }
+.what-happens ol { padding-left: 20px; color: #78350f; font-size: 13px; line-height: 1.55; }
+.what-happens li { margin-bottom: 4px; }
+
+footer { background: #0d1117; color: #6b7280; text-align: center; padding: 28px 24px; font-size: 13px; }
+footer a { color: #60a5fa; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/platform/">Platform</a>
+    <a href="/products/">Products</a>
+    <a href="/blog/">Blog</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Let's get your platform live.</h1>
+  <p>Tell us about your business. Tim will reach out within 1 business day to confirm setup specifics + send the invoice.</p>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="tier-summary" id="tierSummary">
+      <div class="name" id="tierName">Tier</div>
+      <div class="price" id="tierPrice">$XXX<small>/month</small></div>
+      <p id="tierDesc">Description</p>
+    </div>
+
+    <h2>About your business</h2>
+    <form id="startForm" novalidate>
+      <input type="hidden" name="selected_tier" id="selectedTier" value="starter">
+
+      <div class="q">
+        <label>Your name</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="q">
+        <label>Email (where invoice + setup details land)</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="q">
+        <label>Phone (optional, for emergency questions only)</label>
+        <input type="text" name="phone">
+      </div>
+      <div class="q">
+        <label>Business name</label>
+        <input type="text" name="company" required>
+      </div>
+      <div class="q">
+        <label>What kind of business?</label>
+        <input type="text" name="industry" placeholder="HVAC, plumbing, real estate, etc.">
+      </div>
+      <div class="q">
+        <label>How many people on your team?</label>
+        <select name="team_size">
+          <option value="">Pick one...</option>
+          <option>Just me (solo)</option>
+          <option>2-3</option>
+          <option>4-10</option>
+          <option>11-25</option>
+          <option>25+</option>
+        </select>
+      </div>
+      <div class="q">
+        <label>Briefly: what tools are you using now? Any major pain points?</label>
+        <textarea name="current_stack" placeholder="e.g. We use Pipedrive + Calendly + Mailchimp. The biggest pain is missed-call leads dying after hours and our quote turnaround being slow."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Submit — start the setup</button>
+      <div class="status" id="status"></div>
+    </form>
+
+    <div class="what-happens">
+      <h3>What happens next</h3>
+      <ol>
+        <li>Tim reviews within 1 business day, confirms tier + setup window.</li>
+        <li>You get a Stripe invoice for the setup fee + first month.</li>
+        <li>Pay → 7-14 day onboarding window starts. We build the CRM, sequences, automations, AI receptionist (if applicable).</li>
+        <li>Loom walkthrough delivered. You start using the platform.</li>
+        <li>Monthly tweaks happen async via email. No required calls.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Nexus AI Solutions &middot; <a href="/">Home</a> &middot; <a href="/platform/">Platform</a> &middot; <a href="/contact/">Contact</a></p>
+  <p style="margin-top:8px;">Nexus AI Solutions, 19615 Hill Road, Circleville, OH 43113</p>
+</footer>
+
+<script>
+const TIERS = {
+  starter: { name: 'Starter Tier', price: '$297<small>/month</small>', desc: 'Solo or 1-3 person business. Full CRM + missed-call setup + reviews + 5 email sequences + monthly tweaks. $497 one-time setup (waived if you stay 6+ months).' },
+  growth: { name: 'Growth Tier', price: '$497<small>/month</small>', desc: '4-15 person business. Everything in Starter + AI receptionist + 15 custom workflows + multi-user. $997 one-time setup (waived if you stay 6+ months).' },
+  pro: { name: 'Pro Tier', price: '$697<small>/month</small>', desc: '15+ person or multi-location business. Everything + unlimited workflows + custom AI agents + dedicated channel. $1,997 one-time setup (waived if you stay 6+ months).' },
+};
+
+const params = new URLSearchParams(window.location.search);
+const tier = params.get('tier') || 'starter';
+const t = TIERS[tier] || TIERS.starter;
+document.getElementById('tierName').textContent = t.name;
+document.getElementById('tierPrice').innerHTML = t.price;
+document.getElementById('tierDesc').textContent = t.desc;
+document.getElementById('selectedTier').value = tier;
+
+document.getElementById('startForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const email = fd.get('email').trim();
+  const name = fd.get('name').trim();
+  const company = fd.get('company').trim();
+  if (!email || !name || !company) {
+    document.getElementById('status').className = 'status error';
+    document.getElementById('status').style.cssText = 'display:block; padding:12px 16px; border-radius:8px; font-size:14px; background:#fee2e2; color:#7f1d1d;';
+    document.getElementById('status').textContent = 'Please fill in name, email, and business name.';
+    return;
+  }
+  try {
+    const submit = new FormData();
+    submit.append('location_id', 'ixBJpsaV9nFZTFpQS8oC');
+    submit.append('funnel_id', 'platform-intent-' + tier);
+    submit.append('email', email);
+    submit.append('full_name', name);
+    submit.append('phone', fd.get('phone') || '');
+    submit.append('company_name', company);
+    submit.append('source', 'platform-intent-' + tier);
+    submit.append('tag', 'platform-intent-' + tier);
+    submit.append('intake_json', JSON.stringify({
+      tier: tier, industry: fd.get('industry'), team_size: fd.get('team_size'),
+      current_stack: fd.get('current_stack'),
+    }));
+    await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: submit, mode: 'no-cors' });
+  } catch (err) {}
+  document.getElementById('status').className = 'status success';
+  document.getElementById('status').textContent = '✓ Got it. Tim will email you within 1 business day with setup specifics + invoice for ' + t.name + '.';
+  document.querySelector('.btn-submit').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
