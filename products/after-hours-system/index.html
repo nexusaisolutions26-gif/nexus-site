@@ -64,6 +64,11 @@ footer a { color: #60a5fa; }
   .section { padding: 36px 20px; }
   .gate-form { flex-direction: column; }
 }
+
+.hero-cta { display: inline-block; background: #fbbf24; color: #0f172a !important; font-weight: 700; padding: 14px 28px; border-radius: 8px; font-size: 16px; margin-top: 18px; transition: background .15s; text-decoration: none !important; }
+.hero-cta:hover { background: #f59e0b; }
+.trust-strip { background: #f1f5f9; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 14px 24px; text-align: center; font-size: 14px; color: #475569; }
+.trust-strip strong { color: #0f172a; }
 </style>
 </head>
 <body>
@@ -83,7 +88,10 @@ footer a { color: #60a5fa; }
   <h1>Stop losing <span>after-hours leads</span> for good.</h1>
   <p class="lead">A complete system — not just a checklist. Setup steps, evaluation matrix, decision trees, response sequences, and a 30-day playbook for capturing every lead that comes in outside business hours.</p>
   <p class="price">$39 · 28 pages · Complete async system</p>
+  <p style="margin-top:18px;"><a class="hero-cta" href="#gateBlock">Get the system — $39</a></p>
 </div>
+
+<div class="trust-strip"><strong>30-day refund</strong> &middot; instant PDF delivery &middot; one-time payment, no subscription</div>
 
 <div class="section">
 
@@ -116,9 +124,9 @@ footer a { color: #60a5fa; }
     <p>Week-by-week implementation plan. Day-by-day for week 1. Audit checklist for end of month 1. Decision points for month 2.</p>
   </div>
 
-  <div class="gate">
+  <div class="gate" id="gateBlock">
     <h3>Get the system — $39</h3>
-    <p>Drop your email. We'll send you a Stripe payment link by email within 30 minutes. Pay → instant PDF download with the complete 28-page system. Refund anytime in the first 30 days.</p>
+    <p>Drop your email. We'll send you a Stripe payment link by email shortly. Pay → instant PDF download with the complete 28-page system. Refund anytime in the first 30 days.</p>
     <div class="price-line">$39 · One-time · Instant delivery</div>
     <form class="gate-form" id="gateForm" novalidate>
       <input type="email" name="email" placeholder="you@business.com" required>
@@ -137,7 +145,7 @@ footer a { color: #60a5fa; }
 
 <footer>
   <p>&copy; 2026 Nexus AI Solutions &middot; <a href="/">Home</a> &middot; <a href="/products/">Products</a> &middot; <a href="/resources/">Free Resources</a></p>
-  <p style="margin-top:8px;">Nexus AI Solutions, 19615 Hill Road, Circleville, OH 43113</p>
+  <p style="margin-top:8px;">Nexus AI Solutions, Circleville, OH 43113</p>
 </footer>
 
 <script>
@@ -155,7 +163,7 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: fd, mode: 'no-cors' });
   } catch (err) {}
   document.getElementById('gateStatus').className = 'gate-status success';
-  document.getElementById('gateStatus').innerHTML = '✓ Got it. Watch your inbox for an invoice email from Nexus AI Solutions within 30 min. Pay via the Stripe link inside, and your PDF download lands in your inbox immediately.';
+  document.getElementById('gateStatus').innerHTML = 'Got it. Watch your inbox for an invoice email from Nexus AI Solutions within minutes. Pay via the Stripe link inside, and your PDF download lands in your inbox immediately.';
 });
 </script>
 
