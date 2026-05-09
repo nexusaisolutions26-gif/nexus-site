@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Your AI Quick Win Snapshot intake — Nexus AI Solutions</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #f8fafc; line-height: 1.6; }
+a { color: #0d9488; }
+
+.topbar { background: #0d1117; padding: 18px 32px; }
+.topbar-inner { max-width: 760px; margin: 0 auto; color: #fff; font-weight: 700; font-size: 18px; letter-spacing: -0.3px; }
+.topbar-inner span { color: #5eead4; }
+
+.intro { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 40px 32px 32px; }
+.intro-inner { max-width: 760px; margin: 0 auto; }
+.intro h1 { font-size: 28px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 12px; }
+.intro p { color: #475569; font-size: 16px; margin-bottom: 8px; }
+.intro .meta { color: #94a3b8; font-size: 13px; margin-top: 12px; }
+
+form { max-width: 760px; margin: 0 auto; padding: 32px; }
+.section { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; margin-bottom: 20px; }
+.section h2 { font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.section .section-meta { color: #94a3b8; font-size: 13px; margin-bottom: 20px; }
+.q { margin-bottom: 22px; }
+.q label { display: block; font-size: 14px; font-weight: 600; color: #1f2937; margin-bottom: 8px; }
+.q input[type="text"], .q textarea, .q select {
+  width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px;
+  font: inherit; font-size: 15px; color: #0f172a; background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.q textarea { min-height: 80px; resize: vertical; }
+.q input[type="text"]:focus, .q textarea:focus, .q select:focus {
+  outline: none; border-color: #0d9488; box-shadow: 0 0 0 3px rgba(13,148,136,0.15);
+}
+
+.area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 600px) { .area-grid { grid-template-columns: 1fr; } }
+.area-choice { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; cursor: pointer; font-size: 14px; color: #1f2937; display: flex; gap: 10px; align-items: flex-start; transition: border-color .15s, background .15s; }
+.area-choice:hover { border-color: #0d9488; background: #f0fdfa; }
+.area-choice input { margin-top: 3px; }
+.area-choice .label { flex: 1; line-height: 1.45; }
+.area-choice .label strong { display: block; color: #0f172a; font-size: 14px; margin-bottom: 2px; }
+.area-choice input:checked + .label { color: #134e4a; }
+.area-choice:has(input:checked) { border-color: #0d9488; background: #ccfbf1; }
+
+.contact-bar { background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.contact-bar h3 { font-size: 16px; font-weight: 700; color: #134e4a; margin-bottom: 14px; }
+.contact-bar .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 600px) { .contact-bar .row { grid-template-columns: 1fr; } }
+
+.submit-bar { display: flex; gap: 12px; align-items: center; padding-top: 12px; }
+.submit-btn {
+  background: #0d9488; color: #fff; border: none; padding: 16px 32px;
+  border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;
+  transition: background 0.15s;
+}
+.submit-btn:hover { background: #0f766e; }
+.submit-btn:disabled { background: #94a3b8; cursor: not-allowed; }
+
+.status { padding: 14px 18px; border-radius: 8px; font-size: 14px; margin-top: 16px; display: none; }
+.status.success { background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+.status.error { background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+.status.loading { background: #ccfbf1; color: #134e4a; border: 1px solid #5eead4; }
+.status a { color: inherit; text-decoration: underline; font-weight: 700; }
+
+footer { padding: 30px 32px; text-align: center; color: #94a3b8; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">Nexus <span>AI</span> Solutions</div>
+</div>
+
+<div class="intro">
+  <div class="intro-inner">
+    <h1>Your AI Quick Win Snapshot intake</h1>
+    <p>Pick the one operational area you want diagnosed, then answer 8-12 minutes of questions about it. We deliver a 4-6 page tailored PDF within 24 hours of submission.</p>
+    <div class="meta">No calls, no Zoom — fully async. The 24-hour delivery clock starts when you hit submit. Skip anything that does not apply.</div>
+  </div>
+</div>
+
+<form id="intakeForm" novalidate>
+
+  <div class="contact-bar">
+    <h3>How we contact you with your PDF</h3>
+    <div class="row">
+      <div class="q">
+        <label>Your name</label>
+        <input type="text" name="contact_name" required>
+      </div>
+      <div class="q">
+        <label>Email (where the PDF is delivered)</label>
+        <input type="text" name="contact_email" required>
+      </div>
+      <div class="q">
+        <label>Business name</label>
+        <input type="text" name="client_name" required>
+      </div>
+      <div class="q">
+        <label>Industry / primary service</label>
+        <input type="text" name="industry">
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>About your business (quick)</h2>
+    <div class="section-meta">Just enough context for the recommendation to fit your scale.</div>
+    <div class="q">
+      <label>Team size (including owner, employees, contractors)</label>
+      <input type="text" name="team_size" placeholder="e.g. solo, 1-3, 4-10, 10+">
+    </div>
+    <div class="q">
+      <label>Approximate annual revenue range</label>
+      <select name="annual_revenue_range">
+        <option value="">Select...</option>
+        <option>Under $250K</option>
+        <option>$250K-$1M</option>
+        <option>$1M-$5M</option>
+        <option>$5M-$25M</option>
+        <option>$25M+</option>
+      </select>
+    </div>
+    <div class="q">
+      <label>Primary customer type</label>
+      <select name="customer_type">
+        <option value="">Select...</option>
+        <option>B2C (consumers)</option>
+        <option>B2B (other businesses)</option>
+        <option>Both</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Pick the ONE area to focus on</h2>
+    <div class="section-meta">Your snapshot is a deep-dive on a single bottleneck. Choose the one where AI applied this month would create the highest dollar return per hour invested.</div>
+    <div class="area-grid">
+      <label class="area-choice"><input type="radio" name="focus_area" value="lead_response" required><span class="label"><strong>Lead response speed</strong>Inbound calls, missed calls, web inquiries — first response is too slow or inconsistent.</span></label>
+      <label class="area-choice"><input type="radio" name="focus_area" value="scheduling"><span class="label"><strong>Scheduling / booking</strong>Customers can't self-book, or the booking flow eats too much team time.</span></label>
+      <label class="area-choice"><input type="radio" name="focus_area" value="quoting"><span class="label"><strong>Quoting / proposals</strong>Drafting quotes or proposals takes too long and slows down the sale.</span></label>
+      <label class="area-choice"><input type="radio" name="focus_area" value="followup"><span class="label"><strong>Follow-up / nurture</strong>Leads that don't convert immediately get dropped or forgotten.</span></label>
+      <label class="area-choice"><input type="radio" name="focus_area" value="reviews"><span class="label"><strong>Review collection</strong>Not enough Google or Facebook reviews because you forget to ask.</span></label>
+      <label class="area-choice"><input type="radio" name="focus_area" value="custom"><span class="label"><strong>Something else</strong>Describe in detail in the next section.</span></label>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>About that area</h2>
+    <div class="section-meta">The more specific you are here, the more useful your recommendation will be. Skip what doesn't apply.</div>
+    <div class="q">
+      <label>Walk us through how this works in your business today.</label>
+      <textarea name="current_state" placeholder="e.g. 'Customer calls our shop. If we miss it during job hours, voicemail. We check voicemail at lunch and end of day, call back next morning.'"></textarea>
+    </div>
+    <div class="q">
+      <label>What's the dollar value of getting this right? (rough estimate is fine)</label>
+      <textarea name="dollar_value" placeholder="e.g. 'Average ticket is $400, we miss about 5 calls a week. Even at 50% recovery that's roughly $4K/mo.'"></textarea>
+    </div>
+    <div class="q">
+      <label>What have you tried before for this area, and what happened?</label>
+      <textarea name="prior_attempts" placeholder="e.g. 'Hired a part-time admin to answer phones — couldn't justify the cost.' or 'Tried Calendly but the team didn't keep their availability synced.'"></textarea>
+    </div>
+    <div class="q">
+      <label>If you only described "something else" above — describe the area in detail here.</label>
+      <textarea name="custom_area_description"></textarea>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Your existing stack</h2>
+    <div class="section-meta">So we recommend a tool that PLAYS with your current setup, not one that requires you to rip and replace.</div>
+    <div class="q"><label>What CRM or customer database (or none)?</label><input type="text" name="crm" placeholder="e.g. HubSpot, GoHighLevel, Jobber, Housecall Pro, none"></div>
+    <div class="q"><label>What phone or texting tool?</label><input type="text" name="phone_tool" placeholder="e.g. Google Voice, RingCentral, OpenPhone, business cell"></div>
+    <div class="q"><label>What email / calendar?</label><input type="text" name="email_calendar" placeholder="e.g. Google Workspace, Microsoft 365, Apple"></div>
+    <div class="q"><label>Any AI tools currently in use? (ChatGPT, Claude, notetakers, chatbots, etc.)</label><input type="text" name="current_ai"></div>
+  </div>
+
+  <div class="section">
+    <h2>Budget &amp; timeline</h2>
+    <div class="q">
+      <label>Comfortable monthly budget for the right tool</label>
+      <select name="budget_range">
+        <option value="">Select...</option>
+        <option>Free / built into existing tools only</option>
+        <option>Under $50/mo</option>
+        <option>$50-$200/mo</option>
+        <option>$200-$500/mo</option>
+        <option>$500+/mo if it pays back</option>
+      </select>
+    </div>
+    <div class="q">
+      <label>How fast do you want to install once you have the recommendation?</label>
+      <select name="decision_timeline">
+        <option value="">Select...</option>
+        <option>This week</option>
+        <option>This month</option>
+        <option>This quarter</option>
+        <option>Still figuring it out</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Anything else?</h2>
+    <div class="q"><label>Anything else worth knowing for the recommendation?</label><textarea name="anything_else"></textarea></div>
+  </div>
+
+  <div class="submit-bar">
+    <button type="submit" class="submit-btn" id="submitBtn">Submit — start the 24-hour clock</button>
+    <span style="color:#64748b; font-size:14px;">PDF lands in your inbox within 24 hours.</span>
+  </div>
+
+  <div id="status" class="status"></div>
+
+</form>
+
+<footer>
+  Nexus AI Solutions &nbsp;|&nbsp; Circleville, OH 43113 &nbsp;|&nbsp; <a href="/">nexusaiconcepts.com</a>
+</footer>
+
+<script>
+// Submit chain (same pattern as /assessment/intake/form/):
+//   1. Try Cloudflare Worker /submit (if deployed)
+//   2. Fall back to GHL public funnels submit
+//   3. Fall back to mailto: so the customer can still send their answers
+const WORKER_URL = "https://nexus-intake.nexusai.workers.dev/submit";
+const FUNNEL_FALLBACK_URL = "https://services.leadconnectorhq.com/funnels/submit";
+const FUNNEL_LOCATION_ID = "ixBJpsaV9nFZTFpQS8oC";
+const FUNNEL_ID = "snapshot-intake";
+const FALLBACK_EMAIL = "nexusaisolutions26@gmail.com";
+
+const form = document.getElementById('intakeForm');
+const btn = document.getElementById('submitBtn');
+const statusEl = document.getElementById('status');
+
+function setStatus(kind, html) {
+  statusEl.className = 'status ' + kind;
+  statusEl.style.display = 'block';
+  statusEl.innerHTML = html;
+}
+
+function gather() {
+  const fd = new FormData(form);
+  const obj = {};
+  for (const [k, v] of fd.entries()) {
+    if (typeof v === 'string') obj[k] = v.trim();
+  }
+  obj.product = "snapshot";
+  obj.submitted_at = new Date().toISOString();
+  return obj;
+}
+
+function buildMailto(data) {
+  const lines = Object.entries(data).map(([k,v]) => `${k}: ${v}`).join('\n');
+  const body = encodeURIComponent("Snapshot intake submission\n\n" + lines);
+  const subject = encodeURIComponent("Snapshot intake — " + (data.client_name || data.contact_email || ""));
+  return `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+async function tryWorker(data) {
+  const r = await fetch(WORKER_URL, {
+    method: "POST", headers: {"Content-Type":"application/json"},
+    body: JSON.stringify(data)
+  });
+  return r.ok;
+}
+
+async function tryFunnel(data) {
+  const fd = new FormData();
+  fd.append('location_id', FUNNEL_LOCATION_ID);
+  fd.append('funnel_id', FUNNEL_ID);
+  fd.append('email', data.contact_email || '');
+  fd.append('name', data.contact_name || '');
+  fd.append('source', 'snapshot-intake');
+  fd.append('tag', 'snapshot-intake-submitted');
+  // Pass each answer as a custom field. GHL will accept whatever it can map.
+  for (const [k, v] of Object.entries(data)) {
+    if (typeof v === 'string' && v) fd.append(k, v);
+  }
+  await fetch(FUNNEL_FALLBACK_URL, { method: 'POST', body: fd, mode: 'no-cors' });
+  return true;
+}
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const email = (form.contact_email && form.contact_email.value || '').trim();
+  if (!email || !email.includes('@')) {
+    setStatus('error', 'Please enter a valid email address so we can deliver your PDF.');
+    return;
+  }
+  const focus = form.querySelector('input[name="focus_area"]:checked');
+  if (!focus) {
+    setStatus('error', 'Please pick one focus area for your snapshot.');
+    return;
+  }
+  btn.disabled = true;
+  setStatus('loading', 'Submitting your intake...');
+  const data = gather();
+  let ok = false;
+  try { ok = await tryWorker(data); } catch (_) {}
+  if (!ok) {
+    try { ok = await tryFunnel(data); } catch (_) {}
+  }
+  if (ok) {
+    setStatus('success', 'Got it. Your 24-hour clock starts now. Watch your inbox at <strong>' + email + '</strong> for the branded PDF. Reply to that email with any questions in the meantime.');
+    btn.textContent = 'Submitted';
+  } else {
+    setStatus('error', 'Submission failed. <a href="' + buildMailto(data) + '">Click here</a> to send your answers as an email instead. We will reply with confirmation and start the clock.');
+    btn.disabled = false;
+  }
+});
+</script>
+
+</body>
+</html>
