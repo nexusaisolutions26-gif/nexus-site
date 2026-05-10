@@ -149,7 +149,9 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     fd.append('email', email);
     fd.append('source', 'product-waitlist-cold-email-kit');
     fd.append('tag', 'product-waitlist-cold-email-kit');
-    await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: fd, mode: 'no-cors' });
+    fd.append('_subject', 'New form submission from nexusaiconcepts.com');
+    fd.append('_captcha', 'false');
+    await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   document.getElementById('gateStatus').style.display = 'block';
   document.getElementById('gateStatus').innerHTML = 'Got it. Watch your inbox for an invoice email from Nexus AI Solutions within minutes. Pay via the Stripe link inside, and your kit lands immediately after.';

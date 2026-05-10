@@ -298,7 +298,9 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
     fd.append('source', 'interactive-audit');
     fd.append('tag', 'audit-completed');
     fd.append('audit_payload', JSON.stringify(state));
-    await fetch('https://services.leadconnectorhq.com/funnels/submit', { method: 'POST', body: fd, mode: 'no-cors' });
+    fd.append('_subject', 'New form submission from nexusaiconcepts.com');
+    fd.append('_captcha', 'false');
+    await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   const status = document.getElementById('gateStatus');
   status.style.display = 'block';
