@@ -149,8 +149,10 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     fd.append('email', email);
     fd.append('source', 'product-waitlist-cold-email-kit');
     fd.append('tag', 'product-waitlist-cold-email-kit');
-    fd.append('_subject', 'New form submission from nexusaiconcepts.com');
+    fd.append('_subject', 'New $9 Cold Email Kit signup');
     fd.append('_captcha', 'false');
+    fd.append('_autoresponse', 'Hi, we received your Cold Email Kit order request. We'll send a Stripe payment link by email within minutes. Pay -> instant PDF download. Refund anytime in the first 30 days. Reply with any questions. — Nexus AI Solutions');
+    fd.append('product_tag', 'product-waitlist-cold-email-kit');
     await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   document.getElementById('gateStatus').style.display = 'block';

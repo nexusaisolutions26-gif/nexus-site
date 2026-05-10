@@ -164,8 +164,10 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     fd.append('email', email);
     fd.append('source', 'product-waitlist-after-hours-system');
     fd.append('tag', 'product-waitlist-after-hours');
-    fd.append('_subject', 'New form submission from nexusaiconcepts.com');
+    fd.append('_subject', 'New $39 After-Hours System signup');
     fd.append('_captcha', 'false');
+    fd.append('_autoresponse', 'Hi, we received your After-Hours Lead Capture System order request. We'll send a Stripe payment link by email within minutes. Pay -> instant PDF download. Refund anytime in the first 30 days. Reply with any questions. — Nexus AI Solutions');
+    fd.append('product_tag', 'product-waitlist-after-hours');
     await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   document.getElementById('gateStatus').className = 'gate-status success';

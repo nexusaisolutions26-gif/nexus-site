@@ -163,8 +163,10 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     fd.append('email', email);
     fd.append('source', 'product-waitlist-missed-call-playbook');
     fd.append('tag', 'product-waitlist-missed-call');
-    fd.append('_subject', 'New form submission from nexusaiconcepts.com');
+    fd.append('_subject', 'New $14 Missed-Call Playbook signup');
     fd.append('_captcha', 'false');
+    fd.append('_autoresponse', 'Hi, we received your Missed-Call Text-Back Playbook order request. We'll send a Stripe payment link by email within minutes. Pay -> instant PDF download. Refund anytime in the first 30 days. Reply with any questions. — Nexus AI Solutions');
+    fd.append('product_tag', 'product-waitlist-missed-call');
     await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   document.getElementById('gateStatus').className = 'gate-status success';

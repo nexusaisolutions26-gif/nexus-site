@@ -224,8 +224,10 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     fd.append('email', email);
     fd.append('source', 'product-waitlist-snapshot');
     fd.append('tag', 'product-waitlist-snapshot');
-    fd.append('_subject', 'New form submission from nexusaiconcepts.com');
+    fd.append('_subject', 'New $97 AI Quick Win Snapshot signup');
     fd.append('_captcha', 'false');
+    fd.append('_autoresponse', 'Hi, we received your $97 AI Quick Win Snapshot order request. We'll send a Stripe payment link by email within minutes. Pay -> intake form arrives in your inbox -> branded 4-6 page PDF within 24 hours. Refund anytime in the first 30 days. $97 applies as credit toward the full $497 Assessment if you upgrade in 14 days. Reply with any questions. — Nexus AI Solutions');
+    fd.append('product_tag', 'product-waitlist-snapshot');
     await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   document.getElementById('gateStatus').className = 'gate-status success';

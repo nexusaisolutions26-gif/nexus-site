@@ -298,8 +298,10 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
     fd.append('source', 'interactive-audit');
     fd.append('tag', 'audit-completed');
     fd.append('audit_payload', JSON.stringify(state));
-    fd.append('_subject', 'New form submission from nexusaiconcepts.com');
+    fd.append('_subject', 'New audit-interactive signup');
     fd.append('_captcha', 'false');
+    fd.append('_autoresponse', 'Hi, we received your free AI audit request. Your written 4-fix plan tailored to YOUR specific situation will be sent to your inbox shortly. — Nexus AI Solutions');
+    fd.append('product_tag', 'audit-interactive-leads');
     await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   const status = document.getElementById('gateStatus');
