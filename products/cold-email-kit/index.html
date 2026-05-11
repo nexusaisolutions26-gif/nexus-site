@@ -153,7 +153,7 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
     fd.append('_captcha', 'false');
     fd.append('_autoresponse', 'Hi, we received your Cold Email Kit order request. We'll send a Stripe payment link by email within minutes. Pay -> instant PDF download. Refund anytime in the first 30 days. Reply with any questions. — Nexus AI Solutions');
     fd.append('product_tag', 'product-waitlist-cold-email-kit');
-    await fetch('https://formsubmit.co/ajax/nexusaisolutions26@gmail.com', { method: 'POST', body: fd, mode: 'cors' });
+    await fetch('https://formsubmit.co/ajax/d192edfcf59bc76d834b897429308e86', { method: 'POST', body: fd, mode: 'cors' });
   } catch (err) {}
   document.getElementById('gateStatus').style.display = 'block';
   document.getElementById('gateStatus').innerHTML = 'Got it. Watch your inbox for an invoice email from Nexus AI Solutions within minutes. Pay via the Stripe link inside, and your kit lands immediately after.';
