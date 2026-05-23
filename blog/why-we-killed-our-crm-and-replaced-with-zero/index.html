@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="First-person field report: we ran a $300/month CRM for our own AI consulting business for 4 months. Then we killed it. Replaced it with $0 in tools + a Gmail inbox + 6 hours of setup. Here is exactly what we replaced, why each piece, and what we lost giving up the CRM.">
+<meta name="keywords" content="alternatives to gohighlevel, gohighlevel cancel, do I need a CRM for small business, gmail as a CRM, no-CRM small business, formsubmit.co">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Nexus AI Solutions (Central Ohio)">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why We Killed Our $300/Month CRM (And Replaced It With $0 in Tools)">
+<meta property="og:description" content="Real first-person account of canceling GoHighLevel and rebuilding lead capture / customer email / purchases on a static site + Gmail + formsubmit.co + Stripe. What broke, what didn't, what we'd do differently.">
+<meta property="og:url" content="https://nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/">
+<meta property="og:image" content="https://nexusaiconcepts.com/assessment/og-image.png">
+<meta property="article:author" content="Nexus AI Solutions">
+<meta property="article:published_time" content="2026-05-23T09:00:00-04:00">
+<link rel="canonical" href="https://nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why We Killed Our $300/Month CRM (And Replaced It With $0 in Tools)",
+  "description": "First-person field report of canceling GoHighLevel and rebuilding the entire small-business CRM stack on free tools.",
+  "image": "https://nexusaiconcepts.com/assessment/og-image.png",
+  "author": { "@type": "Organization", "name": "Nexus AI Solutions", "url": "https://nexusaiconcepts.com/about/" },
+  "publisher": { "@type": "Organization", "name": "Nexus AI Solutions", "logo": { "@type": "ImageObject", "url": "https://nexusaiconcepts.com/assessment/og-image.png" } },
+  "datePublished": "2026-05-23",
+  "dateModified": "2026-05-23",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/" }
+}
+</script>
+
+<title>Why We Killed Our $300/Month CRM (And Replaced It With $0 in Tools) — Nexus AI Solutions</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
+a { text-decoration: none; color: #2563eb; }
+a:hover { text-decoration: underline; }
+
+nav { background: #0d1117; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.nav-logo span { color: #2563eb; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: #9ca3af; font-size: 15px; }
+
+.hero { background: linear-gradient(135deg, #0d1117 0%, #7c2d12 100%); color: #fff; padding: 80px 32px 56px; text-align: center; }
+.hero .badge { display: inline-block; background: rgba(251, 191, 36, 0.15); color: #fde68a; padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
+.hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; max-width: 880px; margin: 0 auto 18px; line-height: 1.15; }
+.hero .lead { font-size: 18px; color: #fed7aa; max-width: 720px; margin: 0 auto 14px; line-height: 1.55; }
+.hero .meta { font-size: 13px; color: #fbbf24; }
+
+article { max-width: 760px; margin: 50px auto 60px; padding: 0 32px; font-size: 17px; color: #1f2937; }
+article h2 { font-size: 30px; font-weight: 800; color: #0f172a; letter-spacing: -0.6px; margin: 48px 0 14px; line-height: 1.25; }
+article h3 { font-size: 22px; font-weight: 700; color: #0f172a; margin: 36px 0 10px; }
+article p { margin-bottom: 18px; line-height: 1.75; }
+article ul, article ol { margin: 0 0 22px 26px; }
+article li { margin-bottom: 8px; line-height: 1.65; }
+article strong { color: #0f172a; }
+article a { color: #2563eb; }
+
+.callout { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px 24px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+.callout strong { color: #78350f; }
+.callout p { margin: 0; color: #78350f; font-size: 16px; }
+
+.cost-table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 14px; }
+.cost-table th, .cost-table td { text-align: left; padding: 12px 14px; border: 1px solid #e2e8f0; }
+.cost-table th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+.cost-table tr.killed td { background: #fef2f2; text-decoration: line-through; color: #991b1b; }
+.cost-table tr.kept td { background: #f0fdf4; }
+.cost-table tr.kept td:first-child { font-weight: 700; }
+
+.cta-bottom { background: linear-gradient(135deg, #0d1117 0%, #134e4a 100%); color: #fff; padding: 40px 32px; border-radius: 14px; margin: 50px 0 0; text-align: center; }
+.cta-bottom h3 { font-size: 24px; color: #fff; margin-bottom: 12px; letter-spacing: -0.3px; }
+.cta-bottom p { color: #cbd5e1; margin-bottom: 22px; max-width: 580px; margin-left: auto; margin-right: auto; }
+.cta-bottom a { display: inline-block; background: #0d9488; color: #fff; padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 16px; }
+.cta-bottom a:hover { background: #0f766e; text-decoration: none; }
+
+footer { background: #0d1117; color: #6b7280; text-align: center; padding: 32px 24px; font-size: 14px; }
+footer a { color: #60a5fa; }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 22px; flex-wrap: wrap; gap: 10px; }
+  .hero { padding: 60px 22px 40px; }
+  .hero h1 { font-size: 32px; }
+  article { padding: 0 22px; margin: 36px auto 40px; }
+  article h2 { font-size: 26px; }
+  .cost-table { font-size: 12px; }
+  .cost-table th, .cost-table td { padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Nexus<span>AI</span></a>
+  <div class="nav-links">
+    <a href="/products/">Products</a>
+    <a href="/blog/">Blog</a>
+    <a href="/case-studies/">Case studies</a>
+    <a href="/assessment/">$497 Assessment</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="badge">Field report &middot; first-person</span>
+  <h1>Why we killed our $300/month CRM and replaced it with $0 in tools</h1>
+  <p class="lead">Real account of cancelling GoHighLevel for our own AI consulting business in May 2026. What we replaced each piece with, what broke, what we'd do differently, and the full bill — before and after.</p>
+  <p class="meta">May 23, 2026 &middot; 11 min read &middot; Central Ohio</p>
+</div>
+
+<article>
+
+<p>We ran GoHighLevel for our own AI consulting business for four months. Standard agency plan: $297/month for the platform, plus a chunk of Mailgun shared-IP sending costs bundled in. About $300/month all-in.</p>
+
+<p>Last week we cancelled it. Replaced the entire stack — lead capture, customer email, order intake, payment processing, social posting — with $0 in tools plus 6 hours of setup time.</p>
+
+<p>This is the post-mortem.</p>
+
+<div class="callout">
+<p><strong>Who this is for.</strong> If you run a small business (under 10 people) and you're paying $200-$500/month for an all-in-one CRM (GoHighLevel, Keap/Infusionsoft, HubSpot Starter, Zoho, ActiveCampaign+landing-page-builder, etc.), this is the honest version of "do I actually need this." Spoiler: maybe not.</p>
+</div>
+
+<h2>Why we bought GHL in the first place</h2>
+
+<p>Same reasons everyone does. The pitch is genuinely good:</p>
+<ul>
+  <li>One bill replaces 6-8 separate SaaS subscriptions.</li>
+  <li>Unified inbox for SMS + email + chat + Facebook DMs.</li>
+  <li>Built-in payment processing, invoicing, subscription management.</li>
+  <li>Calendar booking, automation workflows, email sending, landing pages, forms.</li>
+  <li>"You can run an entire agency on this." (Their marketing line. It's almost true.)</li>
+</ul>
+
+<p>For our actual use — small consulting outfit, low call volume, no team to share an inbox with — most of those features turned out to be overkill or actively counterproductive. Here's how it broke down.</p>
+
+<h2>What actually broke</h2>
+
+<h3>1. Email deliverability tanked because of the shared IP pool</h3>
+
+<p>GHL routes outbound through Mailgun, and by default puts you on a shared IP pool with hundreds of other GHL accounts. We pulled the raw email headers on one of our sends and confirmed it: <code>X-Mailgun-Sending-Ip-Pool-Name: High volume bucket #3</code>.</p>
+
+<p>Authentication was perfect — SPF, DKIM, DMARC all passing. The From header was correct. The content was clean (sentence case, no $-in-subject, CAN-SPAM footer, list-unsubscribe header). Gmail still routed our perfectly-authenticated emails straight to spam, because the shared IP's reputation was set by every other sender in the pool. None of which we control.</p>
+
+<p>We confirmed this by opening our own Gmail and looking at the spam folder: 12 of 14 spam emails were ours. Same sender, same domain, same content style as the ones we'd put in inbox earlier — Gmail had given up on the IP, not the content.</p>
+
+<p>Getting off shared IPs in GHL means upgrading to a dedicated IP add-on — typically $79-199/month extra. That would push the total bill to $400+/month and still leave us renting infrastructure we don't control.</p>
+
+<h3>2. The "social planner" silently failed for weeks</h3>
+
+<p>We scheduled 9 product-promotion posts to our Facebook page through GHL's social planner. The API returned 201 Created with a real ID for each post. We checked the queue — posts were there, marked "scheduled," with our Facebook account ID attached. At fire time, every single one was silently deleted. Zero published.</p>
+
+<p>Eventually we pulled the post object via API and saw it: <code>platform: "google"</code>. Even though we'd specified our Facebook account, GHL had categorized them as Google Business Profile posts. We don't have a GBP connected. So at fire time the system tried to publish to Google, failed, deleted the post, never tried Facebook.</p>
+
+<p>Reproduced across multiple versions of the API call. Could not find a parameter combination that would set <code>platform</code> to "facebook." It only worked when scheduled through their UI directly.</p>
+
+<h3>3. Form submissions were posting to a 404 endpoint for weeks</h3>
+
+<p>Every email-gate form on our site posted to <code>https://services.leadconnectorhq.com/funnels/submit</code>. That endpoint returns 404 Not Found. The JavaScript used <code>mode: 'no-cors'</code> which silently masks the failure, so customers saw "Got it! Watch your inbox" but the email never made it anywhere.</p>
+
+<p>We had been wondering for weeks why our waitlist tag count was stuck at 0 across every product. That was why.</p>
+
+<h3>4. The payment-failed lockout</h3>
+
+<p>The agency account hit a card-decline period and went into "temporarily locked" mode with a 14-day countdown to permanent shutdown. Several core features locked immediately — workflows stopped firing, the social planner went read-only.</p>
+
+<p>This was the moment we decided to leave instead of fixing the billing. The whole point of paying for infrastructure is that it's reliable. Reliability that hinges on a card not failing isn't reliability.</p>
+
+<h2>What we replaced each piece with</h2>
+
+<table class="cost-table">
+  <thead>
+    <tr><th>Function</th><th>GHL (was)</th><th>Replacement (now)</th><th>Monthly cost</th></tr>
+  </thead>
+  <tbody>
+    <tr class="killed"><td>Hosted landing pages + forms + CRM</td><td>GHL Agency plan</td><td>—</td><td>$297</td></tr>
+    <tr class="kept"><td>Static site hosting</td><td>—</td><td>GitHub Pages (free)</td><td>$0</td></tr>
+    <tr class="kept"><td>Forms / lead capture</td><td>GHL Funnels (broken anyway)</td><td>formsubmit.co relay → Gmail</td><td>$0</td></tr>
+    <tr class="kept"><td>CRM / lead tracking</td><td>GHL contacts</td><td>Gmail inbox (labels + filters)</td><td>$0</td></tr>
+    <tr class="kept"><td>Customer email (outbound)</td><td>GHL Conversations → Mailgun shared IP</td><td>Direct Gmail SMTP via app password</td><td>$0</td></tr>
+    <tr class="kept"><td>Payment processing</td><td>FastPayDirect (GHL white-label of Stripe)</td><td>Stripe Payment Links (direct)</td><td>2.9% + $0.30 per txn (same as before)</td></tr>
+    <tr class="kept"><td>Customer purchase flow</td><td>GHL Invoices (broken — payment poller never fired)</td><td>"Buy now" button → mailto: → Stripe link by reply</td><td>$0</td></tr>
+    <tr class="kept"><td>Social posting</td><td>GHL Social Planner (silent fail)</td><td>Direct Facebook page post + Buffer free tier if needed</td><td>$0</td></tr>
+    <tr class="kept"><td>Calendar booking (if needed)</td><td>GHL Calendars</td><td>Cal.com or Calendly free tier</td><td>$0</td></tr>
+    <tr><td><strong>Total</strong></td><td></td><td></td><td><strong>$0/month + payment fees only</strong></td></tr>
+  </tbody>
+</table>
+
+<h2>The pieces, in order of how much we worried about replacing them</h2>
+
+<h3>Forms (the easiest)</h3>
+
+<p>We thought this would be hard. It took 4 minutes.</p>
+
+<p><a href="https://formsubmit.co/">FormSubmit.co</a> is a free no-signup form relay. You point your form action at <code>https://formsubmit.co/ajax/youremail@gmail.com</code>, the first submission triggers a one-time activation email (one click), and every subsequent submission gets relayed to your inbox with the form fields in the body. It also supports a hashed URL so your email isn't exposed in page source.</p>
+
+<p>Same throughput as GHL Forms for our volume. Way more reliable. The only thing we lost: automatic tagging into a CRM. Which we replaced with…</p>
+
+<h3>CRM / lead tracking (just use Gmail)</h3>
+
+<p>For a 1-3 person business, Gmail labels + filters do everything a CRM does for new leads:</p>
+<ul>
+  <li>Filter: "From FormSubmit OR with subject 'Buy: '" → apply label "Leads/New" + Star + mark Important.</li>
+  <li>Manual triage takes 5 minutes a day. Tag in the inbox once decided.</li>
+  <li>For pipeline view, a single Google Sheet with columns: <em>Date / Email / Source / Status / Notes</em>. Update it from the inbox.</li>
+</ul>
+
+<p>What we lost: the ability to send 5,000-contact email sequences. We don't have 5,000 qualified contacts. We have maybe 40. Personalized one-by-one outreach beats automated 5,000-contact blasts for any business under $5M revenue.</p>
+
+<h3>Customer outbound email (Gmail SMTP, not Mailgun)</h3>
+
+<p>Wrote a 100-line Python sender (<code>send_via_gmail_smtp.py</code>) that connects to <code>smtp.gmail.com:587</code> using a Gmail app password. Sends from <code>nexusaisolutions26@gmail.com</code> through Gmail's own infrastructure — same IP as your normal Gmail sends, no shared-pool reputation problem.</p>
+
+<p>Throttle defaults to 12 seconds between sends (~5/min, ~300/hour). Gmail consumer accounts cap around 500/day; we stay well under to protect the personal-Gmail reputation we actually care about.</p>
+
+<p>What we lost: bulk-send capacity. Acceptable trade for emails that actually reach the inbox.</p>
+
+<h3>Payments (Stripe Payment Links direct)</h3>
+
+<p>FastPayDirect is GHL's white-label of Stripe Checkout. Money was always flowing through Stripe — we just had GHL in the middle holding the payment link IDs. Cutting GHL out: create the Payment Link directly in <a href="https://dashboard.stripe.com/">Stripe Dashboard</a>, paste the <code>https://buy.stripe.com/...</code> URL into the site's Buy Now button. Customer pays. Stripe emails confirmation. Same processor, same fees, same UX. Just one less middleman.</p>
+
+<h3>Social posting (back to native)</h3>
+
+<p>For Facebook page posts: log into Facebook, post manually, or use Meta Business Suite's built-in scheduler (free, doesn't silently break). For multi-channel: <a href="https://buffer.com/">Buffer free tier</a> handles 3 channels with 10 scheduled posts per channel. That covers us.</p>
+
+<p>What we lost: the "post once, fan out everywhere" feature. Realistically we were only posting to Facebook anyway. The other channels were getting our generic stat-dump posts that nobody engaged with.</p>
+
+<h2>What we actually lost (the honest part)</h2>
+
+<p>Three things, with our take on each.</p>
+
+<h3>1. Unified inbox across SMS / email / FB DM / web chat</h3>
+
+<p>This was the feature we used most in GHL. Watching one inbox instead of four was a real quality-of-life improvement.</p>
+
+<p>What we do now: forward FB Messenger to Gmail (Meta lets you do this for free in page settings), forward web chat to Gmail (we don't run web chat anymore — replaced with a "questions? email us" link), SMS goes to our personal phone (low volume). Net: one inbox plus one phone. Not as clean as GHL had it, but acceptable at our scale.</p>
+
+<h3>2. Automated multi-touch nurture sequences</h3>
+
+<p>GHL workflows let you fire 7-touch email sequences over 30 days automatically. We did this. It produced zero sales. The cohort was structurally bad (94% gmail, no first/last names — mostly catch-all info@ addresses), and the workflow was just spraying volume into the void.</p>
+
+<p>If we had a real engaged list, this would be worth rebuilding. We don't. Skipping it.</p>
+
+<h3>3. The "we have a CRM" psychological comfort</h3>
+
+<p>Paying $300/month for a CRM felt professional. Cancelling it felt like admitting we were small. Reality: we are small. Pretending otherwise with $300/month of infrastructure didn't make us bigger. It made us $300 poorer per month.</p>
+
+<h2>What we'd do differently if we were starting today</h2>
+
+<ol>
+  <li><strong>Skip the all-in-one CRM entirely until you've made $10K/month for 3 consecutive months.</strong> Below that, the time you spend in the CRM exceeds the time it saves.</li>
+  <li><strong>Start with Gmail + a Google Sheet for pipeline + Stripe Payment Links for purchases.</strong> Add tools as you hit specific friction. Most small businesses never hit the friction that justifies a CRM.</li>
+  <li><strong>If you DO need automation eventually, layer Zapier/Make.com on top of Gmail + Sheets + Stripe.</strong> Way more flexible than the workflow builders inside all-in-one CRMs, and you keep your data outside any one vendor's walls.</li>
+  <li><strong>For email deliverability, send from your real Gmail or a dedicated IP — never a shared pool.</strong> The cost of a tanked sender reputation outweighs the convenience of bundled sending.</li>
+</ol>
+
+<h2>Counter-arguments (and our response)</h2>
+
+<p><strong>"But what about as you scale?"</strong> Real answer: scale to the point where the friction shows up, then evaluate. The vast majority of businesses claiming they "need a CRM" don't, and the CRM ends up being a half-used $300/month feature library instead of a tool. We'll write a separate post when (if) we hit the point where we miss any GHL feature enough to rebuild it.</p>
+
+<p><strong>"Doesn't this make you look unprofessional?"</strong> The unprofessional version is paying $300/month for a CRM that silently drops customer signups for weeks because the forms POST to a 404. Customers see the inbox-based response speed and personal touch, not the back-end stack.</p>
+
+<p><strong>"What about when customers want to book a call?"</strong> They can't — we don't do calls (it's a written policy on our about page). For businesses that DO do calls, Cal.com free tier handles booking with calendar sync.</p>
+
+<h2>Bottom line</h2>
+
+<p>For most small businesses under $5M revenue and under 10 people, the all-in-one CRM is a solution to a problem they don't have. The actual problem is that they have too few qualified leads to justify automation infrastructure. Fixing that — by getting visible, building authority, and personally working the small list they do have — costs roughly $0/month and roughly all of an owner's available time.</p>
+
+<p>Pay for tools that remove specific friction once you can name the friction. Don't pre-buy infrastructure for the business you wish you had.</p>
+
+<div class="cta-bottom">
+  <h3>Want this analysis for your business?</h3>
+  <p>The $97 AI Quick Win Snapshot is a written 4-6 page report that names the single highest-leverage AI tool for your specific operation — including telling you when no AI tool is the right answer. 24-hour delivery, full refund anytime.</p>
+  <a href="/products/snapshot/">Get the $97 Snapshot &rarr;</a>
+</div>
+
+</article>
+
+<footer>
+  <p>&copy; 2026 Nexus AI Solutions &middot; <a href="/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/case-studies/">Case studies</a> &middot; <a href="/assessment/">$497 Assessment</a></p>
+  <p style="margin-top:8px;">Nexus AI Solutions, Circleville, OH 43113</p>
+</footer>
+
+</body>
+</html>
