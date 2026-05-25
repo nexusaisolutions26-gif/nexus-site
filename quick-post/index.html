@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Quick-Post Kit — internal</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,'Helvetica Neue',Arial,sans-serif; background:#0d1117; color:#e2e8f0; padding:24px 16px; line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; }
+h1 { font-size:28px; color:#fff; margin-bottom:6px; letter-spacing:-0.5px; }
+.sub { color:#9ca3af; font-size:14px; margin-bottom:24px; }
+.hint { background:#1e293b; border-left:3px solid #fbbf24; padding:14px 16px; border-radius:6px; margin-bottom:28px; font-size:14px; color:#fde68a; }
+.platform-block { background:#161b22; border:1px solid #1f2937; border-radius:12px; padding:20px; margin-bottom:20px; }
+.platform-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+.platform-name { font-size:18px; font-weight:700; color:#fff; }
+.platform-meta { font-size:12px; color:#64748b; }
+textarea {
+  width:100%; min-height:180px; background:#0d1117; color:#e2e8f0; border:1px solid #1f2937;
+  border-radius:8px; padding:14px; font-family:inherit; font-size:14px; line-height:1.6; resize:vertical;
+}
+.actions { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+button, .btn-link {
+  background:#2563eb; color:#fff; border:none; padding:11px 18px; border-radius:8px;
+  font-size:14px; font-weight:600; cursor:pointer; text-decoration:none; display:inline-block;
+}
+button:hover, .btn-link:hover { background:#1d4ed8; }
+.btn-copy { background:#16a34a; }
+.btn-copy:hover { background:#15803d; }
+.btn-copied { background:#0d9488 !important; }
+.url-box { font-family:monospace; font-size:12px; background:#0d1117; padding:8px 12px; border:1px solid #1f2937; border-radius:6px; color:#94a3b8; word-break:break-all; margin-top:8px; }
+.x-thread .tweet-num { color:#fbbf24; font-size:12px; font-weight:700; letter-spacing:1px; }
+.section-divider { height:1px; background:#1f2937; margin:36px 0; }
+.notes { background:#1e293b; padding:16px; border-radius:8px; font-size:13px; color:#cbd5e1; }
+.notes strong { color:#fde68a; }
+.notes ul { margin-left:20px; margin-top:6px; }
+.notes li { margin-bottom:4px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<h1>Quick-Post Kit</h1>
+<p class="sub">5-minute distribution. Open on your phone. Tap Copy, switch to the app, paste, post. Done.</p>
+
+<div class="hint">
+  <strong>How to use:</strong> Tap any green "Copy" button below. It puts the formatted post on your clipboard. Switch to the app (LinkedIn, X, Facebook), paste, and hit Post. Each post is pre-loaded with the cornerstone blog URL — that's the traffic driver.
+</div>
+
+<!-- LINKEDIN -->
+<div class="platform-block">
+  <div class="platform-head">
+    <div class="platform-name">LinkedIn</div>
+    <div class="platform-meta">Long-form personal post · best post window: Tue-Thu 8-10 AM ET</div>
+  </div>
+  <textarea id="li-text">After four months of running our AI consulting on GoHighLevel, we killed the entire stack last week.
+
+What broke us:
+• Shared Mailgun IP put 12 of 14 emails in Gmail spam regardless of perfect SPF/DKIM/DMARC
+• The social planner silently deleted every scheduled post (categorized them as platform=google despite Facebook accounts attached)
+• Forms POSTed to a 404 endpoint that mode:'no-cors' masked for weeks
+
+What we replaced it with — all $0/month:
+• GitHub Pages for the site
+• FormSubmit.co for forms
+• Gmail labels + a Sheet for CRM
+• Direct Gmail SMTP for outbound
+• Stripe Payment Links direct (no middleman)
+
+Total swap: 6 hours, $0 ongoing vs. $300+/mo for the old stack.
+
+Full post-mortem with the actual cost table + what we lost giving up the CRM:
+https://nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/
+
+If you're under 10 people and paying for an all-in-one CRM, you might want to read it before your next renewal.</textarea>
+  <div class="actions">
+    <button class="btn-copy" data-target="li-text">Copy LinkedIn post</button>
+    <a class="btn-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">Open LinkedIn &rarr;</a>
+  </div>
+</div>
+
+<!-- FACEBOOK -->
+<div class="platform-block">
+  <div class="platform-head">
+    <div class="platform-name">Facebook</div>
+    <div class="platform-meta">Personal profile · works any time</div>
+  </div>
+  <textarea id="fb-text">Spent the last week tearing out our $300/month CRM. Replaced it with $0 in tools. Now I'm selling what I learned building it.
+
+Five products, all instant access or 24-hour turnaround, all refundable in 30 days:
+
+→ $14 Missed-Call Playbook — recover the leads dying in voicemail
+→ $24 Custom GPT Pack — 12 industries, paste into ChatGPT
+→ $39 After-Hours System — full lead capture with tier comparison
+→ $97 AI Quick Win Snapshot — written 24-hour PDF for YOUR specific business
+→ $9 Cold Email Kit — what we use for our own outreach
+
+All five at: https://nexusaiconcepts.com/products/
+
+Anyone running a small business should at least look at the $14 missed-call one — most service businesses recover $1,500-$5,000/month from a setting that's already in their phone bill.</textarea>
+  <div class="actions">
+    <button class="btn-copy" data-target="fb-text">Copy Facebook post</button>
+    <a class="btn-link" href="https://www.facebook.com/" target="_blank" rel="noopener">Open Facebook &rarr;</a>
+  </div>
+</div>
+
+<!-- X SINGLE TWEET -->
+<div class="platform-block">
+  <div class="platform-head">
+    <div class="platform-name">X / Twitter — single tweet</div>
+    <div class="platform-meta">Under 280 chars · post any time</div>
+  </div>
+  <textarea id="x1-text">Just launched: $9-$97 productized AI tools for small biz. All instant checkout, 30-day refund.
+
+Most useful: $14 Missed-Call Playbook — recovers ~60% of after-hours leads dying in voicemail. Free setting most phone systems hide.
+
+→ nexusaiconcepts.com/products/</textarea>
+  <div class="actions">
+    <button class="btn-copy" data-target="x1-text">Copy single tweet</button>
+    <a class="btn-link" href="https://x.com/compose/post" target="_blank" rel="noopener">Open X composer &rarr;</a>
+  </div>
+</div>
+
+<!-- X THREAD -->
+<div class="platform-block x-thread">
+  <div class="platform-head">
+    <div class="platform-name">X / Twitter — 4-tweet thread</div>
+    <div class="platform-meta">Post sequentially, replying to each</div>
+  </div>
+
+  <p class="tweet-num">TWEET 1/4</p>
+  <textarea id="x-t1" style="min-height:120px;">Spent 4 months running our consulting on GoHighLevel. Killed it this week.
+
+GHL's shared Mailgun IP put 12 of our 14 emails in spam. Their social planner silently deleted every post. Their forms POSTed to a 404 endpoint. Nobody noticed for weeks.</textarea>
+  <div class="actions"><button class="btn-copy" data-target="x-t1">Copy tweet 1</button></div>
+
+  <p class="tweet-num" style="margin-top:18px;">TWEET 2/4</p>
+  <textarea id="x-t2" style="min-height:120px;">Replaced the entire stack with $0 in tools:
+• GitHub Pages (site)
+• FormSubmit.co (forms)
+• Gmail (CRM)
+• Gmail SMTP (outbound)
+• Stripe Payment Links (checkout)
+
+Setup: 6 hours. Cost: $0/month vs $300/month.
+
+Full post-mortem: nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/</textarea>
+  <div class="actions"><button class="btn-copy" data-target="x-t2">Copy tweet 2</button></div>
+
+  <p class="tweet-num" style="margin-top:18px;">TWEET 3/4</p>
+  <textarea id="x-t3" style="min-height:120px;">While rebuilding I productized what I'd been doing for clients. 5 things live:
+
+→ $14 Missed-Call Playbook
+→ $24 12-Industry Custom GPT Pack
+→ $39 After-Hours System
+→ $97 Quick Win Snapshot (24h PDF for your biz)
+→ $9 Cold Email Kit
+
+nexusaiconcepts.com/products/</textarea>
+  <div class="actions"><button class="btn-copy" data-target="x-t3">Copy tweet 3</button></div>
+
+  <p class="tweet-num" style="margin-top:18px;">TWEET 4/4</p>
+  <textarea id="x-t4" style="min-height:120px;">All real. Based on real implementations across 14 Ohio service businesses. Named tools. Real numbers. 30-day refund on every product. No upsell calls, no funnel, no email gate to read the sample reports.
+
+If any of this would help your business, the link's in tweet 3.</textarea>
+  <div class="actions"><button class="btn-copy" data-target="x-t4">Copy tweet 4</button></div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- DIRECT PASTE LINKS -->
+<div class="platform-block">
+  <div class="platform-head">
+    <div class="platform-name">Direct paste-and-post links</div>
+    <div class="platform-meta">Pre-fills the platform composer with the tweet</div>
+  </div>
+  <p style="font-size:14px; color:#cbd5e1; margin-bottom:14px;">These open the platform composer with the post text pre-loaded. Faster than copy-paste.</p>
+  <div class="actions">
+    <a class="btn-link" id="x-intent" href="#" target="_blank" rel="noopener">Tweet single-tweet now &rarr;</a>
+    <a class="btn-link" id="ln-share" style="background:#0a66c2;" href="#" target="_blank" rel="noopener">Share cornerstone post on LinkedIn &rarr;</a>
+    <a class="btn-link" id="fb-share" style="background:#1877f2;" href="#" target="_blank" rel="noopener">Share on Facebook &rarr;</a>
+    <a class="btn-link" id="reddit-share" style="background:#ff4500;" href="#" target="_blank" rel="noopener">Share on Reddit &rarr;</a>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- HN SUBMIT -->
+<div class="platform-block">
+  <div class="platform-head">
+    <div class="platform-name">Hacker News submission</div>
+    <div class="platform-meta">Highest single-event traffic potential. Post window: Tue-Thu 8-10 AM ET. Title matters more than anything.</div>
+  </div>
+  <p style="font-size:14px; color:#cbd5e1; margin-bottom:10px;"><strong style="color:#fbbf24;">Title to use:</strong></p>
+  <textarea id="hn-title" style="min-height:60px;">Killed our $300/month CRM and replaced it with $0 in free tools</textarea>
+  <div class="actions"><button class="btn-copy" data-target="hn-title">Copy HN title</button></div>
+
+  <p style="font-size:14px; color:#cbd5e1; margin-top:18px; margin-bottom:10px;"><strong style="color:#fbbf24;">URL to use:</strong></p>
+  <div class="url-box">https://nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/</div>
+  <div class="actions"><button class="btn-copy" data-target="hn-url" data-text="https://nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/">Copy URL</button></div>
+
+  <p style="font-size:14px; color:#cbd5e1; margin-top:18px; margin-bottom:10px;"><strong style="color:#fbbf24;">First comment to leave on your own submission (helps engagement signal):</strong></p>
+  <textarea id="hn-comment" style="min-height:140px;">Built these over the last 90 days while implementing AI tools for 14 Ohio service businesses. Each playbook is the thing I wished I'd had before doing the first implementation.
+
+Tooling note: site is static (GitHub Pages), forms run through FormSubmit.co, payments are direct Stripe Payment Links (created via the Stripe API in ~5 lines of code each), no CRM, no email automation platform. Replaced a $300/month GoHighLevel setup with $0/month in tools last week.
+
+Refund anytime in 30 days. Sample Snapshot reports public, no signup wall, at /products/snapshot/samples/.
+
+Happy to answer anything technical or about the implementations.</textarea>
+  <div class="actions">
+    <button class="btn-copy" data-target="hn-comment">Copy first comment</button>
+    <a class="btn-link" href="https://news.ycombinator.com/submit" target="_blank" rel="noopener">Open HN submit page &rarr;</a>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="notes">
+  <strong>Posting cadence — don't blast all in one day:</strong>
+  <ul>
+    <li><strong>Day 1 (Tue):</strong> LinkedIn long post</li>
+    <li><strong>Day 2 (Wed):</strong> Facebook</li>
+    <li><strong>Day 3 (Thu):</strong> X — pick single tweet OR 4-tweet thread, not both</li>
+    <li><strong>Day 4 (Fri):</strong> Hacker News submission (Tue or Thu morning is better if you can wait)</li>
+    <li><strong>Day 5+:</strong> Reply to any comments. That's where the conversions happen, not the post.</li>
+  </ul>
+  <p style="margin-top:12px;"><strong>Why this works at all:</strong> the cornerstone post is the bait, not the products. People click for the story, land on the blog post, see the products link in the body, and a small % convert. Spamming the products link directly without the story = ignored.</p>
+</div>
+
+</div>
+
+<script>
+const STORY_URL = 'https://nexusaiconcepts.com/blog/why-we-killed-our-crm-and-replaced-with-zero/';
+const STORY_TITLE = 'Killed our $300/month CRM and replaced it with $0 in free tools';
+
+document.querySelectorAll('button.btn-copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const target = btn.dataset.target;
+    const directText = btn.dataset.text;
+    let text;
+    if (directText) {
+      text = directText;
+    } else {
+      const el = document.getElementById(target);
+      if (!el) return;
+      text = el.value;
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      const originalText = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.classList.add('btn-copied');
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.classList.remove('btn-copied');
+      }, 1800);
+    } catch (e) {
+      alert('Copy failed. Long-press the text and copy manually.');
+    }
+  });
+});
+
+document.getElementById('x-intent').href =
+  'https://x.com/intent/tweet?text=' + encodeURIComponent(document.getElementById('x1-text').value);
+
+document.getElementById('ln-share').href =
+  'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(STORY_URL);
+
+document.getElementById('fb-share').href =
+  'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(STORY_URL);
+
+document.getElementById('reddit-share').href =
+  'https://www.reddit.com/submit?url=' + encodeURIComponent(STORY_URL) +
+  '&title=' + encodeURIComponent(STORY_TITLE);
+</script>
+
+</body>
+</html>
