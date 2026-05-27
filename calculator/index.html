@@ -189,6 +189,26 @@ footer a { color: #2563eb; }
       </div>
       <p style="margin-top:14px; font-size:14px; color:#6b7280;">$97 applies as credit toward $497 if you upgrade in 14 days. <a href="https://nexusaiconcepts.com/products/snapshot/samples/" style="color:#0d9488;">Read 5 sample Snapshot reports first &rarr;</a></p>
     </div>
+
+    <!-- Soft email capture - opt-in only, one email no sequence -->
+    <div style="background:#f8fafc; border:2px solid #93c5fd; border-radius:12px; padding:28px; margin-top:28px;">
+      <h3 style="font-size:18px; font-weight:700; color:#0f172a; margin-bottom:6px;">Or, get this result as a PDF with the specific tool recommendations</h3>
+      <p style="font-size:14px; color:#475569; margin-bottom:14px;">Drop your email and we'll send a one-page PDF: your numbers plus the 2-3 specific tools to fix the biggest leak. <strong>No list. No follow-up sequence. One email, then we go away.</strong></p>
+      <form action="https://formsubmit.co/d192edfcf59bc76d834b897429308e86" method="POST" style="display:flex; gap:8px; flex-wrap:wrap;">
+        <input type="hidden" name="_subject" value="Calculator PDF request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://nexusaiconcepts.com/calculator/thanks/">
+        <input type="hidden" name="source" value="calculator">
+        <input type="hidden" name="calc_lead_loss" id="capture_leadLoss">
+        <input type="hidden" name="calc_total_loss" id="capture_totalLoss">
+        <input type="hidden" name="calc_recoverable" id="capture_recoverable">
+        <input type="email" name="email" placeholder="your@email.com" required style="flex:1; min-width:200px; padding:12px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:15px; font-family:inherit;">
+        <button type="submit" style="background:#2563eb; color:#fff; padding:12px 22px; border:none; border-radius:8px; font-size:14px; font-weight:700; cursor:pointer;">Send the PDF</button>
+        <p style="font-size:11px; color:#64748b; margin-top:8px; width:100%;">One email. No marketing list. If you ever want to hear from us again, come back to the site &mdash; we don't follow up.</p>
+      </form>
+    </div>
+
   </div>
 </div>
 
@@ -224,6 +244,15 @@ function calculate() {
   document.getElementById('totalLoss').textContent = '$' + totalLoss.toLocaleString();
   document.getElementById('annualLoss').textContent = '$' + (totalLoss * 12).toLocaleString();
   document.getElementById('recoverable').textContent = '$' + recoverable.toLocaleString();
+
+  // Pipe the calculated values into the email capture form (hidden fields) so
+  // the PDF request includes the user's actual numbers, not just their email.
+  var captureLeadLoss = document.getElementById('capture_leadLoss');
+  var captureTotalLoss = document.getElementById('capture_totalLoss');
+  var captureRecoverable = document.getElementById('capture_recoverable');
+  if (captureLeadLoss) captureLeadLoss.value = leadLoss;
+  if (captureTotalLoss) captureTotalLoss.value = totalLoss;
+  if (captureRecoverable) captureRecoverable.value = recoverable;
 
   document.getElementById('results').style.display = 'block';
   document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Hand-out one-pager — print and fold</title>
+<style>
+@page { size: letter portrait; margin: 0.4in; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #0f172a; line-height: 1.5; }
+.page { width: 7.7in; min-height: 10.2in; margin: 0.4in auto; padding: 0; }
+
+@media print {
+  body { background: #fff; }
+  .page { margin: 0; }
+  .no-print { display: none !important; }
+}
+
+@media screen {
+  body { background: #f1f5f9; padding: 20px 0; }
+  .page { background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.12); padding: 0.4in; }
+  .screen-only-tip { background: #fef3c7; border: 1px solid #fbbf24; padding: 14px 20px; max-width: 7.7in; margin: 0 auto 20px; border-radius: 8px; font-size: 14px; color: #78350f; }
+}
+
+h1 { font-size: 26pt; font-weight: 800; letter-spacing: -0.5pt; line-height: 1.1; margin-bottom: 6pt; color: #0f172a; }
+h1 span { color: #2563eb; }
+.tagline { font-size: 12pt; color: #475569; margin-bottom: 18pt; font-weight: 500; }
+
+.hr-rule { height: 2pt; background: #fbbf24; width: 60pt; margin-bottom: 14pt; }
+
+.intro { font-size: 11pt; color: #1f2937; line-height: 1.55; margin-bottom: 16pt; }
+.intro strong { color: #0f172a; }
+
+.wins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; margin-bottom: 18pt; }
+.win {
+  border: 1pt solid #e2e8f0;
+  border-radius: 8pt;
+  padding: 12pt 14pt;
+  background: #f8fafc;
+}
+.win-num {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  font-size: 9pt;
+  font-weight: 800;
+  padding: 2pt 8pt;
+  border-radius: 100pt;
+  letter-spacing: 0.5pt;
+  margin-bottom: 6pt;
+}
+.win h3 { font-size: 11pt; font-weight: 700; color: #0f172a; margin-bottom: 4pt; line-height: 1.3; }
+.win p { font-size: 9.5pt; color: #475569; line-height: 1.45; }
+.win .roi { display: block; margin-top: 6pt; font-size: 9pt; color: #15803d; font-weight: 700; }
+
+.offer-strip {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  border-radius: 10pt;
+  padding: 16pt 18pt;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14pt;
+  margin-bottom: 16pt;
+}
+.offer-block { display: flex; gap: 12pt; align-items: center; }
+.offer-block img.qr {
+  width: 90pt; height: 90pt;
+  background: #fff;
+  padding: 4pt;
+  border-radius: 4pt;
+  flex-shrink: 0;
+}
+.offer-block .text { flex: 1; }
+.offer-block .price {
+  font-size: 22pt;
+  font-weight: 800;
+  color: #fde68a;
+  line-height: 1;
+  letter-spacing: -1pt;
+  margin-bottom: 2pt;
+}
+.offer-block .name { font-size: 11pt; font-weight: 700; color: #fff; margin-bottom: 4pt; }
+.offer-block .desc { font-size: 8.5pt; color: #cbd5e1; line-height: 1.4; }
+.offer-block .url-tiny { font-size: 7.5pt; color: #94a3b8; margin-top: 4pt; font-family: monospace; word-break: break-all; }
+
+.proof-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10pt;
+  margin-bottom: 14pt;
+}
+.proof {
+  border-left: 3pt solid #0d9488;
+  padding: 4pt 0 4pt 10pt;
+}
+.proof .head { font-size: 8pt; font-weight: 700; color: #0d9488; text-transform: uppercase; letter-spacing: 1pt; margin-bottom: 2pt; }
+.proof .body { font-size: 9pt; color: #1f2937; line-height: 1.4; }
+.proof .body strong { color: #0f172a; }
+
+.footer-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1pt solid #e2e8f0;
+  padding-top: 10pt;
+  font-size: 8pt;
+  color: #64748b;
+}
+.footer-strip .left { line-height: 1.5; }
+.footer-strip .left strong { color: #0f172a; font-size: 9pt; }
+.footer-strip .right { text-align: right; line-height: 1.5; }
+.footer-strip .right .domain { font-size: 11pt; color: #0f172a; font-weight: 800; letter-spacing: -0.3pt; }
+.footer-strip a { color: #2563eb; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="screen-only-tip no-print">
+  <strong>How to use:</strong> Print this page (Ctrl/Cmd+P, single page, default margins). Hand to any small business owner you meet. The QR codes lead direct to one-click Stripe checkout. Refund anytime in 30 days.
+</div>
+
+<div class="page">
+
+<h1>5 AI Wins<br><span>for Central Ohio small business</span></h1>
+<p class="tagline">Pick one. Implement this week. Most cost $0 in new tools.</p>
+<div class="hr-rule"></div>
+
+<p class="intro">Across 14 Ohio service businesses we worked with in 2025–26, the same 5 fixes came up over and over — none required new platforms, most used a setting that was already in their phone bill or existing software. The exact playbook, with phone-system-specific setup steps, is on the back-of-this-flyer Stripe links.</p>
+
+<div class="wins-grid">
+
+  <div class="win">
+    <span class="win-num">WIN 1</span>
+    <h3>Missed-Call Text-Back</h3>
+    <p>Caller hangs up at voicemail. Phone system auto-texts them: "missed your call, what can we help with?" Recovers 40–60% of dropped calls.</p>
+    <span class="roi">Typical lift: $1,500–$5,000/mo</span>
+  </div>
+
+  <div class="win">
+    <span class="win-num">WIN 2</span>
+    <h3>Quote-Drafter GPT</h3>
+    <p>Custom ChatGPT trained on your past quotes. 12-minute quote becomes 90-second quote. Close rate jumps 15–20%.</p>
+    <span class="roi">Tool cost: $20/mo (ChatGPT Plus)</span>
+  </div>
+
+  <div class="win">
+    <span class="win-num">WIN 3</span>
+    <h3>Auto Review Requests</h3>
+    <p>Job done → text the customer 2 hrs later with a Google review link. Reviews double in 90 days. Google ranking follows.</p>
+    <span class="roi">Most CRMs do this already, off by default</span>
+  </div>
+
+  <div class="win">
+    <span class="win-num">WIN 4</span>
+    <h3>No-Show SMS Confirmations</h3>
+    <p>Appointment reminder 24 hrs before, with "reply C to confirm." Salon/spa/dental no-show rates drop from 11% to under 4%.</p>
+    <span class="roi">Built into Vagaro, Weave, Mindbody</span>
+  </div>
+
+  <div class="win">
+    <span class="win-num">WIN 5</span>
+    <h3>After-Hours Auto-Reply</h3>
+    <p>Email or web-form at 9pm gets an instant personalized reply with your availability. By Monday morning, the lead is warm, not gone.</p>
+    <span class="roi">~30 min one-time setup</span>
+  </div>
+
+  <div class="win" style="background:#fffbeb; border-color:#fde68a;">
+    <span class="win-num" style="background:#92400e;">WHEN AI IS NOT THE ANSWER</span>
+    <h3>You have a sales problem, not a tools problem</h3>
+    <p>If your closing rate on qualified leads is &lt;30%, more leads won't help. If your team is 8+ people, a CRM might. If you're solo and pre-$5M, AI tools deliver more ROI than software.</p>
+  </div>
+
+</div>
+
+<div class="offer-strip">
+
+  <div class="offer-block">
+    <img class="qr" src="qr-missed-call-playbook.png" alt="QR code for $14 Missed-Call Playbook">
+    <div class="text">
+      <div class="price">$14</div>
+      <div class="name">Missed-Call Playbook</div>
+      <div class="desc">14-page PDF, 12 phone systems with setup steps, 8 message templates. 30-day refund.</div>
+      <div class="url-tiny">buy.stripe.com/28E14p…</div>
+    </div>
+  </div>
+
+  <div class="offer-block">
+    <img class="qr" src="qr-snapshot.png" alt="QR code for $97 AI Quick Win Snapshot">
+    <div class="text">
+      <div class="price">$97</div>
+      <div class="name">AI Quick Win Snapshot</div>
+      <div class="desc">Branded 24-hour written report — the single highest-leverage AI tool for YOUR business. Refund anytime.</div>
+      <div class="url-tiny">buy.stripe.com/cNiaEZ…</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="proof-row">
+  <div class="proof">
+    <div class="head">Landscaping · OH</div>
+    <div class="body">Quote turnaround <strong>12 min → 90 sec</strong>. Close rate +18%. Saturdays back with family.</div>
+  </div>
+  <div class="proof">
+    <div class="head">Auto repair · OH</div>
+    <div class="body">Auto-text on missed calls. <strong>11 calls recovered in 30 days × $385 avg = $4,200</strong>.</div>
+  </div>
+  <div class="proof">
+    <div class="head">Veterinary · OH</div>
+    <div class="body">No-show rate <strong>12% → under 5%</strong> with Pawlytics SMS confirmations. 90-min setup.</div>
+  </div>
+</div>
+
+<div class="footer-strip">
+  <div class="left">
+    <strong>Nexus AI Solutions</strong><br>
+    Circleville, Ohio · async-only, no calls<br>
+    30-day refund on every product
+  </div>
+  <div class="right">
+    <span class="domain">nexusaiconcepts.com</span><br>
+    All 5 products + sample reports<br>
+    <a href="mailto:nexusaisolutions26@gmail.com">nexusaisolutions26@gmail.com</a>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
