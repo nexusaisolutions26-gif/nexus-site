@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="{{BRAND_PRIMARY}}">
+<meta name="apple-mobile-web-app-title" content="{{BUSINESS_NAME}}">
+<title>{{BUSINESS_NAME}} — Send photo</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html, body { height:100%; overflow:hidden; }
+body { font-family:-apple-system,'Helvetica Neue',Arial,sans-serif; background:#0d1117; color:#e2e8f0; display:flex; flex-direction:column; }
+
+header { padding:16px 18px 8px; text-align:center; border-bottom:1px solid #1f2937; }
+header .brand { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8; }
+header .biz { font-size:17px; font-weight:700; color:#fff; margin-top:2px; letter-spacing:-0.3px; }
+
+main { flex:1; padding:20px 18px; display:flex; flex-direction:column; overflow-y:auto; }
+
+.dropzone {
+  border:3px dashed #334155;
+  border-radius:18px;
+  background:#161b22;
+  padding:32px 20px;
+  text-align:center;
+  cursor:pointer;
+  transition:all 0.15s;
+  margin-bottom:16px;
+}
+.dropzone.has-file { border-color:{{BRAND_PRIMARY}}; background:#0f1822; border-style:solid; }
+.dropzone:active { transform:scale(0.99); }
+
+.dropzone .icon {
+  width:72px; height:72px; border-radius:50%;
+  background:{{BRAND_PRIMARY}};
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 14px;
+  font-size:36px; color:#fff; font-weight:300;
+}
+.dropzone h2 { font-size:18px; color:#fff; margin-bottom:4px; font-weight:700; }
+.dropzone .sub { font-size:13px; color:#94a3b8; }
+
+.preview-wrap { display:none; margin-bottom:16px; }
+.preview-wrap.show { display:block; }
+.preview-wrap img { width:100%; max-height:280px; object-fit:cover; border-radius:14px; }
+.preview-wrap .change-btn { display:block; width:100%; text-align:center; padding:10px; margin-top:8px; font-size:13px; color:#94a3b8; background:transparent; border:none; cursor:pointer; }
+
+.caption-wrap label { display:block; font-size:13px; font-weight:600; color:#cbd5e1; margin-bottom:6px; padding-left:4px; }
+.caption-wrap textarea {
+  width:100%; padding:14px; min-height:90px;
+  background:#161b22; border:1px solid #1f2937; border-radius:12px;
+  color:#e2e8f0; font-family:inherit; font-size:15px; resize:none;
+}
+.caption-wrap textarea:focus { outline:none; border-color:{{BRAND_PRIMARY}}; }
+.caption-wrap .hint { font-size:11px; color:#64748b; margin-top:6px; padding-left:4px; }
+
+footer { padding:14px 18px 28px; border-top:1px solid #1f2937; background:#0d1117; }
+.send-btn {
+  width:100%; padding:18px;
+  background:{{BRAND_PRIMARY}}; color:#fff;
+  border:none; border-radius:14px;
+  font-size:17px; font-weight:800;
+  letter-spacing:0.3px;
+  cursor:pointer;
+  transition:all 0.15s;
+}
+.send-btn:active { transform:scale(0.98); }
+.send-btn:disabled { background:#334155; color:#64748b; cursor:not-allowed; }
+.send-btn.sending { background:#15803d; }
+
+.status { text-align:center; font-size:13px; color:#86efac; padding:10px 0; min-height:32px; }
+.status.error { color:#fca5a5; }
+
+#fileInput { display:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">SEND POST PHOTO</div>
+  <div class="biz">{{BUSINESS_NAME}}</div>
+</header>
+
+<main>
+  <form id="photoForm" action="https://formsubmit.co/d192edfcf59bc76d834b897429308e86" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Photo from {{BUSINESS_NAME}}">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://nexusaiconcepts.com/clients/{{CLIENT_SLUG}}/send/thanks/">
+    <input type="hidden" name="client_slug" value="{{CLIENT_SLUG}}">
+    <input type="hidden" name="business" value="{{BUSINESS_NAME}}">
+    <input type="hidden" name="city" value="{{CITY}}">
+
+    <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
+      <div class="icon">+</div>
+      <h2>Tap to add a photo</h2>
+      <div class="sub">Take a new one or pick from your phone</div>
+    </div>
+    <input type="file" id="fileInput" name="attachment" accept="image/*" capture="environment" onchange="handleFile(event)">
+
+    <div class="preview-wrap" id="previewWrap">
+      <img id="previewImg" alt="">
+      <button type="button" class="change-btn" onclick="document.getElementById('fileInput').click()">Change photo</button>
+    </div>
+
+    <div class="caption-wrap">
+      <label for="caption">Want to add a note? (optional)</label>
+      <textarea id="caption" name="caption" placeholder="e.g. 'just finished a furnace install in Pickerington' or 'spring AC tune-up special this week'"></textarea>
+      <div class="hint">If you don't add a note, we'll write the caption for you from the photo.</div>
+    </div>
+  </form>
+</main>
+
+<footer>
+  <button type="submit" form="photoForm" class="send-btn" id="sendBtn" disabled>Add a photo to send</button>
+  <div class="status" id="status">Posts go live within 4 hours on your FB + IG</div>
+</footer>
+
+<script>
+function handleFile(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const wrap = document.getElementById('previewWrap');
+  const img = document.getElementById('previewImg');
+  const dropzone = document.getElementById('dropzone');
+  const sendBtn = document.getElementById('sendBtn');
+
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    img.src = ev.target.result;
+    wrap.classList.add('show');
+    dropzone.classList.add('has-file');
+    dropzone.querySelector('h2').textContent = 'Photo ready';
+    dropzone.querySelector('.sub').textContent = 'Tap to swap, or add a note below';
+    sendBtn.disabled = false;
+    sendBtn.textContent = 'Send to my Facebook + Instagram';
+  };
+  reader.readAsDataURL(file);
+}
+
+document.getElementById('photoForm').addEventListener('submit', (e) => {
+  const sendBtn = document.getElementById('sendBtn');
+  const status = document.getElementById('status');
+  sendBtn.disabled = true;
+  sendBtn.classList.add('sending');
+  sendBtn.textContent = 'Sending...';
+  status.textContent = 'Uploading photo...';
+});
+</script>
+
+</body>
+</html>
