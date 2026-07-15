@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Quote & Estimate Generator for Service Businesses | Nexus AI Solutions</title>
+<meta name="description" content="Free tool: turn a plain-English job description into a professional, branded quote in seconds. Built for HVAC, plumbing, electrical, roofing, landscaping and other service businesses. No signup.">
+<link rel="canonical" href="https://nexusaiconcepts.com/tools/quote-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexus AI Solutions">
+<meta property="og:title" content="Free Quote & Estimate Generator for Service Businesses">
+<meta property="og:description" content="Turn a plain-English job into a professional branded quote in seconds. Free, no signup.">
+<meta property="og:url" content="https://nexusaiconcepts.com/tools/quote-generator/">
+<meta property="og:image" content="https://nexusaiconcepts.com/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--navy:#0d1117;--navy2:#131b2e;--blue:#2563eb;--blue2:#60a5fa;--amber:#fbbf24;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9}
+  body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+  header.site{background:var(--navy);color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+  header.site .logo{font-weight:800;font-size:19px;letter-spacing:-.5px}
+  header.site .logo span{color:var(--blue2)}
+  header.site a{color:#cbd5e1;text-decoration:none;font-size:14px}
+  .hero{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:40px 24px 32px;text-align:center}
+  .hero h1{font-size:30px;font-weight:800;letter-spacing:-.5px;max-width:760px;margin:0 auto 10px}
+  .hero p{color:#94a3b8;max-width:620px;margin:0 auto;font-size:16px}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .card h2{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;color:#334155;margin:12px 0 5px}
+  input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;color:var(--ink);background:#fff}
+  textarea{resize:vertical;min-height:84px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .draft-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px;margin-bottom:6px}
+  .draft-box .hint{font-size:12px;color:#1e40af;margin-bottom:8px}
+  button{cursor:pointer;font-family:inherit;font-weight:700;border:none;border-radius:8px}
+  .btn-primary{background:var(--blue);color:#fff;padding:11px 18px;font-size:14px}
+  .btn-primary:hover{background:#1d4ed8}
+  .btn-amber{background:var(--amber);color:#1a1400;padding:11px 18px;font-size:14px}
+  .btn-amber:hover{background:#f59e0b}
+  .btn-ghost{background:#fff;border:1px solid var(--line);color:#334155;padding:8px 12px;font-size:13px}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+  table{width:100%;border-collapse:collapse;margin-top:6px;font-size:14px}
+  th{text-align:left;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;padding:6px 6px}
+  td{padding:4px 6px;border-top:1px solid var(--line);vertical-align:middle}
+  td input{padding:7px 8px}
+  .li-desc{width:100%}
+  .li-qty{width:60px;text-align:center}
+  .li-price{width:100px;text-align:right}
+  .li-del{color:#ef4444;background:none;border:none;font-size:18px;cursor:pointer;line-height:1}
+  .add-row{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .chip{background:#f1f5f9;border:1px solid var(--line);border-radius:20px;padding:5px 11px;font-size:12.5px;cursor:pointer;color:#334155}
+  .chip:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+  /* preview / quote */
+  #preview{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .q-head{background:var(--navy);color:#fff;padding:24px 28px;display:flex;justify-content:space-between;align-items:flex-start}
+  .q-head .biz{font-size:22px;font-weight:800}
+  .q-head .biz small{display:block;font-weight:400;color:#94a3b8;font-size:13px;margin-top:4px}
+  .q-head .q-label{text-align:right}
+  .q-head .q-label b{font-size:20px;letter-spacing:2px}
+  .q-body{padding:24px 28px}
+  .q-meta{display:flex;justify-content:space-between;font-size:13px;color:#475569;margin-bottom:18px;gap:20px;flex-wrap:wrap}
+  .q-meta b{color:var(--ink);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  table.q-items{width:100%;border-collapse:collapse;margin-bottom:16px}
+  table.q-items th{background:#f8fafc;padding:9px 10px;font-size:11px}
+  table.q-items td{padding:9px 10px;font-size:14px;border-top:1px solid var(--line)}
+  table.q-items td.num{text-align:right;white-space:nowrap}
+  .q-totals{margin-left:auto;width:260px;font-size:14px}
+  .q-totals .r{display:flex;justify-content:space-between;padding:5px 0}
+  .q-totals .grand{border-top:2px solid var(--ink);margin-top:6px;padding-top:9px;font-size:19px;font-weight:800}
+  .q-terms{margin-top:20px;font-size:12.5px;color:#475569;border-top:1px solid var(--line);padding-top:14px;white-space:pre-wrap}
+  .q-foot{background:#f8fafc;border-top:1px solid var(--line);padding:12px 28px;font-size:11.5px;color:var(--muted);text-align:center}
+  .toolbar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+  .cta{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;border-radius:14px;padding:22px;margin-top:2px}
+  .cta h3{font-size:17px;margin-bottom:6px}
+  .cta p{color:#94a3b8;font-size:14px;margin-bottom:12px}
+  .cta a{display:inline-block;background:var(--amber);color:#1a1400;padding:10px 18px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px}
+  .muted{color:var(--muted);font-size:12.5px}
+  @media print{
+    header.site,.hero,.editor,.toolbar,.cta,.site-foot{display:none!important}
+    body{background:#fff}.wrap{display:block;padding:0}
+    #preview{border:none;border-radius:0}
+  }
+  .site-foot{text-align:center;padding:26px;color:var(--muted);font-size:13px}
+  .site-foot a{color:var(--blue)}
+</style>
+</head>
+<body>
+<header class="site">
+  <a href="/" class="logo">Nexus <span>AI</span></a>
+  <a href="/">nexusaiconcepts.com</a>
+</header>
+
+<div class="hero">
+  <h1>Turn a job description into a professional quote in seconds</h1>
+  <p>Type what the job is in plain English. Get a clean, branded estimate you can send or print. Free, no signup, nothing leaves your browser.</p>
+</div>
+
+<div class="wrap">
+  <!-- EDITOR -->
+  <div class="editor">
+    <div class="card">
+      <h2>1 &nbsp;Your business</h2>
+      <div class="row">
+        <div><label>Business name</label><input id="bizName" value="Your Company LLC"></div>
+        <div><label>Phone / email</label><input id="bizContact" value="you@yourcompany.com"></div>
+      </div>
+      <label>Trade</label>
+      <select id="trade" onchange="renderChips()">
+        <option value="hvac">HVAC / Heating &amp; Cooling</option>
+        <option value="plumbing">Plumbing</option>
+        <option value="electrical">Electrical</option>
+        <option value="roofing">Roofing</option>
+        <option value="landscaping">Landscaping / Lawn</option>
+        <option value="cleaning">Cleaning / Janitorial</option>
+        <option value="pest">Pest Control</option>
+        <option value="painting">Painting</option>
+        <option value="general">General / Handyman</option>
+      </select>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h2>2 &nbsp;Describe the job (the smart part)</h2>
+      <div class="draft-box">
+        <div class="hint">Type the job like you'd say it out loud. Example: "replace 40 gallon water heater, add expansion tank, haul away old unit"</div>
+        <textarea id="draftText" placeholder="Describe the work..."></textarea>
+      </div>
+      <button class="btn-primary" onclick="smartDraft()">Draft the line items &rarr;</button>
+      <span class="muted" id="draftMsg" style="margin-left:10px"></span>
+      <div style="margin-top:14px">
+        <label>Or add common items for this trade:</label>
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h2>3 &nbsp;Line items</h2>
+      <table>
+        <thead><tr><th>Description</th><th style="text-align:center">Qty</th><th style="text-align:right">Unit $</th><th style="text-align:right">Total</th><th></th></tr></thead>
+        <tbody id="items"></tbody>
+      </table>
+      <div class="add-row">
+        <button class="btn-ghost" onclick="addItem('',1,0)">+ Add blank line</button>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div><label>Customer name</label><input id="custName" value="Customer name" oninput="render()"></div>
+        <div><label>Tax rate %</label><input id="taxRate" type="number" value="0" oninput="render()"></div>
+      </div>
+      <label>Terms / notes</label>
+      <textarea id="terms" oninput="render()">Estimate valid for 30 days. 50% deposit due on scheduling, balance on completion. Thank you for the opportunity to earn your business.</textarea>
+    </div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div>
+    <div class="toolbar">
+      <button class="btn-amber" onclick="window.print()">Save as PDF / Print</button>
+      <button class="btn-ghost" onclick="resetAll()">Start over</button>
+    </div>
+    <div id="preview"></div>
+    <div class="cta">
+      <h3>This quote is done. The follow-up isn't.</h3>
+      <p>The version we build sends the quote automatically, texts a reminder if it's not opened in 2 days, and follows up until they answer. That's the part that wins the job.</p>
+      <a href="/">See how it works &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="site-foot">
+  Free tool by <a href="/">Nexus AI Solutions</a> &middot; We build the automated version. &middot; Nothing you type is stored or sent anywhere.
+</div>
+
+<script>
+const LIBRARY = {
+  hvac:[
+    {k:["diagnostic","service call","inspection","look at","not working","check"],d:"Diagnostic / service call",p:89},
+    {k:["tune","maintenance","tuneup","tune-up"],d:"System tune-up & inspection",p:129},
+    {k:["capacitor"],d:"Capacitor replacement",p:225},
+    {k:["fan motor","condenser fan","blower motor"],d:"Fan / blower motor replacement",p:485},
+    {k:["refrigerant","freon","recharge","charge"],d:"Refrigerant recharge (per lb)",p:75},
+    {k:["thermostat","smart thermostat"],d:"Smart thermostat supply & install",p:285},
+    {k:["water heater","hot water"],d:"40-gal water heater supply & install",p:1650},
+    {k:["expansion tank"],d:"Expansion tank install",p:185},
+    {k:["furnace"],d:"Furnace repair (parts & labor)",p:420},
+    {k:["ac","a/c","air condition","condenser","unit replace","new system","system replace"],d:"AC system replacement (3-ton)",p:6500},
+    {k:["duct","ductwork"],d:"Ductwork repair / sealing",p:550},
+    {k:["haul","dispose","remove old","haul away"],d:"Haul away & dispose old equipment",p:95}
+  ],
+  plumbing:[
+    {k:["service call","diagnostic","look at"],d:"Service call / diagnostic",p:89},
+    {k:["water heater","hot water"],d:"40-gal water heater supply & install",p:1650},
+    {k:["expansion tank"],d:"Expansion tank install",p:185},
+    {k:["faucet"],d:"Faucet supply & install",p:245},
+    {k:["toilet"],d:"Toilet supply & install",p:365},
+    {k:["garbage disposal","disposal"],d:"Garbage disposal install",p:285},
+    {k:["leak","pipe","repair pipe"],d:"Pipe leak repair",p:320},
+    {k:["drain","clog","snake","unclog","backup"],d:"Drain clearing / snaking",p:225},
+    {k:["sump pump","sump"],d:"Sump pump supply & install",p:625},
+    {k:["repipe","re-pipe"],d:"Section repipe (per fixture)",p:450},
+    {k:["haul","dispose","remove old","haul away"],d:"Haul away & dispose old unit",p:85}
+  ],
+  electrical:[
+    {k:["service call","diagnostic"],d:"Service call / diagnostic",p:95},
+    {k:["outlet","receptacle","gfci"],d:"Outlet / GFCI install",p:165},
+    {k:["switch","dimmer"],d:"Switch / dimmer install",p:135},
+    {k:["panel","breaker box","service upgrade","200 amp"],d:"200-amp panel upgrade",p:2400},
+    {k:["breaker"],d:"Breaker replacement",p:185},
+    {k:["ceiling fan","fan"],d:"Ceiling fan supply & install",p:295},
+    {k:["light","fixture","recessed","can light"],d:"Light fixture install",p:175},
+    {k:["ev","charger","car charger"],d:"EV charger circuit & install",p:850},
+    {k:["generator"],d:"Standby generator install",p:4800},
+    {k:["wiring","rewire","circuit"],d:"Dedicated circuit run",p:385}
+  ],
+  roofing:[
+    {k:["inspection","inspect","look at"],d:"Roof inspection & report",p:0},
+    {k:["repair","leak","patch"],d:"Roof leak repair",p:485},
+    {k:["shingle","reshingle","replace roof","new roof","tear off"],d:"Full re-roof (per sq, arch shingle)",p:425},
+    {k:["gutter"],d:"Gutter supply & install (per ft)",p:12},
+    {k:["gutter guard","leaf guard"],d:"Gutter guard install (per ft)",p:9},
+    {k:["flashing"],d:"Flashing repair / replace",p:325},
+    {k:["vent","ridge vent"],d:"Ridge vent install",p:450},
+    {k:["skylight"],d:"Skylight flashing & seal",p:395},
+    {k:["haul","dispose","dumpster","tear off"],d:"Debris removal & dumpster",p:650}
+  ],
+  landscaping:[
+    {k:["mow","mowing","cut","lawn"],d:"Lawn mowing (per visit)",p:55},
+    {k:["mulch"],d:"Mulch supply & spread (per yd)",p:95},
+    {k:["trim","hedge","bush","prune"],d:"Hedge / shrub trimming",p:185},
+    {k:["tree","branch","limb"],d:"Tree / limb removal",p:450},
+    {k:["cleanup","clean up","leaves","fall","spring"],d:"Seasonal cleanup",p:285},
+    {k:["sod","seed","reseed"],d:"Sod / reseeding (per 500 sqft)",p:325},
+    {k:["fertiliz","weed","treatment"],d:"Fertilization & weed treatment",p:75},
+    {k:["retaining wall","wall","paver","patio"],d:"Paver / retaining wall (per sqft)",p:28},
+    {k:["snow","plow"],d:"Snow removal (per push)",p:75}
+  ],
+  cleaning:[
+    {k:["deep clean","deep"],d:"Deep clean (one-time)",p:325},
+    {k:["recurring","weekly","biweekly","monthly","regular"],d:"Recurring clean (per visit)",p:145},
+    {k:["office","commercial","janitorial"],d:"Commercial janitorial (per 1,000 sqft)",p:120},
+    {k:["carpet"],d:"Carpet cleaning (per room)",p:45},
+    {k:["window"],d:"Window cleaning (per pane)",p:8},
+    {k:["move out","move-in","turnover"],d:"Move-out / turnover clean",p:395},
+    {k:["floor","strip","wax","buff"],d:"Floor strip & wax (per sqft)",p:0.65},
+    {k:["supplies"],d:"Supplies & materials",p:35}
+  ],
+  pest:[
+    {k:["inspection","inspect"],d:"Pest inspection",p:0},
+    {k:["initial","first","one-time","treatment"],d:"Initial treatment",p:185},
+    {k:["quarterly","recurring","plan","ongoing"],d:"Quarterly service plan (per visit)",p:110},
+    {k:["termite"],d:"Termite treatment",p:1250},
+    {k:["bed bug","bedbug"],d:"Bed bug treatment (per room)",p:325},
+    {k:["rodent","mice","rat","mouse"],d:"Rodent exclusion & baiting",p:395},
+    {k:["mosquito"],d:"Mosquito treatment (per visit)",p:95},
+    {k:["wasp","hornet","nest","bee"],d:"Wasp / hornet nest removal",p:145}
+  ],
+  painting:[
+    {k:["interior","room","bedroom","inside"],d:"Interior room repaint (per room)",p:425},
+    {k:["exterior","outside","siding"],d:"Exterior repaint (per 1,000 sqft)",p:1650},
+    {k:["ceiling"],d:"Ceiling paint (per room)",p:185},
+    {k:["trim","baseboard","door"],d:"Trim & door painting (per room)",p:165},
+    {k:["cabinet"],d:"Cabinet refinishing (per door)",p:95},
+    {k:["deck","fence","stain"],d:"Deck / fence staining (per sqft)",p:3.5},
+    {k:["prep","patch","drywall","repair wall"],d:"Prep, patch & sand",p:225},
+    {k:["primer","prime"],d:"Priming (per 1,000 sqft)",p:450}
+  ],
+  general:[
+    {k:["service call","visit","trip"],d:"Service call / trip",p:75},
+    {k:["labor","hour","hourly"],d:"Labor (per hour)",p:85},
+    {k:["drywall","hole","patch"],d:"Drywall patch & finish",p:185},
+    {k:["door"],d:"Door install / repair",p:245},
+    {k:["shelf","mount","tv","hang"],d:"Mounting / hanging",p:120},
+    {k:["faucet","fixture"],d:"Fixture replacement",p:165},
+    {k:["material","supplies","parts"],d:"Materials & supplies",p:50},
+    {k:["haul","dispose","remove"],d:"Haul away & disposal",p:85}
+  ]
+};
+
+let items = [];
+
+function trade(){return document.getElementById('trade').value;}
+
+function renderChips(){
+  const c=document.getElementById('chips'); c.innerHTML='';
+  LIBRARY[trade()].forEach(it=>{
+    const s=document.createElement('span'); s.className='chip'; s.textContent=it.d+' ($'+it.p+')';
+    s.onclick=()=>addItem(it.d,1,it.p);
+    c.appendChild(s);
+  });
+}
+
+function smartDraft(){
+  const txt=(document.getElementById('draftText').value||'').toLowerCase();
+  const msg=document.getElementById('draftMsg');
+  if(!txt.trim()){msg.textContent='Type a job description first.';return;}
+  const lib=LIBRARY[trade()];
+  let added=0;
+  lib.forEach(it=>{
+    // word-boundary match so "ac" doesn't hit "replace" and specs like
+    // "40 gallon" aren't read as quantities. Qty defaults to 1 (user edits).
+    const hit=it.k.some(kw=>{
+      const re=new RegExp('\\b'+kw.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&')+'\\b','i');
+      return re.test(txt);
+    });
+    if(hit && !items.some(x=>x.d===it.d)){addItem(it.d,1,it.p);added++;}
+  });
+  msg.textContent = added? added+' item(s) drafted — edit qty/price below.' : 'No matches — try the common-item chips below.';
+}
+
+function addItem(d,q,p){items.push({d:d,q:q,p:p});render();}
+function delItem(i){items.splice(i,1);render();}
+function upd(i,f,v){items[i][f]= f==='d'? v : parseFloat(v||0);render();}
+
+function money(n){return '$'+(Math.round(n*100)/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+
+function render(){
+  // editor table
+  const tb=document.getElementById('items'); tb.innerHTML='';
+  items.forEach((it,i)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><input class="li-desc" value="${it.d.replace(/"/g,'&quot;')}" oninput="upd(${i},'d',this.value)"></td>
+      <td><input class="li-qty" type="number" value="${it.q}" oninput="upd(${i},'q',this.value)"></td>
+      <td><input class="li-price" type="number" value="${it.p}" oninput="upd(${i},'p',this.value)"></td>
+      <td class="num" style="text-align:right;white-space:nowrap">${money(it.q*it.p)}</td>
+      <td><button class="li-del" onclick="delItem(${i})" title="remove">&times;</button></td>`;
+    tb.appendChild(tr);
+  });
+  // preview
+  const biz=val('bizName'), contact=val('bizContact'), cust=val('custName');
+  const taxRate=parseFloat(val('taxRate')||0);
+  const sub=items.reduce((s,it)=>s+it.q*it.p,0);
+  const tax=sub*taxRate/100; const grand=sub+tax;
+  const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
+  const qnum='Q-'+String(Math.abs(hash(biz+cust))%9000+1000);
+  let rows=items.map(it=>`<tr><td>${esc(it.d)}</td><td class="num">${it.q}</td><td class="num">${money(it.p)}</td><td class="num">${money(it.q*it.p)}</td></tr>`).join('');
+  if(!rows) rows=`<tr><td colspan="4" style="color:#94a3b8;padding:18px;text-align:center">Add line items to build the quote</td></tr>`;
+  document.getElementById('preview').innerHTML=`
+    <div class="q-head">
+      <div class="biz">${esc(biz)}<small>${esc(contact)}</small></div>
+      <div class="q-label"><b>ESTIMATE</b><div style="color:#94a3b8;font-size:13px;margin-top:4px">${qnum}</div></div>
+    </div>
+    <div class="q-body">
+      <div class="q-meta">
+        <div><b>Prepared for</b>${esc(cust)}</div>
+        <div><b>Date</b>${today}</div>
+        <div><b>Valid</b>30 days</div>
+      </div>
+      <table class="q-items">
+        <thead><tr><th>Description</th><th style="text-align:right">Qty</th><th style="text-align:right">Unit</th><th style="text-align:right">Amount</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <div class="q-totals">
+        <div class="r"><span>Subtotal</span><span>${money(sub)}</span></div>
+        ${taxRate?`<div class="r"><span>Tax (${taxRate}%)</span><span>${money(tax)}</span></div>`:''}
+        <div class="r grand"><span>Total</span><span>${money(grand)}</span></div>
+      </div>
+      <div class="q-terms">${esc(val('terms'))}</div>
+    </div>
+    <div class="q-foot">Generated free at nexusaiconcepts.com/tools/quote-generator</div>`;
+}
+
+function val(id){return document.getElementById(id).value;}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function hash(s){let h=0;for(let i=0;i<s.length;i++){h=(h<<5)-h+s.charCodeAt(i)|0;}return h;}
+function resetAll(){items=[];document.getElementById('draftText').value='';document.getElementById('draftMsg').textContent='';render();}
+
+['bizName','bizContact'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+renderChips();
+// seed a demo so the preview is never empty
+addItem('',0,0); items=[]; render();
+</script>
+</body>
+</html>

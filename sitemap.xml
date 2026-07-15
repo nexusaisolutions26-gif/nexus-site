@@ -642,4 +642,9 @@
   </url>
   <url><loc>https://nexusaiconcepts.com/social/</loc></url>
   <url><loc>https://nexusaiconcepts.com/build/</loc></url>
+  <url>
+    <loc>https://nexusaiconcepts.com/tools/quote-generator/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
