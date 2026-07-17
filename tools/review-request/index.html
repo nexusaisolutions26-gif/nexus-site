@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Google Review Request Generator | Nexus AI Solutions</title>
+<meta name="description" content="Free tool: generate a warm, high-converting review request (text + email) after a completed job, with your Google review link. Get more 5-star reviews without feeling pushy. No signup.">
+<link rel="canonical" href="https://nexusaiconcepts.com/tools/review-request/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexus AI Solutions">
+<meta property="og:title" content="Free Google Review Request Generator">
+<meta property="og:description" content="Warm, high-converting review requests after every job. Text + email. Free.">
+<meta property="og:url" content="https://nexusaiconcepts.com/tools/review-request/">
+<meta property="og:image" content="https://nexusaiconcepts.com/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--navy:#0d1117;--navy2:#131b2e;--blue:#2563eb;--blue2:#60a5fa;--amber:#fbbf24;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9}
+  body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+  header.site{background:var(--navy);color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+  header.site .logo{font-weight:800;font-size:19px;letter-spacing:-.5px}
+  header.site .logo span{color:var(--blue2)}
+  header.site a{color:#cbd5e1;text-decoration:none;font-size:14px}
+  .hero{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:40px 24px 32px;text-align:center}
+  .hero h1{font-size:29px;font-weight:800;letter-spacing:-.5px;max-width:780px;margin:0 auto 10px}
+  .hero p{color:#94a3b8;max-width:640px;margin:0 auto;font-size:16px}
+  .wrap{max-width:1120px;margin:0 auto;padding:24px;display:grid;grid-template-columns:380px 1fr;gap:24px}
+  @media(max-width:880px){.wrap{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .card h2{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;color:#334155;margin:12px 0 5px}
+  input,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;color:var(--ink)}
+  input:focus,select:focus{outline:none;border-color:var(--blue)}
+  button{cursor:pointer;font-family:inherit;font-weight:700;border:none;border-radius:8px}
+  .btn-primary{background:var(--blue);color:#fff;padding:12px 18px;font-size:14px;width:100%;margin-top:16px}
+  .btn-primary:hover{background:#1d4ed8}
+  .btn-copy{background:#fff;border:1px solid var(--line);color:#334155;padding:6px 12px;font-size:12.5px}
+  .btn-copy:hover{border-color:var(--blue);color:var(--blue)}
+  .tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+  .tab{padding:7px 14px;border-radius:20px;font-size:13px;font-weight:600;background:#fff;border:1px solid var(--line);cursor:pointer;color:#334155}
+  .tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .msg{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+  .msg-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#f8fafc;border-bottom:1px solid var(--line)}
+  .msg-head .when{font-weight:700;font-size:14px}
+  .msg-body{padding:16px;white-space:pre-wrap;font-size:14px;color:#334155;line-height:1.65}
+  .tip{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:12px 14px;font-size:13px;color:#1e40af;margin-bottom:16px}
+  .cta{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;border-radius:14px;padding:22px;margin-top:2px}
+  .cta h3{font-size:17px;margin-bottom:6px}
+  .cta p{color:#94a3b8;font-size:14px;margin-bottom:12px}
+  .cta a{display:inline-block;background:var(--amber);color:#1a1400;padding:10px 18px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px}
+  .site-foot{text-align:center;padding:26px;color:var(--muted);font-size:13px}
+  .site-foot a{color:var(--blue)}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header class="site"><a href="/" class="logo">Nexus <span>AI</span></a><a href="/">nexusaiconcepts.com</a></header>
+<div class="hero">
+  <h1>Get more 5-star reviews without feeling pushy</h1>
+  <p>The best time to ask is right after the job, while they're happy. Fill this in, get a warm request for text and email, with your Google link built in. Free, nothing stored.</p>
+</div>
+<div class="wrap">
+  <div>
+    <div class="card">
+      <h2>The details</h2>
+      <label>Your business name</label><input id="biz" value="Your Company" oninput="gen()">
+      <label>Customer first name</label><input id="cust" value="Sam" oninput="gen()">
+      <label>What you did for them</label><input id="job" value="the water heater install" oninput="gen()">
+      <label>Your Google review link</label><input id="link" placeholder="paste your Google review link" oninput="gen()">
+      <label>Your name / signoff</label><input id="signer" placeholder="how you sign off" oninput="gen()">
+      <button class="btn-primary" onclick="gen()">Generate requests</button>
+    </div>
+    <div class="cta" style="margin-top:20px">
+      <h3>The reviews that never happen are the ones you forget to ask for.</h3>
+      <p>We build the version that texts this automatically the moment you mark a job done, and follows up once if they don't respond. Reviews on autopilot.</p>
+      <a href="/">See how it works &rarr;</a>
+    </div>
+  </div>
+  <div>
+    <div class="tip" id="tip"></div>
+    <div class="tabs">
+      <div class="tab active" id="tab-sms" onclick="setChan('sms')">Text (best)</div>
+      <div class="tab" id="tab-email" onclick="setChan('email')">Email</div>
+      <div class="tab" id="tab-followup" onclick="setChan('followup')">If no response (day 3)</div>
+    </div>
+    <div id="out"></div>
+  </div>
+</div>
+<div class="site-foot">Free tool by <a href="/">Nexus AI Solutions</a> &middot; Nothing you type is stored. &middot; We build the automated version.</div>
+<div class="toast" id="toast">Copied</div>
+<script>
+let chan='sms';
+function v(id){return document.getElementById(id).value.trim();}
+function setChan(c){chan=c;['sms','email','followup'].forEach(x=>document.getElementById('tab-'+x).classList.toggle('active',x===c));gen();}
+function data(){
+  const biz=v('biz')||'our company',cust=v('cust')||'there',job=v('job')||'the work',link=v('link'),sign=v('signer')||biz;
+  const L=link||'[your Google review link]';
+  return {
+    sms:`Hi ${cust}, it's ${biz} -- thanks again for letting us handle ${job}! If you were happy with how it went, a quick Google review means the world to a small business like ours and takes about 30 seconds: ${L}\n\nThank you either way!\n-- ${sign}`,
+    email:`Subject: Quick favor, ${cust}?\n\nHi ${cust},\n\nThank you again for choosing ${biz} for ${job} -- it was a pleasure working with you.\n\nIf you have a spare minute and were happy with the result, would you leave us a quick Google review? Honest reviews from customers like you are the single biggest way people find and trust us.\n\nIt takes about 30 seconds: ${L}\n\nEither way, we appreciate you.\n\nBest,\n${sign}`,
+    followup:`Hi ${cust}, ${biz} again -- no worries if you've been busy! If you have 30 seconds, a quick Google review would genuinely help us out: ${L} Thanks so much. -- ${sign}`
+  };
+}
+function gen(){
+  const d=data();
+  document.getElementById('tip').textContent = v('link')? 'Send the text within a few hours of finishing -- response rates are highest while the job is fresh.' : 'Tip: paste your Google review link (Google Business Profile -> Ask for reviews -> copy link) so it drops straight in.';
+  const map={sms:'Text message',email:'Email',followup:'Follow-up text (day 3)'};
+  const body=d[chan];
+  document.getElementById('out').innerHTML=`
+    <div class="msg">
+      <div class="msg-head"><div class="when">${map[chan]}</div><button class="btn-copy" onclick="copyOut()">Copy</button></div>
+      <div class="msg-body" id="body">${esc(body)}</div>
+    </div>`;
+}
+function copyOut(){const t=document.getElementById('body').textContent;navigator.clipboard.writeText(t).then(()=>{const el=document.getElementById('toast');el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1200);});}
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+gen();
+</script>
+</body>
+</html>
