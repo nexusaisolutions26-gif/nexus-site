@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /thanks/
-
-Sitemap: https://nexusaiconcepts.com/sitemap.xml
