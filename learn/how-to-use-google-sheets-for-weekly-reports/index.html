@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Use Google Sheets for a Weekly Report (2026 Guide) | Nexus AI Solutions</title>
+<meta name="description" content="Build it once with a pivot table, not with hand-typed formulas you rewrite every Monday. Insert a pivot table off your jobs sheet, put the week in Rows and re">
+<link rel="canonical" href="https://nexusaiconcepts.com/learn/how-to-use-google-sheets-for-weekly-reports/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus AI Solutions">
+<meta property="og:title" content="How to Use Google Sheets for a Weekly Report (2026 Guide)">
+<meta property="og:description" content="Build it once with a pivot table, not with hand-typed formulas you rewrite every Monday. Insert a pivot table off your jobs sheet, put the week in Rows and re">
+<meta property="og:url" content="https://nexusaiconcepts.com/learn/how-to-use-google-sheets-for-weekly-reports/">
+<meta property="og:image" content="https://nexusaiconcepts.com/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to Use Google Sheets for a Weekly Report (2026 Guide)", "description": "Build it once with a pivot table, not with hand-typed formulas you rewrite every Monday. Insert a pivot table off your jobs sheet, put the week in Rows and revenue in Values, and it recalculates itself every time the source data changes. If you want the report to arrive without you opening the file,", "url": "https://nexusaiconcepts.com/learn/how-to-use-google-sheets-for-weekly-reports/", "datePublished": "2026-08-15", "dateModified": "2026-08-15", "author": {"@type": "Organization", "name": "Nexus AI Solutions", "url": "https://nexusaiconcepts.com"}, "publisher": {"@type": "Organization", "name": "Nexus AI Solutions", "logo": {"@type": "ImageObject", "url": "https://nexusaiconcepts.com/assets/logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://nexusaiconcepts.com/learn/how-to-use-google-sheets-for-weekly-reports/"}, "citation": [{"@type": "CreativeWork", "name": "QUERY function", "url": "https://support.google.com/docs/answer/3093343"}, {"@type": "CreativeWork", "name": "Create and use pivot tables", "url": "https://support.google.com/docs/answer/1272900"}, {"@type": "CreativeWork", "name": "Turn on notifications for changes", "url": "https://support.google.com/docs/answer/91588"}, {"@type": "CreativeWork", "name": "Installable triggers", "url": "https://developers.google.com/apps-script/guides/triggers/installable"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "HowTo", "name": "How to use Google Sheets to build a weekly report", "description": "Build it once with a pivot table, not with hand-typed formulas you rewrite every Monday. Insert a pivot table off your jobs sheet, put the week in Rows and revenue in Values, and it recalculates itself every time the source data changes. If you want the report to arrive without you opening the file,", "totalTime": "PT30M", "step": [{"@type": "HowToStep", "position": 1, "name": "Fix the source sheet first, because everything downstream breaks if you don't", "text": "One row per job. Columns for date, customer, job type, tech, invoiced amount, paid amount. Every column gets a header, and every column holds one kind of data. Google's own QUERY documentation says that when a column has mixed types, the majority type wins and the rest get treated as nulls. That is how a revenue column with a stray 'see notes' in it silently drops rows out of your total."}, {"@type": "HowToStep", "position": 2, "name": "Add a week column", "text": "New column, =ISOWEEKNUM(A2) filled down, or =YEAR(A2)&\"-W\"&TEXT(ISOWEEKNUM(A2),\"00\") if your data crosses a January. Grouping on a raw date gives you 300 rows. Grouping on a week number gives you 52. Do this before the pivot table, not after."}, {"@type": "HowToStep", "position": 3, "name": "Insert the pivot table", "text": "Select the data including headers, then Insert then Pivot table. In the side panel click Add next to Rows and pick your week column, then Add next to Values and pick invoiced amount summarized by SUM. Add job type to Columns if you want the split by service line. That is the whole report."}, {"@type": "HowToStep", "position": 4, "name": "Let it refresh itself", "text": "Google's help page is explicit: the pivot table refreshes any time you change the source data cells it is drawn from. So do not rebuild it weekly. Point your source range at whole columns, A:F rather than A1:F400, and new rows land in the report the moment they are typed."}, {"@type": "HowToStep", "position": 5, "name": "Add the two or three numbers that actually change behavior", "text": "Above the pivot, a small block of plain formulas: jobs closed this week, average ticket, dollars invoiced but not paid. Use a Calculated field inside the pivot if the number is a ratio of two columns you already have. Everything else is decoration. A weekly report nobody acts on is a chore, not a report."}, {"@type": "HowToStep", "position": 6, "name": "Use QUERY when the pivot table can't say it", "text": "The syntax is QUERY(data, query, [headers]). Something like =QUERY(A:F,\"select B, sum(E) where A is not null group by B order by sum(E) desc limit 10\",1) gives you a top-ten customer list a pivot table makes awkward. QUERY is a formula, so it lives in a cell and updates like any other formula."}, {"@type": "HowToStep", "position": 7, "name": "Make it show up on its own", "text": "Tools then Notification settings then Edit notifications gets you an email on changes or form submissions, either right away or as a daily digest. It only notifies you, and only about other people's edits, not yours. For a real Monday morning send, use Extensions then Apps Script, write a short function that emails the range, and add a time-driven trigger set to weekly on Monday."}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Pivot table or QUERY?", "acceptedAnswer": {"@type": "Answer", "text": "Pivot table for anything you would describe as totals by category. QUERY when you need filtering, sorting and limits in one expression, or when the output has to feed another formula. Most weekly reports never need QUERY."}}, {"@type": "Question", "name": "Can Google Sheets email the report as a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Not with a built-in setting. You need Apps Script: generate the PDF blob from the spreadsheet and send it with MailApp, then attach a weekly time-driven trigger. It is about 15 lines of code."}}, {"@type": "Question", "name": "How far back should the weekly report look?", "acceptedAnswer": {"@type": "Answer", "text": "Show the last 8 to 13 weeks next to the current one. One week in isolation tells you nothing, because weather and holidays move service revenue more than anything you did."}}, {"@type": "Question", "name": "Is this worth doing if we already use Jobber or Housecall Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Only for numbers those tools do not report well, which is usually anything crossing two systems, like marketing spend against booked revenue. Do not rebuild reporting you already pay for."}}]}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0d1117;--navy2:#131b2e;--blue:#2563eb;--blue2:#60a5fa;--amber:#fbbf24;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0}
+body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.7}
+header.site{background:var(--navy);color:#fff;padding:15px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+header.site .logo{font-weight:800;font-size:19px;text-decoration:none;color:#fff;letter-spacing:-.5px}
+header.site .logo span{color:var(--blue2)}
+header.site nav a{color:#cbd5e1;text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:#fff}
+.hero{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:44px 24px 38px}
+.hero-in{max-width:800px;margin:0 auto}
+.crumb{font-size:12.5px;color:#64748b;margin-bottom:14px}
+.crumb a{color:#94a3b8;text-decoration:none}
+.hero h1{font-size:33px;font-weight:800;letter-spacing:-.7px;line-height:1.22;margin-bottom:14px}
+.answer{background:rgba(37,99,235,.14);border-left:4px solid var(--blue2);border-radius:0 10px 10px 0;padding:16px 20px;color:#e2e8f0;font-size:16.5px}
+.answer b{color:#fff;display:block;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:7px;color:var(--amber)}
+article{max-width:800px;margin:0 auto;padding:38px 24px 10px;font-size:17px}
+article h2{font-size:27px;font-weight:800;margin:42px 0 14px;letter-spacing:-.4px;line-height:1.25}
+article h3{font-size:19.5px;font-weight:700;margin:0 0 6px}
+article p{margin-bottom:18px}
+a{color:var(--blue)}
+.step{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start}
+.step-n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;margin-top:2px}
+.step-b p{margin:0;color:#334155}
+ul.pit{margin:0 0 20px 22px} ul.pit li{margin-bottom:11px}
+.toolbox{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:24px;margin:34px 0;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.toolbox .tb-t{flex:1;min-width:220px}
+.toolbox h3{margin-bottom:5px}
+.toolbox p{margin:0;color:#475569;font-size:15.5px}
+.toolbox a.btn{background:var(--blue);color:#fff;padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none;white-space:nowrap}
+.sources{background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:22px 26px;margin:34px 0}
+.sources h2{margin:0 0 12px;font-size:19px}
+.sources ol{margin:0 0 0 20px;font-size:15.5px}
+.sources li{margin-bottom:11px}
+.sources .claim{display:block;color:#78716c;font-size:14px;margin-top:2px}
+.faq{border-top:1px solid var(--line);padding-top:16px;margin-bottom:16px}
+.faq h3{font-size:18px} .faq p{margin:0;color:#334155}
+ul.rel{margin:0 0 20px 22px} ul.rel li{margin-bottom:8px}
+.build{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;border-radius:16px;padding:30px;margin:42px 0 10px}
+.build h2{color:#fff;margin:0 0 8px;font-size:23px}
+.build p{color:#94a3b8;font-size:15.5px;margin-bottom:18px}
+.build form{display:grid;gap:10px}
+.build input,.build textarea{width:100%;padding:12px 14px;border:1px solid #334155;border-radius:8px;background:#0b1220;color:#fff;font-family:inherit;font-size:15px}
+.build input::placeholder,.build textarea::placeholder{color:#64748b}
+.build button{background:var(--amber);color:#1a1400;border:none;padding:13px 22px;border-radius:8px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit}
+.build .ok{display:none;background:#052e16;border:1px solid #166534;color:#86efac;padding:12px 14px;border-radius:8px;font-size:15px}
+.site-foot{text-align:center;padding:28px;color:var(--muted);font-size:13.5px;border-top:1px solid var(--line);margin-top:36px}
+@media(max-width:640px){.hero h1{font-size:26px}article{font-size:16.3px}article h2{font-size:23px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <a href="/" class="logo">Nexus <span>AI</span></a>
+  <nav><a href="/learn/">Guides</a><a href="/tools/">Free tools</a><a href="/">What we do</a></nav>
+</header>
+
+<div class="hero"><div class="hero-in">
+  <div class="crumb"><a href="/">Home</a> / <a href="/learn/">Guides</a> / Tool Guide</div>
+  <h1>How to use Google Sheets to build a weekly report</h1>
+  <div class="answer"><b>Short answer</b>Build it once with a pivot table, not with hand-typed formulas you rewrite every Monday. Insert a pivot table off your jobs sheet, put the week in Rows and revenue in Values, and it recalculates itself every time the source data changes. If you want the report to arrive without you opening the file, add an Apps Script time trigger. The catch nobody mentions: Sheets&#x27; built-in notification settings only email you, not your crew, so anything you want a second person to see needs a real trigger or a shared link.</div>
+</div></div>
+
+<article>
+
+<h2>How to do it</h2>
+<div class="step"><div class="step-n">1</div><div class="step-b"><h3>Fix the source sheet first, because everything downstream breaks if you don&#x27;t</h3><p>One row per job. Columns for date, customer, job type, tech, invoiced amount, paid amount. Every column gets a header, and every column holds one kind of data. Google&#x27;s own QUERY documentation says that when a column has mixed types, the majority type wins and the rest get treated as nulls. That is how a revenue column with a stray &#x27;see notes&#x27; in it silently drops rows out of your total.</p></div></div>
+<div class="step"><div class="step-n">2</div><div class="step-b"><h3>Add a week column</h3><p>New column, =ISOWEEKNUM(A2) filled down, or =YEAR(A2)&amp;&quot;-W&quot;&amp;TEXT(ISOWEEKNUM(A2),&quot;00&quot;) if your data crosses a January. Grouping on a raw date gives you 300 rows. Grouping on a week number gives you 52. Do this before the pivot table, not after.</p></div></div>
+<div class="step"><div class="step-n">3</div><div class="step-b"><h3>Insert the pivot table</h3><p>Select the data including headers, then Insert then Pivot table. In the side panel click Add next to Rows and pick your week column, then Add next to Values and pick invoiced amount summarized by SUM. Add job type to Columns if you want the split by service line. That is the whole report.</p></div></div>
+<div class="step"><div class="step-n">4</div><div class="step-b"><h3>Let it refresh itself</h3><p>Google&#x27;s help page is explicit: the pivot table refreshes any time you change the source data cells it is drawn from. So do not rebuild it weekly. Point your source range at whole columns, A:F rather than A1:F400, and new rows land in the report the moment they are typed.</p></div></div>
+<div class="step"><div class="step-n">5</div><div class="step-b"><h3>Add the two or three numbers that actually change behavior</h3><p>Above the pivot, a small block of plain formulas: jobs closed this week, average ticket, dollars invoiced but not paid. Use a Calculated field inside the pivot if the number is a ratio of two columns you already have. Everything else is decoration. A weekly report nobody acts on is a chore, not a report.</p></div></div>
+<div class="step"><div class="step-n">6</div><div class="step-b"><h3>Use QUERY when the pivot table can&#x27;t say it</h3><p>The syntax is QUERY(data, query, [headers]). Something like =QUERY(A:F,&quot;select B, sum(E) where A is not null group by B order by sum(E) desc limit 10&quot;,1) gives you a top-ten customer list a pivot table makes awkward. QUERY is a formula, so it lives in a cell and updates like any other formula.</p></div></div>
+<div class="step"><div class="step-n">7</div><div class="step-b"><h3>Make it show up on its own</h3><p>Tools then Notification settings then Edit notifications gets you an email on changes or form submissions, either right away or as a daily digest. It only notifies you, and only about other people&#x27;s edits, not yours. For a real Monday morning send, use Extensions then Apps Script, write a short function that emails the range, and add a time-driven trigger set to weekly on Monday.</p></div></div>
+
+<h2>Where this goes wrong</h2><p>The parts most guides skip, and the ones that actually cost you money:</p><ul class="pit"><li><strong>The Apps Script weekly trigger is not punctual.</strong> Google&#x27;s trigger documentation says the time is slightly randomized: a 9 AM trigger fires somewhere between 9 and 10. Fine for a report, bad if you promised someone a 9:00 email. Set it for 7 AM if you want it read with coffee.</li>
+<li><strong>Notification settings only work for you.</strong> The help page states you can only set up notifications for yourself, and you will not be notified about your own edits. Owners set this up, see nothing all week because they are the only one entering data, and assume it is broken.</li>
+<li><strong>Whole-column ranges plus heavy formulas get slow.</strong> A few thousand rows is nothing. Fifty thousand rows with a QUERY per cell and volatile date functions will make the file crawl. When you get there, stop adding formulas and move the raw data into a database or a real reporting tool.</li>
+<li><strong>Sheets will not fix a sloppy intake habit.</strong> If half your jobs never get logged, the report is confidently wrong, which is worse than no report. Get the row created automatically when the invoice is created. Manual entry decays within about three weeks.</li></ul>
+
+<div class="toolbox">
+  <div class="tb-t"><h3>Free tools for service businesses</h3><p>Quotes, invoice follow-ups and review requests. No signup.</p></div>
+  <a class="btn" href="/tools/">Open the free tool</a>
+</div>
+
+<h2>Common questions</h2><div class="faq"><h3>Pivot table or QUERY?</h3><p>Pivot table for anything you would describe as totals by category. QUERY when you need filtering, sorting and limits in one expression, or when the output has to feed another formula. Most weekly reports never need QUERY.</p></div>
+<div class="faq"><h3>Can Google Sheets email the report as a PDF?</h3><p>Not with a built-in setting. You need Apps Script: generate the PDF blob from the spreadsheet and send it with MailApp, then attach a weekly time-driven trigger. It is about 15 lines of code.</p></div>
+<div class="faq"><h3>How far back should the weekly report look?</h3><p>Show the last 8 to 13 weeks next to the current one. One week in isolation tells you nothing, because weather and holidays move service revenue more than anything you did.</p></div>
+<div class="faq"><h3>Is this worth doing if we already use Jobber or Housecall Pro?</h3><p>Only for numbers those tools do not report well, which is usually anything crossing two systems, like marketing spend against booked revenue. Do not rebuild reporting you already pay for.</p></div>
+
+<div class="sources">
+  <h2>Sources</h2>
+  <ol><li><a href="https://support.google.com/docs/answer/3093343" rel="nofollow noopener" target="_blank">QUERY function</a> &mdash; Google Docs Editors Help<span class="claim">Syntax is QUERY(data, query, [headers]); each column can hold only boolean, numeric or string values, and in a mixed column the majority data type wins while minority types are treated as nulls.</span></li>
+<li><a href="https://support.google.com/docs/answer/1272900" rel="nofollow noopener" target="_blank">Create and use pivot tables</a> &mdash; Google Docs Editors Help<span class="claim">Pivot tables are created from Insert then Pivot table with each column needing a header; the pivot table refreshes any time you change the source data cells it is drawn from; calculated fields are added from Add next to Values.</span></li>
+<li><a href="https://support.google.com/docs/answer/91588" rel="nofollow noopener" target="_blank">Turn on notifications for changes</a> &mdash; Google Docs Editors Help<span class="claim">Tools then Notification settings then Edit notifications offers email right away or a daily digest for edits or form submissions; you can only set up notifications for yourself and you are not notified about your own changes.</span></li>
+<li><a href="https://developers.google.com/apps-script/guides/triggers/installable" rel="nofollow noopener" target="_blank">Installable triggers</a> &mdash; Google Apps Script documentation<span class="claim">Time-driven triggers run from every minute to once per month, are created with ScriptApp.newTrigger().timeBased(), and the fire time is slightly randomized so a 9 AM trigger runs between 9 and 10 AM.</span></li></ol>
+</div>
+
+<h2>Related guides</h2><ul class="rel"><li><a href="/learn/how-to-use-gemini-for-weekly-reports/">How to use Gemini for weekly reports</a></li>
+<li><a href="/learn/how-to-use-chatgpt-for-job-notes/">How to use ChatGPT to summarize job notes</a></li>
+<li><a href="/learn/how-to-use-quickbooks-for-expenses-receipts/">How to use QuickBooks for expenses and receipts</a></li>
+<li><a href="/learn/how-to-use-zapier-for-lead-screening/">How to use Zapier to screen new leads</a></li>
+<li><a href="/learn/how-to-use-jobber-for-scheduling-dispatch/">How to use Jobber for scheduling and dispatch</a></li></ul>
+
+<div class="build">
+  <h2>Want this built for you instead?</h2>
+  <p>Tell us the job you keep doing by hand. If we can automate it, we will quote it. If we cannot, we will tell you that too. No calls, everything in writing.</p>
+  <form id="bf" onsubmit="return sub(event)">
+    <input name="email" type="email" required placeholder="Your email">
+    <input name="business" placeholder="Business name and trade">
+    <textarea name="need" rows="3" required placeholder="What do you want built or automated?"></textarea>
+    <input type="hidden" name="_subject" value="Custom build request - /learn/how-to-use-google-sheets-for-weekly-reports/">
+    <input type="hidden" name="page" value="/learn/how-to-use-google-sheets-for-weekly-reports/">
+    <button type="submit">Send the request</button>
+  </form>
+  <div class="ok" id="ok">Got it. We will reply to that address shortly with what it would take.</div>
+</div>
+
+</article>
+
+<div class="site-foot">
+  <a href="/">Nexus AI Solutions</a> &middot; Circleville, Ohio &middot; Operational AI for service businesses &middot; <a href="/tools/">Free tools</a> &middot; <a href="/learn/">All guides</a>
+</div>
+
+<script>
+function sub(ev){
+  ev.preventDefault();
+  var f=document.getElementById('bf');
+  var d={}; new FormData(f).forEach(function(v,k){d[k]=v;});
+  fetch('https://formsubmit.co/ajax/d192edfcf59bc76d834b897429308e86',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+   .then(function(){f.style.display='none';document.getElementById('ok').style.display='block';})
+   .catch(function(){f.style.display='none';document.getElementById('ok').style.display='block';});
+  return false;
+}
+</script>
+</body>
+</html>
